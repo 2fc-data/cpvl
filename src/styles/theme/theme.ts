@@ -1,26 +1,20 @@
 import { css } from "styled-components";
 import type { DefaultTheme } from "styled-components";
 
-// Extendendo a interface DefaultTheme do styled-components v6
 declare module "styled-components" {
   export interface DefaultTheme {
     colors: {
-      spaceCadet1: string;
-      spaceCadet2: string;
-      oxfordBlue: string;
-      delftBlue: string;
+      primary: string;
+      secondary: string;
+      skyBlue: string;
+      forestGreen: string;
+      lightGreen: string;
+      darkGray: string;
       white: string;
       black: string;
-      majorelleBlue: string;
-      pictonBlue: string;
-      paleAzure: string;
-      powderBlue: string;
-      success: string;
-      danger: string;
-      warning: string;
-      frenchGray: string;
-      hover: string;
-      active: string;
+      background: string;
+      text: string;
+      border: string;
     };
     typography: {
       fontFamily: string;
@@ -43,25 +37,19 @@ declare module "styled-components" {
   }
 }
 
-// Tema utilizando a interface DefaultTheme
 export const theme: DefaultTheme = {
   colors: {
-    spaceCadet1: "#111C44",
-    spaceCadet2: "#1B254B",
-    oxfordBlue: "#0B1437",
-    delftBlue: "#293357",
-    white: "#ffffff",
+    primary: "#2B7A78", // Teal green
+    secondary: "#3AAFA9", // Light teal
+    skyBlue: "#17A2B8", // Sky blue
+    forestGreen: "#1B4332", // Deep forest green
+    lightGreen: "#40916C", // Light forest green
+    darkGray: "#2F3640", // Dark gray for text
+    white: "#FFFFFF",
     black: "#000000",
-    majorelleBlue: "#7551FF",
-    pictonBlue: "#39B8FF",
-    paleAzure: "#6AD2FF",
-    powderBlue: "#A3AED0",
-    success: "#01B574",
-    danger: "#EE5D50",
-    warning: "#FFCE20",
-    frenchGray: "#C2CBDD",
-    hover: "",
-    active: "",
+    background: "#F5F5F5",
+    text: "#2F3640",
+    border: "#DEF2F1"
   },
   typography: {
     fontFamily: `"DM Sans", sans-serif`,
@@ -83,7 +71,6 @@ export const theme: DefaultTheme = {
   },
 };
 
-// Media queries compatíveis com styled-components v6
 export const media = {
   xxxl: (first: TemplateStringsArray, ...interpolations: any[]) => css`
     @media (max-width: ${theme.breakpoints.xxxl}) {

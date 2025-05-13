@@ -1,33 +1,26 @@
 import styled from "styled-components";
 import { media, theme } from "../../styles/theme/theme";
 
-export const BaseLayoutWrap = styled.div`  
+export const BaseLayoutWrap = styled.div`
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  /* min-height: 100vh; */
-  color: ${theme.colors.black};
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: ${theme.colors.background};
+  padding-top: 80px; // Space for fixed header
 
-  .main-content-wrapper{    
-    display: flex;
-    flex-direction: column;
+  .main-content-wrapper {
     flex: 1;
-    margin-left: 260px;
-    padding: 32px 20px;
-    width: 100%;    
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
 
-    ${media.xxl`
-      margin-left: 260px;
-      padding: 32px 16px;
-    `}
-
-    ${media.xl`
-      margin-left: 72px;
-      padding: 24px 16px;
+    ${media.lg`
+      padding: 1.5rem;
     `}
 
     ${media.md`
-      margin-left: 0;
+      padding: 1rem;
     `}
   }
 `;

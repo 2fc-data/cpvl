@@ -2,9 +2,7 @@ import "normalize.css";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./styles/theme/theme";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import { GlobalStyles } from "./styles/global/globalStyles";
-
 import { BaseLayout } from "./components/layout/";
 import { About } from "./pages/about";
 import { Airspace } from './pages/airSpace';
@@ -16,7 +14,6 @@ import { Register } from './pages/register';
 import { Statute } from "./pages/statute";
 
 function App() {
-
   return (
     <ThemeProvider theme={theme}>
       <Router>
@@ -37,7 +34,7 @@ function App() {
         </Routes>
       </Router>
     </ThemeProvider>
-  )
+  );
 }
 
-export default App
+export default App;
