@@ -35,7 +35,7 @@ export const FooterWrap = styled.div`
     display: flex-wrap;
     justify-content: center;
     line-height: 2;
-    margin: 0 10px;
+    margin: 20px 10px;
     min-width: 240px;
     padding: 20px 10px;
   }

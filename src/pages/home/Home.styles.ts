@@ -30,7 +30,7 @@ export const HomeWrap = styled.div`
 
     ${media.lg`
       font-size: 28px;
-      margin-top: -20rem; 
+      margin-top: 0rem; 
       padding: 6px 10px;
     `}
 

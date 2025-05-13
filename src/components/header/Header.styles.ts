@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { media, theme } from "../../styles/theme/theme";
 
 export const HeaderWrap = styled.header`
-  background-color: ${theme.colors.primary};
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 1rem 2rem;
+  background-color: ${theme.colors.white};
+  color: ${theme.colors.lightGreen};
+  padding: 1rem 0rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -12,10 +12,10 @@ export const HeaderWrap = styled.header`
   z-index: 1000;
 
   .header-container {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    max-width: 1400px;
+    display: flex;
+    justify-content: space-around;
+    max-width: 1320px;
     margin: 0 auto;
   }
 
@@ -32,11 +32,11 @@ export const HeaderWrap = styled.header`
         width: 100%;
         height: 100%;
         object-fit: contain;
+        border: none;
       }
     }
 
     .brand-name {
-      color: ${theme.colors.white};
       font-size: 1.5rem;
       font-weight: 700;
 
@@ -57,14 +57,15 @@ export const HeaderWrap = styled.header`
   }
 
   .nav-item {
-    position: relative;
-    color: ${theme.colors.white};
-    font-weight: 500;
-    padding: 0.5rem 1rem;
+    position: relative;    
+    font-weight: 600;
+    padding: 0.3rem 1rem;
     transition: ${theme.transitions.easeInOut};
 
     &:hover {
-      color: ${theme.colors.border};
+      color: ${theme.colors.white};
+      background-color: ${theme.colors.lightGreen};
+      border-radius: 3px;
 
       .submenu {
         display: block;
@@ -78,25 +79,27 @@ export const HeaderWrap = styled.header`
     top: 100%;
     left: 0;
     background-color: ${theme.colors.white};
-    border-radius: 4px;
+    border-radius: 3px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     min-width: 200px;
     padding: 0.5rem 0;
 
     .submenu-item {
-      color: ${theme.colors.text};
-      padding: 0.5rem 1rem;
+      border-bottom: 1px solid ${theme.colors.lightGreen};
+      color: ${theme.colors.lightGreen};
+      margin-left: 0.5rem;
+      padding: 0.5rem;
       display: block;
 
       &:hover {
-        background-color: ${theme.colors.border};
+        background-color: ${theme.colors.lightGreen};
+        color: ${theme.colors.white};      
       }
     }
   }
 
   .mobile-menu-btn {
-    display: none;
-    color: ${theme.colors.white};
+    display: none;   
     font-size: 1.5rem;
     cursor: pointer;
 
@@ -111,7 +114,7 @@ export const HeaderWrap = styled.header`
     top: 80px;
     left: 0;
     right: 0;
-    background-color: ${theme.colors.primary};
+    background-color: ${theme.colors.white};
     padding: 1rem;
 
     &.active {
@@ -119,10 +122,15 @@ export const HeaderWrap = styled.header`
     }
 
     .mobile-nav-item {
-      color: ${theme.colors.white};
+      color: ${theme.colors.lightGreen};
       padding: 0.75rem 1rem;
       display: block;
       border-bottom: 1px solid ${theme.colors.border};
+
+      &:hover {
+        background-color: ${theme.colors.lightGreen};
+        color: ${theme.colors.white};      
+      }
 
       &:last-child {
         border-bottom: none;
