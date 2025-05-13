@@ -16,7 +16,7 @@ export const Footer = () => {
       <div className="footer-block">
         <p className="footer-title">Midias Sociais</p>
         <p className="footer-link"><Link to="https://www.facebook.com/cpvlpocos/">Facebook</Link></p>
-        <p className="footer-link"><Link to="https://www.instagram.com/clubpocoscaldensedevoo_oficial/">Instagram</Link></p>
+        <p className="footer-link"><Link to="https://www.instagram.com/cpvloficial/">Instagram</Link></p>
       </div>
 
       <div className="footer-block">
