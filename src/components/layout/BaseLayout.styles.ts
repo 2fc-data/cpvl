@@ -4,6 +4,7 @@ import { media, theme } from "../../styles/theme/theme";
 export const BaseLayoutWrap = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-height: 100vh;
   background-color: ${theme.colors.background};
   padding-top: 80px; // Space for fixed header
