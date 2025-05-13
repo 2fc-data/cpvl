@@ -2,19 +2,20 @@ import styled from "styled-components";
 import { media, theme } from "../../styles/theme/theme";
 
 
-export const SectionWrap = styled.div`
+export const SectionWrap = styled.div`  
   display: flex;
   justify-content: space-between;
-  margin: 15px 0;
-  padding: 30px 0px;
+  margin: 60px 0;
+  padding: 0px 0px;
 
   ${media.xl`
-    margin: 15px 0;
+    margin: 45px 0;
     padding: 10px 0;
   `}
 
   ${media.lg`
     flex-direction: column;
+    margin: 30px 0;
     padding: 8px 0;
     text-align: justify;
   `}
@@ -27,8 +28,8 @@ export const SectionWrap = styled.div`
   `}
 
   .section-content {
-    margin: 15px 0;
-    padding: 15px; 
+    margin: 15px 0px;
+    padding: 15px 30px; 
     width: 100%;
 
     ${media.lg`
@@ -44,12 +45,12 @@ export const SectionWrap = styled.div`
 
   .section-title {
     display: flex;
-    border-bottom: 2px solid ${theme.colors.black};
+    border-bottom: 3px solid ${theme.colors.lightGreen};
+     color: ${theme.colors.lightGreen};
     font-size: 16px;
     font-weight: 700;
     justify-content: center;
     text-transform: uppercase;
-    width: 100%;
   }
 
   .section-description {
@@ -72,19 +73,19 @@ export const SectionWrap = styled.div`
     align-items: center;
     display: flex;
     background-color: ${theme.colors.white};
-    border: 1px solid ${theme.colors.black};
+    border: 1px solid ${theme.colors.lightGreen};
     border-radius: 5px;
-    color: ${theme.colors.black};
+    color: ${theme.colors.lightGreen};
     justify-content: center;
     margin-top: 15px;
     padding: 2px 5px ;
     width: 90px;
 
     &:hover {
-      background-color: ${theme.colors.white};
-      border: 1px solid ${theme.colors.black};
+      background-color: ${theme.colors.lightGreen};
+      border: 1px solid ${theme.colors.lightGreen};
       border-radius: 3px;
-      color: ${theme.colors.black};
+      color: ${theme.colors.white};
       cursor: pointer;
     }
   }
