@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { HeaderWrap } from './Header.styles';
 import { setSidebarOpen } from "../../redux/slices/sidebarSlice";
 import { MdMenu } from "react-icons/md";
