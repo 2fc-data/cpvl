@@ -14,7 +14,7 @@ export const HeaderWrap = styled.header`
   .header-container {
     align-items: center;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     max-width: 1320px;
     margin: 0 auto;
   }
