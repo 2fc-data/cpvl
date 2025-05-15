@@ -32,7 +32,7 @@ export const GlobalStyles = createGlobalStyle`
     }
     a{        
         color: unset;
-        text-decoration: underline;
+        text-decoration: none;
         transition: ${theme.transitions.easeInOut};
     }
 
