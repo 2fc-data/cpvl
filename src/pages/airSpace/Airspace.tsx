@@ -4,16 +4,6 @@ import pdf from "/src/assets/docs/EspacoAereo.pdf"
 
 export const Airspace = () => {
 
-  const PDFViewer = () => {
-
-    return (
-      <iframe
-        src={pdf}
-        style={{ width: "100%", height: "600px" }}
-      />
-    )
-  };
-
   return (
     <AirspaceWrap>
       <div className='airspace-content'>
@@ -22,8 +12,9 @@ export const Airspace = () => {
         </div>
 
         <div className="airspace-section">
+
           <div className="airspace-block">
-            <p className="airspace-block-title">Espaço Aéreo</p>
+            <div className="airspace-block-title">Espaço Aéreo</div>
             <div className="airspace-block-text">
               Desde 1986, o Código Brasileiro de Aeronáutica estabelece que o
               aerodesporto deverá ser praticado em áreas determinadas pela
@@ -31,18 +22,21 @@ export const Airspace = () => {
               quando realizada dentro do Espaço Aéreo Condicionado (EAC), em
               áreas geralmente estabelecidas por SBR´s ou NOTAM destinadas ao
               aerodesporto e disponíveis no site do Departamento de Controle de
-              Espaço Aéreo (DECEA)</div>
-          </div>
+              Espaço Aéreo (DECEA).
 
-          <div className="airspace-block-btn">
+              <br /><br />
+              <p>
+                <a href="https://www.decea.mil.br/?i=unidades&p=cindacta-i">DECEA Cindacta I</a>
+              </p>
+            </div>
+
+            <div className="airspace-block-btn">
               <div className="airspace-link">
-                <Link to="https://www.decea.mil.br/?i=unidades&p=cindacta-i">DECEA Cindacta I</Link>
+                <a href={pdf} download>Download</a>
               </div>
+            </div>
           </div>
-        </div>
 
-        <div className="airspace-section">
-          {PDFViewer()}
         </div>
       </div>
     </AirspaceWrap >

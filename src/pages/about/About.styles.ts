@@ -76,7 +76,7 @@ export const AboutWrap = styled.div`
 
   .about-block-title {
     align-items: center;
-    color: ${theme.colors.black};
+    color: ${theme.colors.lightGreen};
     display: flex; 
     font-size: 3rem;
     font-weight: 500;    

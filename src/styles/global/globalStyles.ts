@@ -30,9 +30,9 @@ export const GlobalStyles = createGlobalStyle`
         display: block;
         max-width: 100%;
     }
-    a{
+    a{        
         color: unset;
-        text-decoration: none;
+        text-decoration: underline;
         transition: ${theme.transitions.easeInOut};
     }
 

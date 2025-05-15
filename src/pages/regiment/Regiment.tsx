@@ -4,15 +4,15 @@ import pdf from "/src/assets/docs/RI.pdf";
 
 export const Regiment = () => {
 
-  const PDFViewer = () => {
+  // const PDFViewer = () => {
 
-    return (
-        <iframe
-          src={pdf}
-          style={{ width: "100%", height: "400px" }}        
-        />
-    )
-  };
+  //   return (
+  //     <iframe
+  //       src={pdf}
+  //       style={{ width: "100%", height: "400px" }}
+  //     />
+  //   )
+  // };
 
   return (
 
@@ -23,6 +23,7 @@ export const Regiment = () => {
         </div>
 
         <div className="regiment-section">
+          
           <div className="regiment-block">
             <div className="regiment-block-title">Regimento Interno</div>
             <div className="regiment-block-text">
@@ -36,12 +37,16 @@ export const Regiment = () => {
               assembléias é de extrema importância, pois entende que todos tem
               algo a contribuir com o clube.
             </div>
+
+            <div className="regiment-block-btn">
+              <div className="regiment-link">
+                <a href={pdf} download>Download</a>
+              </div>
+            </div>
           </div>
+
         </div>
 
-        <div className="regiment-section">
-          {PDFViewer()}
-        </div>
       </div>
     </RegimentWrap>
   )

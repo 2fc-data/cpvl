@@ -1,5 +1,4 @@
 import { media, theme } from "../../styles/theme/theme";
-
 import styled from "styled-components";
 import image_airspace from "../../assets/images/5crepusculo.jpg";
 
@@ -86,7 +85,7 @@ export const StatuteWrap = styled.div`
 
   .statute-block-title {
     align-items: center;
-    color: ${theme.colors.black};
+    color: ${theme.colors.lightGreen};
     display: flex; 
     font-size: 3rem;
     font-weight: 500;      
@@ -123,18 +122,18 @@ export const StatuteWrap = styled.div`
     align-items: center;
     display: flex;
     background-color: ${theme.colors.white};
-    border: 1px solid ${theme.colors.black};
+    border: 1px solid ${theme.colors.lightGreen};
     border-radius: 6px;
-    color: ${theme.colors.black};
+    color: ${theme.colors.lightGreen};
     justify-content: center;
-    padding: 9px 9px ;
+    padding: 3px 9px ;
     width: 135px;
 
     &:hover {
-      background-color: ${theme.colors.white};
-      border: 1px solid ${theme.colors.black};
+      background-color: ${theme.colors.lightGreen};
+      border: 1px solid ${theme.colors.lightGreen};
       border-radius: 6px;
-      color: ${theme.colors.black};
+      color: ${theme.colors.white};
       cursor: pointer;
     }
   }
