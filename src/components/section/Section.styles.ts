@@ -3,11 +3,11 @@ import { media, theme } from "../../styles/theme/theme";
 
 
 export const SectionWrap = styled.div`
-  background-color: ${theme.colors.skyBlueDark};
+  background-color: ${theme.colors.white};
   display: flex;
   justify-content: space-between;
   margin: 0px 0;
-  padding: 0px 0px;
+  padding: 102px 0px;
 
   ${media.xl`
     margin: 45px 0;
@@ -52,6 +52,7 @@ export const SectionWrap = styled.div`
     font-weight: 700;
     justify-content: center;
     text-transform: uppercase;
+    padding-bottom: 15px;
   }
 
   .section-description {

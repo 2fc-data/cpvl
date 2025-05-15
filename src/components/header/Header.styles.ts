@@ -91,6 +91,10 @@ export const HeaderWrap = styled.header`
       padding: 0.5rem;
       display: block;
 
+      &:last-child {
+        border-bottom: none;
+      }
+
       &:hover {
         background-color: ${theme.colors.lightGreen};
         color: ${theme.colors.white};      
