@@ -26,7 +26,7 @@ export const AboutWrap = styled.div`
 
   .about-header-title{
     align-items: center;
-    border: 2px solid ${theme.colors.black};
+    border: 2px solid ${theme.colors.white};
     color: ${theme.colors.white};     
     display: flex; 
     font-size: 18px;
