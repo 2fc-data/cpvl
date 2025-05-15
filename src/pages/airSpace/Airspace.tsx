@@ -1,5 +1,4 @@
 import { AirspaceWrap } from "./Airspace.styles"
-import { Link } from "react-router-dom"
 import pdf from "/src/assets/docs/EspacoAereo.pdf"
 
 export const Airspace = () => {
