@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { FooterWrap } from "./Footer.styles";
 
+
 export const Footer = () => {
   return (
     <FooterWrap className="footer-content">
@@ -26,12 +27,6 @@ export const Footer = () => {
         <p className="footer-link">Altitude: 1550m</p>
         <p className="footer-link">Desnível: 400m</p>
         <p className="footer-link">Quadrante: S | NE | N | NW</p>
-      </div>
-
-      <div className="footer-block">
-        <p className="footer-title">Parceiros</p>
-        <p className="footer-link"><Link to="https://citur.com.br/">Citur</Link></p>
-        <p className="footer-link"><Link to="https://pocosdecaldas.mg.gov.br/">Prefeitora Poços de Caldas</Link></p>
       </div>
     </FooterWrap>
   )

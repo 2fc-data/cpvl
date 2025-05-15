@@ -7,9 +7,11 @@ declare module "styled-components" {
       primary: string;
       secondary: string;
       skyBlue: string;
+      skyBlueDark: string;
       forestGreen: string;
       lightGreen: string;
       darkGray: string;
+      lightGray: string;
       white: string;
       black: string;
       background: string;
@@ -41,14 +43,18 @@ export const theme: DefaultTheme = {
   colors: {
     primary: "#2B7A78", // Teal green
     secondary: "#3AAFA9", // Light teal
+
     skyBlue: "#17A2B8", // Sky blue
-    forestGreen: "#1B4332", // Deep forest green
-    lightGreen: "#40916C", // Light forest green
-    darkGray: "#2F3640", // Dark gray for text
+    skyBlueDark: "##006C9E", //
+    forestGreen: "#142618", // Deep forest green
+    lightGreen: "#517356", // Light forest green 
+    darkGray: "#8C8C7B", // Dark gray for text
+    lightGray: "#8C8C7B",
     white: "#FFFFFF",
     black: "#000000",
     background: "#F5F5F5",
-    text: "#2F3640",
+    text: "#0D0D0D",
+    
     border: "#DEF2F1"
   },
   typography: {

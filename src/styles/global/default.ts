@@ -108,7 +108,7 @@ export const CheckboxWrap = styled.div`
     width: 100%;
     height: 100%;
     border: 2px solid ${theme.colors.black};
-    border-radius: 2px;
+    border-radius: 3px;
   }
 
   .checkbox-mark {
@@ -123,7 +123,7 @@ export const CheckboxWrap = styled.div`
     opacity: 0;
     color: ${theme.colors.black};
     background-color: ${theme.colors.white};
-    border-radius: 2px;
+    border-radius: 3px;
     transition: ${theme.transitions.easeInOut};
   }
 

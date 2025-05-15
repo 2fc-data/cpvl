@@ -16,7 +16,7 @@ export const HeaderWrap = styled.header`
     display: flex;
     justify-content: space-between;
     max-width: 1320px;
-    margin: 0 auto;
+    margin: 0 45px;
   }
 
   .logo-section {
@@ -65,7 +65,7 @@ export const HeaderWrap = styled.header`
     &:hover {
       color: ${theme.colors.white};
       background-color: ${theme.colors.lightGreen};
-      border-radius: 3px;
+      border-radius: 6px;
 
       .submenu {
         display: block;
@@ -79,7 +79,7 @@ export const HeaderWrap = styled.header`
     top: 100%;
     left: 0;
     background-color: ${theme.colors.white};
-    border-radius: 3px;
+    border-radius: 6px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     min-width: 200px;
     padding: 0.5rem 0;
@@ -99,6 +99,7 @@ export const HeaderWrap = styled.header`
   }
 
   .mobile-menu-btn {
+    color: ${theme.colors.lightGreen};
     display: none;   
     font-size: 1.5rem;
     cursor: pointer;

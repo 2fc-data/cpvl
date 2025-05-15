@@ -62,7 +62,7 @@ export const DirectionWrap = styled.div`
     column-gap: 25px;
     margin: 15px;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 6px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     min-width: 90%;
   }
@@ -189,7 +189,7 @@ export const DirectionWrap = styled.div`
     display: flex;
     background-color: ${theme.colors.white};
     border: 1px solid ${theme.colors.white};
-    border-radius: 5px;
+    border-radius: 6px;
     color: ${theme.colors.black};
     justify-content: center;
     padding: 9px 9px ;
@@ -198,7 +198,7 @@ export const DirectionWrap = styled.div`
     &:hover {
       background-color: ${theme.colors.white};
       border: 1px solid ${theme.colors.white};
-      border-radius: 3px;
+      border-radius: 6px;
       color: ${theme.colors.black};
       cursor: pointer;
     }

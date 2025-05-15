@@ -39,7 +39,7 @@ export const Header = () => {
           className="mobile-menu-btn"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          <MdMenu size={24} />
+          <MdMenu size={36} />
         </button>
 
         <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>

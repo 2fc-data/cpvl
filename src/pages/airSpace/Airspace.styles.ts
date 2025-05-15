@@ -122,7 +122,7 @@ export const AirspaceWrap = styled.div`
     display: flex;
     background-color: ${theme.colors.white};
     border: 1px solid ${theme.colors.white};
-    border-radius: 5px;
+    border-radius: 6px;
     color: ${theme.colors.black};
     justify-content: center;
     padding: 9px 9px ;
@@ -131,7 +131,7 @@ export const AirspaceWrap = styled.div`
     &:hover {
       background-color: ${theme.colors.white};
       border: 1px solid ${theme.colors.white};
-      border-radius: 3px;
+      border-radius: 6px;
       color: ${theme.colors.black};
       cursor: pointer;
     }

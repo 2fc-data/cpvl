@@ -3,7 +3,7 @@ import { media, theme } from "../../styles/theme/theme";
 
 export const LoginWrap = styled.div`
   background-color: ${theme.colors.white};
-  border-radius: 8px;
+  border-radius: 6px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   color: ${theme.colors.black};
   margin: 111px auto;
@@ -45,7 +45,7 @@ export const LoginWrap = styled.div`
     input[type='password'] {
       padding: 10px;
       border: 1px solid ${theme.colors.black};
-      border-radius: 4px;
+      border-radius: 6px;
       font-size: 16px;
     }
 
@@ -66,7 +66,7 @@ export const LoginWrap = styled.div`
     background-color: ${theme.colors.white};
     border: 1px solid ${theme.colors.black};
     color: ${theme.colors.black};
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;

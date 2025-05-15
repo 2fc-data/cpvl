@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { media, theme } from "../../styles/theme/theme";
 import bg_footer from "../../assets/images/gramaFooter.jpg";
+import Logo_footer from "../../assets/images/logo_cpvl.svg";
 
 export const FooterWrap = styled.div`
   /* background-color: ${theme.colors.forestGreen}; */
@@ -29,8 +30,8 @@ export const FooterWrap = styled.div`
 
   .footer-block {
     align-items: center;
-    background-color: ${theme.colors.forestGreen};
-    border-radius: 3px;
+    background-color: rgba(20, 38, 20, 0.6);
+    border-radius: 6px;
     color: ${theme.colors.white};
     display: flex-wrap;
     justify-content: center;
@@ -58,7 +59,26 @@ export const FooterWrap = styled.div`
 
     &:hover {
       background-color: ${theme.colors.lightGreen};
-      border-radius: 3px;
+      border-radius: 6px;
     }
   }
+
+  /* .footer-logo-img {
+    background-image: url(${Logo_footer});
+    background-position: center;
+    background-size: cover;    
+    display: flex;
+    height: 30%;
+    justify-content: center;
+    padding: 10px;
+    width: 75%;
+
+    ${media.lg`
+      width: 100%;
+    `}
+
+    ${media.md`
+      width: 100%;
+    `}
+  } */
 `;

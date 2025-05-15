@@ -2,10 +2,11 @@ import styled from "styled-components";
 import { media, theme } from "../../styles/theme/theme";
 
 
-export const SectionWrap = styled.div`  
+export const SectionWrap = styled.div`
+  background-color: ${theme.colors.skyBlueDark};
   display: flex;
   justify-content: space-between;
-  margin: 60px 0;
+  margin: 0px 0;
   padding: 0px 0px;
 
   ${media.xl`
@@ -46,7 +47,7 @@ export const SectionWrap = styled.div`
   .section-title {
     display: flex;
     border-bottom: 3px solid ${theme.colors.lightGreen};
-     color: ${theme.colors.lightGreen};
+    color: ${theme.colors.lightGreen};
     font-size: 16px;
     font-weight: 700;
     justify-content: center;
@@ -74,7 +75,7 @@ export const SectionWrap = styled.div`
     display: flex;
     background-color: ${theme.colors.white};
     border: 1px solid ${theme.colors.lightGreen};
-    border-radius: 5px;
+    border-radius: 6px;
     color: ${theme.colors.lightGreen};
     justify-content: center;
     margin-top: 15px;
@@ -84,7 +85,7 @@ export const SectionWrap = styled.div`
     &:hover {
       background-color: ${theme.colors.lightGreen};
       border: 1px solid ${theme.colors.lightGreen};
-      border-radius: 3px;
+      border-radius: 6px;
       color: ${theme.colors.white};
       cursor: pointer;
     }
