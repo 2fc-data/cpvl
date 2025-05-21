@@ -5,18 +5,15 @@ export const HeaderWrap = styled.header`
   background-color: ${theme.colors.white};
   color: ${theme.colors.lightGreen};
   padding: 1rem 0rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: 1000;
 
   .header-container {
     align-items: center;
     display: flex;
     justify-content: space-between;
+    top: 0;
     max-width: 1320px;
-    margin: 0 45px;
+    margin: 0 35px;
   }
 
   .logo-section {

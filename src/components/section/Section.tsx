@@ -28,7 +28,7 @@ export const Section = () => {
         <h3 className="section-title">Regimento Interno</h3>
         <div className="section-description">
           Na assemblpeia Geral Extraordinária (AGE) de setembro de 2024, foram debatido novos tópicos importantes para atualização do novo Regimento Interno.
-        </div>
+        </div> 
         <div className="section-link">
           <Link to="/regiment">Saiba mais</Link>
         </div>
