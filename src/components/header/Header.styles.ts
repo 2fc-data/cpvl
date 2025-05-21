@@ -20,9 +20,11 @@ export const HeaderWrap = styled.header`
   }
 
   .logo-section {
+    border: none;
     display: flex;
     align-items: center;
     gap: 1rem;
+    
 
     .logo {
       width: 120px;

@@ -3,37 +3,43 @@ import { media, theme } from "../../styles/theme/theme";
 
 
 export const SectionWrap = styled.div`
-  background-color: ${theme.colors.white};
+  align-items: center;
+  background-color: ${theme.colors.white};  
   display: flex;
-  justify-content: space-between;
-  margin: 0px 0;
-  padding: 102px 0px;
-
-  ${media.xl`
-    margin: 45px 0;
-    padding: 10px 0;
-  `}
+  justify-content: space-around;
+  margin-top: 0px;
+  padding: 130px 10px;
+  text-align: justify;
+  width: 100%;
 
   ${media.lg`
+    display: flex-wrap;
     flex-direction: column;
-    margin: 30px 0;
-    padding: 8px 0;
+    margin: 15px;
+    padding: 15px 12px;
     text-align: justify;
   `}
 
   ${media.md`
+    display: flex-wrap;
     flex-direction: column;
-    justify-content: center;
-    padding: 5px 0;
+    margin: 15px;
+    padding: 10px 9px;
     text-align: justify;
   `}
 
   .section-content {
-    margin: 15px 0px;
-    padding: 15px 30px; 
-    width: 100%;
+    align-items: center;    
+    border-radius: 6px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex-wrap;
+    flex-direction: column;
+    min-height: 300px;
+    margin: 20px 30px;
+    padding: 20px 30px; 
+    width: 400px;
 
-    ${media.lg`
+    /* ${media.lg`
       justify-items: center;
       padding: 15px 45px; 
     `}
@@ -41,7 +47,7 @@ export const SectionWrap = styled.div`
     ${media.md`
       justify-items: center;
       padding: 15px 45px; 
-    `}
+    `} */
   }
 
   .section-title {
@@ -59,20 +65,22 @@ export const SectionWrap = styled.div`
     padding: 15px 0;
     font-size: 14px;
     font-weight: 500;
-    height: 120px;
+    height: auto;
+    min-height: 120px;
     line-height: 2;
 
     ${media.lg`
-      height: 60px;
+      height: auto;
     `}
 
     ${media.md`
-      height: 90px;
+      height: auto;
     `}
   }
 
   .section-link {
     align-items: center;
+    bottom: 0;
     display: flex;
     background-color: ${theme.colors.white};
     border: 1px solid ${theme.colors.lightGreen};
@@ -80,7 +88,7 @@ export const SectionWrap = styled.div`
     color: ${theme.colors.lightGreen};
     justify-content: center;
     margin-top: 15px;
-    padding: 2px 5px ;
+    padding: 10px 5px ;
     width: 90px;
 
     &:hover {
