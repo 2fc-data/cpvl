@@ -9,23 +9,21 @@ export const SectionWrap = styled.div`
   justify-content: space-around;
   margin-top: 0px;
   padding: 130px 10px;
-  text-align: justify;
   width: 100%;
 
   ${media.lg`
     display: flex-wrap;
     flex-direction: column;
-    margin: 15px;
-    padding: 15px 12px;
-    text-align: justify;
+    padding: 10px 9px;
+    text-align: center;
   `}
 
   ${media.md`
     display: flex-wrap;
     flex-direction: column;
-    margin: 15px;
+    margin-top: 0px;
     padding: 10px 9px;
-    text-align: justify;
+    text-align: center;
   `}
 
   .section-content {
@@ -33,21 +31,18 @@ export const SectionWrap = styled.div`
     border-radius: 6px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
     display: flex-wrap;
-    flex-direction: column;
-    min-height: 300px;
-    margin: 20px 30px;
-    padding: 20px 30px; 
-    width: 400px;
-
-    /* ${media.lg`
-      justify-items: center;
-      padding: 15px 45px; 
+    justify-content: center;
+    min-height: 345px;
+    margin: 20px 25px;
+    padding: 20px 25px; 
+    text-align: justify;
+    width: 270px;
+    
+    ${media.lg`
+      min-height: 145px;
+      padding: 15px 12px;
+      width: 95%;
     `}
-
-    ${media.md`
-      justify-items: center;
-      padding: 15px 45px; 
-    `} */
   }
 
   .section-title {
@@ -65,16 +60,15 @@ export const SectionWrap = styled.div`
     padding: 15px 0;
     font-size: 14px;
     font-weight: 500;
-    height: auto;
-    min-height: 120px;
+    min-height: 270px;
     line-height: 2;
 
     ${media.lg`
-      height: auto;
+      min-height: 90px;
     `}
 
     ${media.md`
-      height: auto;
+      min-height: 90px;
     `}
   }
 

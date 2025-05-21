@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { media, theme } from "../../styles/theme/theme";
 
 export const Container = styled.div`
-  max-width: 1320px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
 `;
@@ -15,7 +15,7 @@ export const BlockTitle = styled.div`
     font-weight: 700;
     color: ${theme.colors.black};
 
-    ${media.xxl`
+    ${media.xl`
         font-size: 24px;
     `}
 

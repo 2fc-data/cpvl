@@ -4,15 +4,18 @@ import { media, theme } from "../../styles/theme/theme";
 export const HeaderWrap = styled.header`
   background-color: ${theme.colors.white};
   color: ${theme.colors.lightGreen};
-  padding: 1rem 0rem;
+  padding: 2rem 0rem;
   z-index: 1000;
+
+  ${media.xl`
+    padding: 1rem 0rem;
+  `}
 
   .header-container {
     align-items: center;
     display: flex;
     justify-content: space-between;
     top: 0;
-    max-width: 1320px;
     margin: 0 35px;
   }
 
@@ -28,8 +31,8 @@ export const HeaderWrap = styled.header`
       height: 54px;
 
       img {
-        width: 100%;
-        height: 100%;
+        width: 99%;
+        height: 99%;
         object-fit: contain;
         border: none;
       }

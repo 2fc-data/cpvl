@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle`
         scroll-behavior: smooth;
         height: 100%;
     }
-    body{
+    body{        
         display: flex;
         justify-content: center;
         background: ${theme.colors.white};
@@ -28,9 +28,9 @@ export const GlobalStyles = createGlobalStyle`
         list-style: none;
     }
     img{
-        width: 100%;
         display: block;
         max-width: 100%;
+        width: 100%;
     }
     a{        
         color: unset;

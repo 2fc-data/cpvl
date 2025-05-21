@@ -2,26 +2,27 @@ import styled from "styled-components";
 import { media, theme } from "../../styles/theme/theme";
 import bg_footer from "../../assets/images/gramaFooter.jpg";
 
-export const FooterWrap = styled.div`  
+export const FooterWrap = styled.div`
+  align-items: center;
   background-image: url(${bg_footer});
   bottom: 0;
   display: flex;
   justify-content: space-around;
   margin-top: 0px;
-  padding: 130px 10px;
+  padding: 90px 10px;
   width: 100%;
 
   ${media.lg`
     display: flex-wrap;
     flex-direction: column;
-    padding: 15px 12px;
+    padding: 15px 9px;
     text-align: center;
   `}
 
   ${media.md`
     display: flex-wrap;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 0px;
     padding: 10px 9px;
     text-align: center;
   `}
@@ -36,21 +37,32 @@ export const FooterWrap = styled.div`
     justify-content: center;
     line-height: 2;
     margin: 20px 10px;
-    min-width: 240px;
+    min-height: 345px;
     padding: 20px 10px;
+    width: 270px;
+
+    ${media.lg`
+      padding: 15px 12px;
+      width: 95%;
+    `}
   }
 
   .footer-title {
     border-bottom: 1px solid ${theme.colors.lightGreen};
     font-size: 16px;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 30px;    
     text-transform: uppercase;
+
+    ${media.lg`
+      padding-left: 15px;
+    `}
   }
 
   .footer-link {
     margin-top: 10px;
     padding-left: 10px;
+    text-align: left;
 
     ${media.md`
       padding-left: 0px;

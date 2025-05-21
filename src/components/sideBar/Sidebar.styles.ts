@@ -7,29 +7,25 @@ export const SidebarWrap = styled.div`
   z-index: 1000;
   color: ${theme.colors.black};
   position: fixed;
-  top: 0;
+  top: 0px;
   left: 0;
   height: 100%;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 20px 30px;
 
-  ${media.xxl`
-        width: 240px;
-    `}
-
   ${media.xl`
         width: 72px;
-    `}
+  `}
 
-    ${media.md`
-        width: 260px;
-        transform: translateX(-100%);
-    `}
+  ${media.md`
+      width: 260px;
+      transform: translateX(-100%);
+  `}
 
-    .sidebar-content {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
+  .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
   
   .sidebar-head {
     padding: 20px;
@@ -68,12 +64,12 @@ export const SidebarWrap = styled.div`
       text-transform: uppercase;
 
       ${media.xl`
-         display: none;
-    `}
+        display: none;
+      `}
 
       ${media.md`
-            display: block;
-        `}
+        display: block;
+      `}
     }
 
     .sidebar-close-btn {
@@ -103,7 +99,7 @@ export const SidebarWrap = styled.div`
 
       ${media.lg`
             row-gap: 16px;
-        `}
+      `}
     }
 
     .sidenav-item {
@@ -113,11 +109,11 @@ export const SidebarWrap = styled.div`
 
       ${media.xl`
             justify-content: center;
-        `}
+      `}
 
       ${media.md`
             justify-content: flex-start;
-        `}
+      `}
     }
 
     .sidenav-link {
