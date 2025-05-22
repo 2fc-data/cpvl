@@ -64,25 +64,27 @@ export const Register = () => {
           // {...register('confirmPassword', { required: true })}
           />
           {/* {errors?.confirmPassword && <span>Confirmação de senha é obrigatória</span>} */}
+          <br />
         </div>
 
         <div className="form-group">
-          <input type="checkbox"
+          <input type="checkbox" id="agreeStatute" name="agreeStatute"
           // {...register('agreeStatute', { required: true })}
           />
-          <label>Li e concordo com o ESTATUTO do CPVL:</label>
+          <label htmlFor="agreeStatute">Li e concordo com o ESTATUTO CPVL.</label>
           {/* {errors?.agreeStatute && <span>Aceitar o Estatuto é obrigatório</span>} */}
         </div>
 
         <div className="form-group">
-          <input type="checkbox"
+          <input type="checkbox" id="agreeRegimentoInterno" name="agreeRegimentoInterno"
           // {...register('agreeRegimentoInterno', { required: true })} 
           />
-          <label>Li e concordo com o REGIMENTO INTERNO do CPVL:</label>
+          <label htmlFor="agreeRegimentoInterno">Li e concordo com o REGIMENTO INTERNO CPVL.</label>
           {/* {errors?.agreeRegimentoInterno && <span>Aceitar o REGIMENTO INTERNO é obrigatório</span>} */}
         </div>
 
         <div className="form-group">
+          <br />
           <button >Cadastrar</button> 
           {/* onClick={() => handleSubmit(onSubmit)()} */}
         </div>

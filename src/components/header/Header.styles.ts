@@ -4,7 +4,7 @@ import { media, theme } from "../../styles/theme/theme";
 export const HeaderWrap = styled.header`
   background-color: ${theme.colors.white};
   color: ${theme.colors.lightGreen};
-  padding: 2rem 0rem;
+  padding: 1rem 0rem;
   z-index: 1000;
 
   ${media.xl`
