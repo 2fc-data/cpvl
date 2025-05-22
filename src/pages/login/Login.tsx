@@ -47,8 +47,9 @@ export const Login = () => {
 
 
         <div className="redirect-register">
-          <p>Não tem conta? </p>
-          <Link to="/register"><u>Clique aqui</u></Link>
+          <br />
+          <h4>Não tem conta? </h4>
+          <Link to="/register"><h4><u>Clique aqui</u>, para se cadastrar.</h4></Link>
         </div>
       </div>
     </LoginWrap>

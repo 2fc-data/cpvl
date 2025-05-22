@@ -2,19 +2,22 @@ import styled from "styled-components";
 import { theme } from "../../styles/theme/theme";
 
 export const RegisterWrap = styled.div`
-  background-color: ${theme.colors.white};
-  border-radius: 6px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  color: ${theme.colors.black};
-  margin: 0 auto;
-  max-width: 600px;
-  padding: 20px;
+  background-color: ${theme.colors.skyBlueDark};
+  color: ${theme.colors.white};
+  display: flex;
+  justify-content: center;
   width: 100%;
   
   .register-form-container {
+    border: 1px solid ${theme.colors.white};
+    border-radius: 6px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 15px;
+    margin: 90px auto;
+    width: 75%;
+    padding: 20px;
   }
 
   .register-title {
