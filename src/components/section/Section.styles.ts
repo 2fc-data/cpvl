@@ -48,8 +48,8 @@ export const SectionWrap = styled.div`
 
   .section-title {
     display: flex;
-    border-bottom: 3px solid ${theme.colors.lightGreen};
-    color: ${theme.colors.lightGreen};
+    border-bottom: 3px solid ${theme.colors.skyBlueDark};
+    color: ${theme.colors.skyBlueDark};
     font-size: 16px;
     font-weight: 700;
     justify-content: center;
@@ -78,17 +78,17 @@ export const SectionWrap = styled.div`
     bottom: 0;
     display: flex;
     background-color: ${theme.colors.white};
-    border: 1px solid ${theme.colors.lightGreen};
+    border: 1px solid ${theme.colors.skyBlueDark};
     border-radius: 6px;
-    color: ${theme.colors.lightGreen};
+    color: ${theme.colors.skyBlueDark};
     justify-content: center;
     margin-top: 15px;
     padding: 10px 5px ;
     width: 90px;
 
     &:hover {
-      background-color: ${theme.colors.lightGreen};
-      border: 1px solid ${theme.colors.lightGreen};
+      background-color: ${theme.colors.skyBlueDark};
+      border: 1px solid ${theme.colors.skyBlueDark};
       border-radius: 6px;
       color: ${theme.colors.white};
       cursor: pointer;
