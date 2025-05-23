@@ -3,7 +3,7 @@ import { media, theme } from "../../styles/theme/theme";
 
 export const HeaderWrap = styled.header`
   background-color: ${theme.colors.white};
-  color: ${theme.colors.lightGreen};
+  color: ${theme.colors.skyBlueDark};
   padding: 1rem 0rem;
   z-index: 1000;
 
@@ -66,7 +66,7 @@ export const HeaderWrap = styled.header`
 
     &:hover {
       color: ${theme.colors.white};
-      background-color: ${theme.colors.lightGreen};
+      background-color: ${theme.colors.skyBlueDark};
       border-radius: 6px;
 
       .submenu {
@@ -82,13 +82,13 @@ export const HeaderWrap = styled.header`
     left: 0;
     background-color: ${theme.colors.white};
     border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.6);
     min-width: 200px;
     padding: 0.5rem 0;
 
     .submenu-item {
-      border-bottom: 1px solid ${theme.colors.lightGreen};
-      color: ${theme.colors.lightGreen};
+      border-bottom: 1px solid ${theme.colors.skyBlueDark};
+      color: ${theme.colors.skyBlueDark};
       margin-left: 0.5rem;
       padding: 0.5rem;
       display: block;
@@ -98,14 +98,14 @@ export const HeaderWrap = styled.header`
       }
 
       &:hover {
-        background-color: ${theme.colors.lightGreen};
+        background-color: ${theme.colors.skyBlueDark};
         color: ${theme.colors.white};      
       }
     }
   }
 
   .mobile-menu-btn {
-    color: ${theme.colors.lightGreen};
+    color: ${theme.colors.skyBlueDark};
     display: none;   
     font-size: 1.5rem;
     cursor: pointer;
@@ -129,13 +129,13 @@ export const HeaderWrap = styled.header`
     }
 
     .mobile-nav-item {
-      color: ${theme.colors.lightGreen};
+      color: ${theme.colors.skyBlueDark};
       padding: 0.75rem 1rem;
       display: block;
       border-bottom: 1px solid ${theme.colors.border};
 
       &:hover {
-        background-color: ${theme.colors.lightGreen};
+        background-color: ${theme.colors.skyBlueDark};
         color: ${theme.colors.white};      
       }
 

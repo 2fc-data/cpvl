@@ -4,7 +4,7 @@ import { media, theme } from "../../styles/theme/theme";
 
 export const SectionWrap = styled.div`
   align-items: center;
-  background-color: ${theme.colors.white};  
+  background-color: ${theme.colors.skyBlueDark};  
   display: flex;
   justify-content: space-around;
   margin-top: 0px;
@@ -27,9 +27,10 @@ export const SectionWrap = styled.div`
   `}
 
   .section-content {
-    align-items: center;    
+    align-items: center;
+    background-color: ${theme.colors.white};  
     border-radius: 6px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 6px rgba(255, 255, 255, 0.6);
     display: flex-wrap;
     justify-content: center;
     min-height: 345px;

@@ -1,41 +1,37 @@
-import { animate, motion, useMotionTemplate, useMotionValue } from "framer-motion";
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { HomeWrap } from "./Home.styles"
-import { useEffect } from "react";
-
-const COLORS = ["rgba(224, 226, 68, 0.5)", "rgba(71, 210, 245, 0.5)", "rgba(142, 68, 226, 0.5)", "rgba(245, 112, 71, 0.5)"];
 
 export const Home = () => {
+  const { scrollY } = useScroll();
 
-  const color = useMotionValue(COLORS[0]);
+  const yCity = useTransform(scrollY, [0, 200], [0, -100]);
+  const opacityCity = useTransform(scrollY, [0, 200, 300, 950], [1, 0.5, 0.5, 0]);
 
-  const backgroundImage = useMotionTemplate`radial-gradient
-  (125% 125% at 50% 0%, rgba(194, 214, 219, 0.5), ${color})`;
+  const yTitle = useTransform(scrollY, [0, 200, 300, 500], [0, 200, 400, 450]);
+  const scaleTitle = useTransform(scrollY, [0, 300], [0.9, 1.2]);
 
-  useEffect(() => {
-    animate(color, COLORS, {
-      ease: 'easeInOut',
-      duration: 10,
-      repeat: Infinity,
-      repeatType: 'reverse'
-    })
-  }, [])
+  const ySubTitle = useTransform(scrollY, [0, 200, 300, 500], [0, 200, 400, 450]);
+  const scaleSubTitle = useTransform(scrollY, [0, 300], [1, 2.1]);
 
   return (
     <HomeWrap>
-      <motion.section
-        style={{ backgroundImage }}
+      <motion.div className='home-content'
+        initial={{ opacity: 0, scale: 1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        style={{ y: yCity, opacity: opacityCity }}
+        transition={{ duration: 0.6 }}
       >
-        <div className='home-content'>
-          <div className="home-title">
-            Clube Poços-caldense de Vôo Livre
-          </div>
-          <div className="home-subtitle">
-            desde 1995
-          </div>
-        </div>
-      </motion.section>
-
-
+        <motion.div className="home-title"
+          style={{ scale: scaleTitle, y: yTitle }}
+        >
+          Clube Poços-caldense de Vôo Livre
+        </motion.div>
+        <motion.div className="home-subtitle"
+          style={{ scale: scaleSubTitle, y: ySubTitle }}
+        >
+          desde 1995
+        </motion.div>
+      </motion.div>
     </HomeWrap>
   )
 }

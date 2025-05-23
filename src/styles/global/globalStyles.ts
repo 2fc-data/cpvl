@@ -19,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
         font-family: ${theme.typography.fontFamily};        
         font-size: ${theme.typography.fontSize};
         font-weight: ${theme.typography.fontWeight};
-        line-height: ${theme.typography.lineHeight};
+        line-height: ${theme.typography.lineHeight};        
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         height: 100%;

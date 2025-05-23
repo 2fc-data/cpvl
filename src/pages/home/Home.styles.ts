@@ -1,8 +1,9 @@
 import { media, theme } from "../../styles/theme/theme";
 import styled from "styled-components";
-import image_se from "../../assets/images/se.jpg";
+import image_se from "../../assets/images/se1.jpg";
 
 export const HomeWrap = styled.div`
+  background-color: ${theme.colors.skyBlueDark}; 
 
   .home-content {
     align-items: center;
@@ -18,7 +19,6 @@ export const HomeWrap = styled.div`
 
   .home-title{
     align-items: center;
-    border: 2px solid ${theme.colors.white};
     color: ${theme.colors.white};
     display: flex;        
     font-size: 32px;
@@ -29,13 +29,13 @@ export const HomeWrap = styled.div`
     text-transform: uppercase;
 
     ${media.lg`
-      font-size: 28px;
+      font-size: 24px;
       margin: 0rem 3rem;
       padding: 6px 10px;
     `}
 
     ${media.md`
-      font-size: 20px;
+      font-size: 16px;
       margin-top: -15rem; 
       padding: 6px 10px;
     `}

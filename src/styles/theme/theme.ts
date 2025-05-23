@@ -44,7 +44,7 @@ export const theme: DefaultTheme = {
     primary: "#2B7A78", // Teal green
     secondary: "#3AAFA9", // Light teal
     skyBlue: "#17A2B8", // Sky blue
-    skyBlueDark: "#006C9E", //
+    skyBlueDark: "#2c517b", // 212d33
     forestGreen: "#142618", // Deep forest green
     lightGreen: "#517356", // Light forest green 
     darkGray: "#8C8C7B", // Dark gray for text
