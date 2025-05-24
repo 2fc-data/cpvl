@@ -1,10 +1,8 @@
 import { media, theme } from "../../styles/theme/theme";
 import styled from "styled-components";
-import image_se from "../../assets/images/se1.jpg";
+import image_se from "../../assets/images/rampaNorte.jpg";
 
-export const HomeWrap = styled.div`
-  background-color: ${theme.colors.skyBlueDark}; 
-
+export const HomeWrap = styled.div`  
   .home-content {
     align-items: center;
     background-image: url(${image_se});    
@@ -12,19 +10,19 @@ export const HomeWrap = styled.div`
     background-position: center;
     display: flex;
     flex-direction: column;
-    height: 60vh;
     justify-content: center;
-    width: 100%;
+    min-height: 93vh;
+    width: 100%;  
   }
 
   .home-title{
     align-items: center;
-    color: ${theme.colors.white};
+    color: ${theme.colors.lightGreen};
     display: flex;        
     font-size: 32px;
     font-weight: 700;
     justify-content: center;
-    margin-top: -12rem;
+    margin-top: 0rem;
     padding: 12px 20px;
     text-transform: uppercase;
 
@@ -43,9 +41,10 @@ export const HomeWrap = styled.div`
 
   .home-subtitle{
     align-items: center;
-    color: ${theme.colors.white};      
-    font-size: 14px;
-    font-weight: 500;
+    color: ${theme.colors.lightGreen};
+    display: flex;    
+    font-size: 24px;
+    font-weight: 600;
     justify-content: center;
     margin-top: 1rem;
   }

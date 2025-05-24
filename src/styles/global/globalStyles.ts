@@ -13,8 +13,8 @@ export const GlobalStyles = createGlobalStyle`
         height: 100%;
     }
     body{        
-        display: flex;
-        justify-content: center;
+        /* display: flex;
+        justify-content: center; */
         background: ${theme.colors.white};
         font-family: ${theme.typography.fontFamily};        
         font-size: ${theme.typography.fontSize};

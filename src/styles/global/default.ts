@@ -1,8 +1,7 @@
 import styled, { css } from "styled-components";
 import { media, theme } from "../../styles/theme/theme";
 
-export const Container = styled.div`
-  max-width: 1200px;
+export const Container = styled.div`  
   margin: 0 auto;
   padding: 0 16px;
 `;

@@ -1,15 +1,15 @@
 import styled from "styled-components";
 import { media, theme } from "../../styles/theme/theme";
-import bg_footer from "../../assets/images/gramaFooter.jpg";
+
 
 export const FooterWrap = styled.div`
   align-items: center;
-  background-image: url(${bg_footer});
+  background-color: ${theme.colors.lightGreen};
   bottom: 0;
   display: flex;
   justify-content: space-around;
   margin-top: 0px;
-  padding: 90px 10px;
+  padding: 10px 10px;
   width: 100%;
 
   ${media.lg`
@@ -29,9 +29,9 @@ export const FooterWrap = styled.div`
 
   .footer-block {
     align-items: center;
-    background-color: rgba(20, 38, 20, 0.6);
+    background-color: rgba(20, 38, 20, 0);
     border-radius: 6px;
-    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.3);
+    /* box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1); */
     color: ${theme.colors.white};
     display: flex-wrap;
     justify-content: center;
