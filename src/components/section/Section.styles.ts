@@ -8,7 +8,7 @@ export const SectionWrap = styled.div`
   display: flex;
   justify-content: space-around;
   margin-top: 0px;
-  padding: 0px 0px 130px 0px;
+  padding: 130px 0px;
   width: 100%;
 
   ${media.lg`

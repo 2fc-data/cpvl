@@ -29,9 +29,9 @@ export const FooterWrap = styled.div`
 
   .footer-block {
     align-items: center;
-    background-color: rgba(20, 38, 20, 0);
+    background-color: rgba(20, 38, 20, 0.1);
     border-radius: 6px;
-    /* box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1); */
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.01);
     color: ${theme.colors.white};
     display: flex-wrap;
     justify-content: center;
@@ -60,17 +60,18 @@ export const FooterWrap = styled.div`
   }
 
   .footer-link {
+    border-bottom: 1px solid ${theme.colors.lightGray};
     margin-top: 10px;
     padding-left: 10px;
     text-align: left;
 
     ${media.md`
-      padding-left: 0px;
+      padding-left: 10px;
     `}
 
     &:hover {
       background-color: ${theme.colors.lightGreen};
-      border-radius: 6px;
+      border-radius: 3px;
     }
   }
 `;
