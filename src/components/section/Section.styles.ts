@@ -13,7 +13,7 @@ export const SectionWrap = styled.div`
   ${media.lg`
     display: flex-wrap;
     flex-direction: column;
-    padding: 10px 9px;
+    padding: 45px 6px;
     text-align: center;
   `}
 
@@ -21,7 +21,7 @@ export const SectionWrap = styled.div`
     display: flex-wrap;
     flex-direction: column;
     margin-top: 0px;
-    padding: 10px 9px;
+    padding: 30px 9px;
     text-align: center;
   `}
 
@@ -33,12 +33,18 @@ export const SectionWrap = styled.div`
     display: flex-wrap;
     justify-content: center;
     min-height: 345px;
-    margin: 20px 0px;
+    margin: 20px auto;
     padding: 20px 25px; 
     text-align: justify;
     width: 300px;
     
     ${media.lg`
+      min-height: 145px;
+      padding: 15px 12px;
+      width: 95%;
+    `}
+
+    ${media.md`
       min-height: 145px;
       padding: 15px 12px;
       width: 95%;

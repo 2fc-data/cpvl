@@ -15,7 +15,7 @@ export const FooterWrap = styled.div`
   ${media.lg`
     display: flex-wrap;
     flex-direction: column;
-    padding: 15px 9px;
+    padding: 45px 9px;
     text-align: center;
   `}
 
@@ -23,7 +23,7 @@ export const FooterWrap = styled.div`
     display: flex-wrap;
     flex-direction: column;
     margin-top: 0px;
-    padding: 10px 9px;
+    padding: 30px 9px;
     text-align: center;
   `}
 
@@ -43,8 +43,9 @@ export const FooterWrap = styled.div`
 
     ${media.lg`
       padding: 15px 12px;
-      width: 95%;
+      width: 90%;
     `}
+
   }
 
   .footer-title {

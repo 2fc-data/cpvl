@@ -24,8 +24,16 @@ export const LoginWrap = styled.div`
     justify-content: center;
     gap: 15px;
     margin: 90px auto;
-    width: 50%;
-    padding: 20px;
+    width: 90%;
+    padding: 20px 10px;
+
+    ${media.lg`
+      margin: 45px auto;
+    `}
+  
+    ${media.md`
+      margin: 30px auto;
+    `}
   }
 
   .login-title {
