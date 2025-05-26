@@ -5,7 +5,7 @@ import image_se from "../../assets/images/rampaNorte.jpg";
 export const HomeWrap = styled.div`  
   .home-content {
     align-items: center;
-    background-image: url(${image_se});    
+    background-image: url(${image_se});  
     background-size: cover;
     background-position: center;
     display: flex;

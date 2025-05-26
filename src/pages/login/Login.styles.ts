@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { media, theme } from "../../styles/theme/theme";
 
 export const LoginWrap = styled.div`
-  background-color: ${theme.colors.skyBlueDark};
-  color: ${theme.colors.white};
+  background-color: ${theme.colors.white};
+  color: ${theme.colors.skyBlueDark};
   display: flex;
   justify-content: center;
   width: 100%;
@@ -17,14 +17,14 @@ export const LoginWrap = styled.div`
   `}
 
   .login-form-container {
-    border: 1px solid ${theme.colors.white};
+    border: 1px solid ${theme.colors.skyBlueDark};
     border-radius: 6px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 15px;
     margin: 90px auto;
-    width: 75%;
+    width: 50%;
     padding: 20px;
   }
 

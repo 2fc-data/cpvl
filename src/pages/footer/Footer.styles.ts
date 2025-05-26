@@ -29,7 +29,7 @@ export const FooterWrap = styled.div`
 
   .footer-block {
     align-items: center;
-    background-color: ${theme.colors.white};
+    background-color: ${theme.colors.lightWhite};
     border-radius: 6px;
     box-shadow: 0px 3px 6px rgba(250, 249, 249, 0.3);
     color: ${theme.colors.lightGreen};
@@ -39,7 +39,7 @@ export const FooterWrap = styled.div`
     margin: 20px 10px;
     min-height: 345px;
     padding: 20px 10px;
-    width: 270px;
+    width: 300px;
 
     ${media.lg`
       padding: 15px 12px;
@@ -71,6 +71,7 @@ export const FooterWrap = styled.div`
 
     &:hover {
       background-color: ${theme.colors.lightGreen};
+      color: ${theme.colors.white};
       border-radius: 3px;
     }
   }

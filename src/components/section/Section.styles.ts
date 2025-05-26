@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { media, theme } from "../../styles/theme/theme";
 
-
 export const SectionWrap = styled.div`
   align-items: center;
   background-color: ${theme.colors.skyBlueDark};  
@@ -28,16 +27,16 @@ export const SectionWrap = styled.div`
 
   .section-content {
     align-items: center;
-    background-color: ${theme.colors.white};  
+    background-color: ${theme.colors.lightWhite};  
     border-radius: 6px;
-    box-shadow: 0px 3px 6px rgba(250, 249, 249, 0.3);
+    box-shadow: 0px 3px 6px rgba(243, 238, 238, 0.3);
     display: flex-wrap;
     justify-content: center;
     min-height: 345px;
     margin: 20px 0px;
     padding: 20px 25px; 
     text-align: justify;
-    width: 270px;
+    width: 300px;
     
     ${media.lg`
       min-height: 145px;
