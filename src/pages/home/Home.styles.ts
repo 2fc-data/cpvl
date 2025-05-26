@@ -11,7 +11,7 @@ export const HomeWrap = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 75vh;
+    height: 90vh;
     width: 100%;
   }
 
