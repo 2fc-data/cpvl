@@ -9,7 +9,7 @@ export const FooterWrap = styled.div`
   display: flex;
   justify-content: space-around;
   margin-top: 0px;
-  padding: 10px 10px;
+  padding: 130px 10px;
   width: 100%;
 
   ${media.lg`
@@ -29,10 +29,10 @@ export const FooterWrap = styled.div`
 
   .footer-block {
     align-items: center;
-    background-color: rgba(20, 38, 20, 0.1);
+    background-color: ${theme.colors.white};
     border-radius: 6px;
-    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.01);
-    color: ${theme.colors.white};
+    box-shadow: 0px 3px 6px rgba(250, 249, 249, 0.3);
+    color: ${theme.colors.lightGreen};
     display: flex-wrap;
     justify-content: center;
     line-height: 2;
@@ -48,7 +48,7 @@ export const FooterWrap = styled.div`
   }
 
   .footer-title {
-    border-bottom: 1px solid ${theme.colors.lightGreen};
+    border-bottom: 3px solid ${theme.colors.lightGreen};
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 30px;    

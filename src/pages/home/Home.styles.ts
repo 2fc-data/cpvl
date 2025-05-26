@@ -11,29 +11,30 @@ export const HomeWrap = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 93vh;
-    width: 100%;  
+    height: 75vh;
+    width: 100%;
   }
 
   .home-title{
     align-items: center;
-    color: ${theme.colors.lightGreen};
-    display: flex;        
-    font-size: 32px;
-    font-weight: 700;
+    color: ${theme.colors.white};
+    display: flex;
+    font-family: Forward-Bold, sans-serif;  
+    font-size: 36px;
+    font-weight: 800;
     justify-content: center;
-    margin-top: 0rem;
+
     padding: 12px 20px;
     text-transform: uppercase;
 
     ${media.lg`
-      font-size: 24px;
+      font-size: 26px;
       margin: 0rem 3rem;
       padding: 6px 10px;
     `}
 
     ${media.md`
-      font-size: 16px;
+      font-size: 20px;
       margin-top: -15rem; 
       padding: 6px 10px;
     `}
@@ -41,10 +42,11 @@ export const HomeWrap = styled.div`
 
   .home-subtitle{
     align-items: center;
-    color: ${theme.colors.lightGreen};
-    display: flex;    
-    font-size: 24px;
-    font-weight: 600;
+    color: ${theme.colors.white};
+    display: flex;   
+    font-family: Forward-Bold, sans-serif;  
+    font-size: 36px;
+    font-weight: 800;
     justify-content: center;
     margin-top: 1rem;
   }

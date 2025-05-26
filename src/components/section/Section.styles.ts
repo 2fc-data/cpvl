@@ -4,7 +4,7 @@ import { media, theme } from "../../styles/theme/theme";
 
 export const SectionWrap = styled.div`
   align-items: center;
-  /* background-color: ${theme.colors.skyBlue};   */
+  background-color: ${theme.colors.skyBlueDark};  
   display: flex;
   justify-content: space-around;
   margin-top: 0px;
@@ -28,9 +28,9 @@ export const SectionWrap = styled.div`
 
   .section-content {
     align-items: center;
-    background-color: ${theme.colors.skyBlueDark};  
+    background-color: ${theme.colors.white};  
     border-radius: 6px;
-    box-shadow: 3px 3px 6px rgba(61, 79, 100, 0.6);
+    box-shadow: 0px 3px 6px rgba(250, 249, 249, 0.3);
     display: flex-wrap;
     justify-content: center;
     min-height: 345px;
@@ -48,8 +48,8 @@ export const SectionWrap = styled.div`
 
   .section-title {
     display: flex;
-    border-bottom: 3px solid ${theme.colors.white};
-    color: ${theme.colors.white};
+    border-bottom: 3px solid ${theme.colors.skyBlueDark};
+    color: ${theme.colors.skyBlueDark};
     font-size: 16px;
     font-weight: 700;
     justify-content: center;
@@ -58,7 +58,7 @@ export const SectionWrap = styled.div`
   }
 
   .section-description {
-    color: ${theme.colors.white};
+    color: ${theme.colors.skyBlueDark};
     padding: 15px 0;
     font-size: 14px;
     font-weight: 500;
