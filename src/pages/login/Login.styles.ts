@@ -24,15 +24,17 @@ export const LoginWrap = styled.div`
     justify-content: center;
     gap: 15px;
     margin: 90px auto;
-    width: 90%;
+    width: 42%;
     padding: 20px 10px;
 
     ${media.lg`
       margin: 45px auto;
+      width: 72%;
     `}
   
     ${media.md`
       margin: 30px auto;
+      width: 81%;
     `}
   }
 
