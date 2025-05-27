@@ -76,8 +76,8 @@ export const FooterWrap = styled.div`
     `}
 
     &:hover {
-      background-color: ${theme.colors.white};
-      color: ${theme.colors.lightGray};
+      background-color: ${theme.colors.lightGreen};
+      color: ${theme.colors.white};
       border-radius: 3px;
     }
   }
