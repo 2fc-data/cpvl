@@ -15,6 +15,7 @@ declare module "styled-components" {
       lightWhite: string;
       white: string;
       black: string;
+      lightBlack: string;
       background: string;
       text: string;
       border: string;
@@ -45,7 +46,7 @@ export const theme: DefaultTheme = {
     primary: "#2B7A78", // Teal green
     secondary: "#3AAFA9", // Light teal
     skyBlue: "#17A2B8", // Sky blue
-    skyBlueDark: "#2c517b", // 212d33
+    skyBlueDark: "#2c517b", // 212d33 // 
     forestGreen: "#142618", // Deep forest green
     lightGreen: "#517356", // Light forest green 
     darkGray: "#8C8C7B", // Dark gray for text
@@ -53,6 +54,7 @@ export const theme: DefaultTheme = {
     lightWhite: "rgba(255, 255, 255, 0.9)",
     white: "#FFFFFF",    
     black: "#000000",
+    lightBlack: "rgba(19, 19, 19, 0.6)",
     background: "#F5F5F5",
     text: "#0D0D0D",
     border: "#DEF2F1"

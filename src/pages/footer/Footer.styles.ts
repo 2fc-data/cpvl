@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import { media, theme } from "../../styles/theme/theme";
+import footerBg from "../../assets/images/footerBg.jpg";
 
 
 export const FooterWrap = styled.div`
   align-items: center;
-  background-color: ${theme.colors.lightGreen};
+  /* background-color: ${theme.colors.lightGreen}; */
+  background-image: url(${footerBg});
+  background-size: cover;
+  background-position: center;
   bottom: 0;
   display: flex;
   justify-content: space-around;
@@ -31,15 +35,14 @@ export const FooterWrap = styled.div`
     align-items: center;
     background-color: ${theme.colors.lightWhite};
     border-radius: 6px;
-    box-shadow: 0px 3px 6px rgba(250, 249, 249, 0.3);
     color: ${theme.colors.lightGreen};
     display: flex-wrap;
-    justify-content: center;
+    justify-content: lcenter;
     line-height: 2;
     margin: 20px 10px;
     min-height: 345px;
-    padding: 20px 10px;
-    width: 300px;
+    padding: 20px 10px;    
+    width: 240px;
 
     ${media.lg`
       padding: 15px 12px;
@@ -61,7 +64,9 @@ export const FooterWrap = styled.div`
   }
 
   .footer-link {
-    border-bottom: 1px solid ${theme.colors.lightGray};
+    border-bottom: 1px solid ${theme.colors.lightGreen};
+    font-family: sans-serif;  
+    font-weight: 500;
     margin-top: 10px;
     padding-left: 10px;
     text-align: left;
@@ -71,8 +76,8 @@ export const FooterWrap = styled.div`
     `}
 
     &:hover {
-      background-color: ${theme.colors.lightGreen};
-      color: ${theme.colors.white};
+      background-color: ${theme.colors.white};
+      color: ${theme.colors.lightGray};
       border-radius: 3px;
     }
   }

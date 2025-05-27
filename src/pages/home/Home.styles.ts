@@ -1,8 +1,10 @@
 import { media, theme } from "../../styles/theme/theme";
 import styled from "styled-components";
-import image_se from "../../assets/images/rampaNorte.jpg";
+import image_se from "../../assets/images/se1.jpg";
 
-export const HomeWrap = styled.div`  
+export const HomeWrap = styled.div`
+  margin-top: -90px;
+
   .home-content {
     align-items: center;
     background-image: url(${image_se});  
@@ -11,7 +13,7 @@ export const HomeWrap = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 90vh;
+    height: 100vh;
     width: 100%;
   }
 
@@ -29,13 +31,15 @@ export const HomeWrap = styled.div`
 
     ${media.lg`
       font-size: 26px;
-      margin: 0rem 3rem;
+      font-weight: 700;
+      margin-top: -12rem;
       padding: 6px 10px;
     `}
 
     ${media.md`
-      font-size: 20px;
-      margin-top: -15rem; 
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: -9rem;
       padding: 6px 10px;
     `}
   }

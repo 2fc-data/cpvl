@@ -2,8 +2,9 @@ import styled from 'styled-components';
 import { media, theme } from "../../styles/theme/theme";
 
 export const HeaderWrap = styled.header`
-  background-color: ${theme.colors.white};
-  color: ${theme.colors.skyBlueDark};
+  /* background-color: ${theme.colors.white}; */
+  background-color: transparent;
+  color: ${theme.colors.white};
   padding: 1rem 0rem;
   z-index: 1000;
 
@@ -20,7 +21,7 @@ export const HeaderWrap = styled.header`
   }
 
   .logo-section {
-    border: none;
+    border: none;    
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -31,10 +32,11 @@ export const HeaderWrap = styled.header`
       height: 54px;
 
       img {
+        border: none;
+        border-radius: 3px;
         width: 99%;
         height: 99%;
         object-fit: contain;
-        border: none;
       }
     }
 
