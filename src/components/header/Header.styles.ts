@@ -67,9 +67,9 @@ export const HeaderWrap = styled.header`
     transition: ${theme.transitions.easeInOut};
 
     &:hover {
-      color: ${theme.colors.white};
-      background-color: ${theme.colors.skyBlueDark};
-      border-radius: 6px;
+      color: ${theme.colors.skyBlueDark};
+      background-color: ${theme.colors.lightWhite};
+      border-radius: 3px;
 
       .submenu {
         display: block;
@@ -82,9 +82,9 @@ export const HeaderWrap = styled.header`
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: ${theme.colors.white};
+    background-color: ${theme.colors.lightWhite};
     border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 2px 3px rgba(255, 255, 255, 0.6);
     min-width: 200px;
     padding: 0.5rem 0;
 

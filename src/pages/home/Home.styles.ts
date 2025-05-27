@@ -25,6 +25,7 @@ export const HomeWrap = styled.div`
     font-size: 36px;
     font-weight: 800;
     justify-content: center;
+    margin-top: -450px;
 
     padding: 12px 20px;
     text-transform: uppercase;
