@@ -111,7 +111,7 @@ export const HeaderWrap = styled.header`
   }
 
   .mobile-menu-btn {
-    color: ${theme.colors.skyBlueDark};
+    color: ${theme.colors.lightGreen};
     display: none;   
     font-size: 1.5rem;
     cursor: pointer;
@@ -135,13 +135,13 @@ export const HeaderWrap = styled.header`
     }
 
     .mobile-nav-item {
-      color: ${theme.colors.skyBlueDark};
+      color: ${theme.colors.lightGreen};
       padding: 0.75rem 1rem;
       display: block;
       border-bottom: 1px solid ${theme.colors.border};
 
       &:hover {
-        background-color: ${theme.colors.skyBlueDark};
+        background-color: ${theme.colors.lightGreen};
         color: ${theme.colors.white};      
       }
 

@@ -27,7 +27,7 @@ export const SectionWrap = styled.div`
 
   .section-content {
     align-items: center;
-    background-color: ${theme.colors.lightWhite};  
+    background-color: ${theme.colors.white};  
     border-radius: 6px;
     box-shadow: 0px 3px 6px rgba(243, 238, 238, 0.3);
     display: flex-wrap;
@@ -83,8 +83,8 @@ export const SectionWrap = styled.div`
     align-items: center;
     bottom: 0;
     display: flex;
-    background-color: ${theme.colors.lightWhite};
-    border: 1px solid ${theme.colors.lightWhite};
+    background-color: ${theme.colors.white};
+    border: 1px solid ${theme.colors.white};
     border-radius: 6px;
     color: ${theme.colors.skyBlueDark};
     justify-content: center;

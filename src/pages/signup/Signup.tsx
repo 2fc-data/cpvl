@@ -7,63 +7,62 @@ import {
   hasMinLength
 } from '../../util/validation';
 
-export const Signup = () => {
+function signupAction(prevFormState: unknown, formData: FormData) {
+  const name = formData.get('name');
+  const email = formData.get('email');
+  const password = formData.get('password');
+  const confirmPassword = formData.get('confirmPassword');
+  const agreeStatute = formData.get('agreeStatute');
+  const agreeRegimentoInterno = formData.get('agreeRegimentoInterno');
 
-  function signupAction(prevFormState: unknown, formData: FormData) {
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const password = formData.get('password');
-    const confirmPassword = formData.get('confirmPassword');
-    const agreeStatute = formData.get('agreeStatute');
-    const agreeRegimentoInterno = formData.get('agreeRegimentoInterno');
+  const errors: string[] = [];
 
-    const errors: string[] = [];
-
-    if (name !== null &&
-      (!isNotEmpty(name.toString()) || !hasMinLength(name.toString(), 10))) {
-      errors.push("Nome completo, deve deve ter no mínimo 10 caracteres");
-    }
-
-    if (email !== null &&
-      (!isNotEmpty(email.toString()) || !isEmail(email.toString()))) {
-      errors.push("Digite um E-mail válido");
-    }
-
-    if (password !== null &&
-      (!isNotEmpty(password.toString()) || !hasMinLength(password.toString(), 6))) {
-      errors.push("Senha deve ter no mínimo 6 characteres");
-    }
-
-    if (password !== null && confirmPassword !== null &&
-      (!isEqualToOtherValue(password.toString(), confirmPassword.toString()))) {
-      errors.push("Senha e Confirmação da Senha devem coincidir");
-    }
-
-    if (!agreeStatute) {
-      errors.push("Confirme o entendimento do Estatuto CPVL");
-    }
-
-    if (!agreeRegimentoInterno) {
-      errors.push("Confirme o entendimento do Regimento Interno CPVL");
-    }
-
-    if (errors.length > 0) {
-      return {
-        errors,
-        enteredValues: {
-          name,
-          email,
-          password,
-          confirmPassword,
-          agreeStatute,
-          agreeRegimentoInterno
-        }
-      };
-    }
-
-    return { errors: null };
+  if (name !== null &&
+    (!isNotEmpty(name.toString()) || !hasMinLength(name.toString(), 10))) {
+    errors.push("Nome completo, deve deve ter no mínimo 10 caracteres");
   }
 
+  if (email !== null &&
+    (!isNotEmpty(email.toString()) || !isEmail(email.toString()))) {
+    errors.push("Digite um E-mail válido");
+  }
+
+  if (password !== null &&
+    (!isNotEmpty(password.toString()) || !hasMinLength(password.toString(), 6))) {
+    errors.push("Senha deve ter no mínimo 6 characteres");
+  }
+
+  if (password !== null && confirmPassword !== null &&
+    (!isEqualToOtherValue(password.toString(), confirmPassword.toString()))) {
+    errors.push("Senha e Confirmação da Senha devem coincidir");
+  }
+
+  if (!agreeStatute) {
+    errors.push("Confirme o entendimento do Estatuto CPVL");
+  }
+
+  if (!agreeRegimentoInterno) {
+    errors.push("Confirme o entendimento do Regimento Interno CPVL");
+  }
+
+  if (errors.length > 0) {
+    return {
+      errors,
+      enteredValues: {
+        name,
+        email,
+        password,
+        confirmPassword,
+        agreeStatute,
+        agreeRegimentoInterno
+      }
+    };
+  }
+
+  return { errors: null };
+}
+
+export const Signup = () => {
   const [formState, formAction] = useActionState(signupAction, {
     errors: null
   });

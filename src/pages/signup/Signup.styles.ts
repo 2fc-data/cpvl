@@ -3,7 +3,7 @@ import { media, theme } from "../../styles/theme/theme";
 
 export const SignupWrap = styled.div`
   background-color: ${theme.colors.white};
-  color: ${theme.colors.skyBlueDark};
+  color: ${theme.colors.lightGreen};
   display: flex;
   justify-content: center;
   width: 100%;
@@ -17,7 +17,7 @@ export const SignupWrap = styled.div`
   `}
 
   .signup-form-container {
-    border: 1px solid ${theme.colors.skyBlueDark};
+    border: 1px solid ${theme.colors.lightGreen};
     border-radius: 6px;
     display: flex;
     flex-direction: column;
@@ -57,7 +57,7 @@ export const SignupWrap = styled.div`
     input[type='text'],
     input[type='password'] {
       padding: 10px;
-      border: 1px solid ${theme.colors.skyBlueDark};
+      border: 1px solid ${theme.colors.lightGreen};
       border-radius: 6px;
       font-size: 16px;
     }
@@ -69,7 +69,7 @@ export const SignupWrap = styled.div`
     }
 
     span {
-      color: ${theme.colors.skyBlueDark};
+      color: ${theme.colors.lightGreen};
       font-size: 12px;
     }
   }
@@ -97,8 +97,8 @@ export const SignupWrap = styled.div`
 
   .button {
     padding: 10px;
-    background-color: ${theme.colors.skyBlueDark};
-    border: 1px solid ${theme.colors.skyBlueDark};
+    background-color: ${theme.colors.lightGreen};
+    border: 1px solid ${theme.colors.lightGreen};
     color: ${theme.colors.white};
     border-radius: 6px;
     font-size: 16px;
@@ -108,17 +108,17 @@ export const SignupWrap = styled.div`
     &.button-clean {
       background-color: ${theme.colors.white};
       border: 1px solid ${theme.colors.white};
-      color: ${theme.colors.skyBlueDark};
+      color: ${theme.colors.lightGreen};
 
       &:hover {
-        border-color: ${theme.colors.skyBlueDark};
-        color: ${theme.colors.skyBlueDark};
+        border-color: ${theme.colors.lightGreen};
+        color: ${theme.colors.lightGreen};
       }
     }
 
     &:hover {
       background-color: ${theme.colors.white};
-      color: ${theme.colors.skyBlueDark};
+      color: ${theme.colors.lightGreen};
     }
   }
 `;

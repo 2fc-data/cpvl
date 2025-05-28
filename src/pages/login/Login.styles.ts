@@ -3,7 +3,7 @@ import { media, theme } from "../../styles/theme/theme";
 
 export const LoginWrap = styled.div`
   background-color: ${theme.colors.white};
-  color: ${theme.colors.skyBlueDark};
+  color: ${theme.colors.lightGreen};
   display: flex;
   justify-content: center;
   width: 100%;
@@ -17,7 +17,7 @@ export const LoginWrap = styled.div`
   `}
 
   .login-form-container {
-    border: 1px solid ${theme.colors.skyBlueDark};
+    border: 1px solid ${theme.colors.lightGreen};
     border-radius: 6px;
     display: flex;
     flex-direction: column;
@@ -57,7 +57,7 @@ export const LoginWrap = styled.div`
     input[type='text'],
     input[type='password'] {
       padding: 10px;
-      border: 1px solid ${theme.colors.skyBlueDark};
+      border: 1px solid ${theme.colors.lightGreen};
       border-radius: 6px;
       font-size: 16px;
     }
@@ -69,24 +69,56 @@ export const LoginWrap = styled.div`
     }
 
     span {
-      color: ${theme.colors.skyBlueDark};
+      color: ${theme.colors.lightGreen};
       font-size: 12px;
     }
   }
+  
+  .error {
+    border-top: 3px solid ${theme.colors.darkGray};
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: ${theme.colors.lightGray};
+  }
 
-  button {
+  .error ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .error li {
+    line-height: 2;
+    list-style: square;
+    margin-left: 20px;
+    padding: 5px;
+  }
+
+  .button {
     padding: 10px;
-    background-color: ${theme.colors.skyBlueDark};
-    border: 1px solid ${theme.colors.skyBlueDark};
+    background-color: ${theme.colors.lightGreen};
+    border: 1px solid ${theme.colors.lightGreen};
     color: ${theme.colors.white};
     border-radius: 6px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
 
+    &.button-clean {
+      background-color: ${theme.colors.white};
+      border: 1px solid ${theme.colors.white};
+      color: ${theme.colors.lightGreen};
+
+      &:hover {
+        border-color: ${theme.colors.lightGreen};
+        color: ${theme.colors.lightGreen};
+      }
+    }
+
     &:hover {
       background-color: ${theme.colors.white};
-      color: ${theme.colors.skyBlueDark};
+      color: ${theme.colors.lightGreen};
     }
   }
 `;
