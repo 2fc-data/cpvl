@@ -1,22 +1,22 @@
 import styled from "styled-components";
 import { media, theme } from "../../styles/theme/theme";
 
-export const LoginWrap = styled.div`
+export const SignupWrap = styled.div`
   background-color: ${theme.colors.white};
   color: ${theme.colors.skyBlueDark};
   display: flex;
   justify-content: center;
   width: 100%;
-
+  
   ${media.lg`
     margin: 0px auto;
   `}
-  
+    
   ${media.md`
     margin: 0px auto;
   `}
 
-  .login-form-container {
+  .signup-form-container {
     border: 1px solid ${theme.colors.skyBlueDark};
     border-radius: 6px;
     display: flex;
@@ -38,7 +38,7 @@ export const LoginWrap = styled.div`
     `}
   }
 
-  .login-title {
+  .signup-title {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -74,7 +74,28 @@ export const LoginWrap = styled.div`
     }
   }
 
-  button {
+  .error {
+    border-top: 3px solid ${theme.colors.darkGray};
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: ${theme.colors.lightGray};
+  }
+
+  .error ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .error li {
+    line-height: 2;
+    list-style: square;
+    margin-left: 20px;
+    padding: 5px;
+  }
+
+  .button {
     padding: 10px;
     background-color: ${theme.colors.skyBlueDark};
     border: 1px solid ${theme.colors.skyBlueDark};
@@ -83,6 +104,17 @@ export const LoginWrap = styled.div`
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
+
+    &.button-clean {
+      background-color: ${theme.colors.white};
+      border: 1px solid ${theme.colors.white};
+      color: ${theme.colors.skyBlueDark};
+
+      &:hover {
+        border-color: ${theme.colors.skyBlueDark};
+        color: ${theme.colors.skyBlueDark};
+      }
+    }
 
     &:hover {
       background-color: ${theme.colors.white};

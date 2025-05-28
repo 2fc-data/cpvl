@@ -10,7 +10,7 @@ import { Direction } from "./pages/direction";
 import { Home } from './pages/home/';
 import { Login } from './pages/login/';
 import { Regiment } from "./pages/regiment";
-import { Register } from './pages/register';
+import { Signup } from './pages/signup';
 import { Statute } from "./pages/statute";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
             <Route path="home" element={<Home />} />
             <Route path="login" element={<Login />} />            
             <Route path="regiment" element={<Regiment />} />
-            <Route path="register" element={<Register />} />
+            <Route path="signup" element={<Signup />} />
             <Route path="statute" element={<Statute />} />
             <Route path="*" element={<Home />} />
           </Route>

@@ -19,6 +19,7 @@ declare module "styled-components" {
       background: string;
       text: string;
       border: string;
+      warning: string;
     };
     typography: {
       fontFamily: string;
@@ -57,7 +58,8 @@ export const theme: DefaultTheme = {
     lightBlack: "rgba(19, 19, 19, 0.6)",
     background: "#F5F5F5",
     text: "#0D0D0D",
-    border: "#DEF2F1"
+    border: "#DEF2F1",
+    warning: "#FF0000",
   },
   typography: {
     fontFamily: `"DM Sans", sans-serif`,

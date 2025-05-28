@@ -83,20 +83,20 @@ export const SectionWrap = styled.div`
     align-items: center;
     bottom: 0;
     display: flex;
-    background-color: ${theme.colors.skyBlueDark};
-    border: 1px solid ${theme.colors.white};
+    background-color: ${theme.colors.lightWhite};
+    border: 1px solid ${theme.colors.lightWhite};
     border-radius: 6px;
-    color: ${theme.colors.white};
+    color: ${theme.colors.skyBlueDark};
     justify-content: center;
     margin-top: 15px;
     padding: 10px 5px ;
     width: 90px;
 
     &:hover {
-      background-color: ${theme.colors.white};
-      border: 1px solid ${theme.colors.white};
+      background-color: ${theme.colors.skyBlueDark};
+      border: 1px solid ${theme.colors.skyBlueDark};
       border-radius: 6px;
-      color: ${theme.colors.skyBlueDark};
+      color: ${theme.colors.white};
       cursor: pointer;
     }
   }

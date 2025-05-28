@@ -61,15 +61,19 @@ export const HeaderWrap = styled.header`
   }
 
   .nav-item {
+    background-color: ${theme.colors.lightGreen};
+    border-radius: 3px;
+    box-shadow: 0px 1px 3px ${theme.colors.lightGreen};
+    color: ${theme.colors.white};
     position: relative;    
     font-weight: 600;
     padding: 0.3rem 1rem;
     transition: ${theme.transitions.easeInOut};
 
-    &:hover {
-      color: ${theme.colors.skyBlueDark};
-      background-color: ${theme.colors.lightWhite};
+    &:hover {      
+      background-color: ${theme.colors.white};
       border-radius: 3px;
+      color: ${theme.colors.lightGreen};
 
       .submenu {
         display: block;
@@ -82,15 +86,15 @@ export const HeaderWrap = styled.header`
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: ${theme.colors.lightWhite};
+    background-color: ${theme.colors.white};
     border-radius: 6px;
-    box-shadow: 0 2px 3px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 2px 3px ${theme.colors.lightGreen};
     min-width: 200px;
     padding: 0.5rem 0;
 
     .submenu-item {
-      border-bottom: 1px solid ${theme.colors.skyBlueDark};
-      color: ${theme.colors.skyBlueDark};
+      border-bottom: 1px solid ${theme.colors.lightGreen};
+      color: ${theme.colors.lightGreen};
       margin-left: 0.5rem;
       padding: 0.5rem;
       display: block;
@@ -100,7 +104,7 @@ export const HeaderWrap = styled.header`
       }
 
       &:hover {
-        background-color: ${theme.colors.skyBlueDark};
+        background-color: ${theme.colors.lightGreen};
         color: ${theme.colors.white};      
       }
     }
