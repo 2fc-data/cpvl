@@ -19,7 +19,6 @@ declare module "styled-components" {
       background: string;
       text: string;
       border: string;
-      warning: string;
     };
     typography: {
       fontFamily: string;
@@ -59,10 +58,11 @@ export const theme: DefaultTheme = {
     background: "#F5F5F5",
     text: "#0D0D0D",
     border: "#DEF2F1",
-    warning: "#FF0000",
   },
   typography: {
-    fontFamily: `"DM Sans", sans-serif`,
+    // "Atlas Typewriter", "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
+
+    fontFamily: `"Atlas Typewriter", "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace, "DM Sans", sans-serif`,
     fontSize: "14px",
     fontWeight: 400,
     lineHeight: 1.6,

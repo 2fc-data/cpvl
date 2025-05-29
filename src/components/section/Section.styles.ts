@@ -90,7 +90,7 @@ export const SectionWrap = styled.div`
     justify-content: center;
     margin-top: 15px;
     padding: 10px 5px ;
-    width: 90px;
+    width: 100%;
 
     &:hover {
       background-color: ${theme.colors.skyBlueDark};

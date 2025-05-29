@@ -20,8 +20,7 @@ export const HomeWrap = styled.div`
   .home-title{
     align-items: center;
     color: ${theme.colors.white};
-    display: flex;
-    font-family: Forward-Bold, sans-serif;  
+    display: flex;    
     font-size: 36px;
     font-weight: 800;
     justify-content: center;
@@ -48,8 +47,7 @@ export const HomeWrap = styled.div`
   .home-subtitle{
     align-items: center;
     color: ${theme.colors.white};
-    display: flex;   
-    font-family: Forward-Bold, sans-serif;  
+    display: flex;       
     font-size: 36px;
     font-weight: 800;
     justify-content: center;
