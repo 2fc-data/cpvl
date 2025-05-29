@@ -8,7 +8,7 @@ export const Home = () => {
       scale: 1,
     },
     hover: {
-      scale: 1.02,
+      scale: 1.2,
     },
   }
 

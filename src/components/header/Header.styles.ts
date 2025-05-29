@@ -61,10 +61,10 @@ export const HeaderWrap = styled.header`
   }
 
   .nav-item {
-    background-color: ${theme.colors.lightGreen};
+    /* background-color: ${theme.colors.lightGreen}; */
     border-radius: 3px;
     box-shadow: 0px 1px 3px ${theme.colors.lightGreen};
-    color: ${theme.colors.white};
+    color: ${theme.colors.forestGreen};
     position: relative;    
     font-weight: 600;
     padding: 0.3rem 1rem;

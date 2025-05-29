@@ -4,8 +4,7 @@ import footerBg from "../../assets/images/footerBg.jpg";
 
 
 export const FooterWrap = styled.div`
-  align-items: center;
-  /* background-color: ${theme.colors.lightGreen}; */
+  align-items: center;  
   background-image: url(${footerBg});
   background-size: cover;
   background-position: center;
@@ -42,7 +41,7 @@ export const FooterWrap = styled.div`
     margin: 20px 10px;
     min-height: 345px;
     padding: 20px 10px;    
-    width: 240px;
+    width: 300px;
 
     ${media.lg`
       padding: 15px 12px;
