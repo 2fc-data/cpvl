@@ -100,7 +100,7 @@ export const Login = () => {
 
           <div className="form-group">
             <br />
-            <button type="reset" className="button button-clean">Limpar</button>
+            <button type="reset" className="button">Limpar</button>
             <button className="button">Entrar</button>
           </div>
 

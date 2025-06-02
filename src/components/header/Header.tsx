@@ -1,14 +1,93 @@
-// import { useDispatch } from "react-redux";
 import { HeaderWrap } from './Header.styles';
-// import { setSidebarOpen } from "../../redux/slices/sidebarSlice";
+import { FaBuilding } from "react-icons/fa";
+import { FaFilePen } from "react-icons/fa6";
+import {
+  MdAirplanemodeActive,
+  MdHome,
+  MdMenuBook,
+  MdParagliding
+} from "react-icons/md";
 import { MdMenu } from "react-icons/md";
 import Logo from '../../assets/images/logo_cpvl.svg';
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
+const Menu = [
+  {
+    title: " Home",
+    icon: <MdHome size={20} />,
+    link: "/home",
+  },
+  {
+    title: " Sobre",
+    icon: <MdMenuBook size={20} />,
+    link: "/about",
+    submenu: [
+      {
+        title: " Diretoria",
+        icon: <FaBuilding size={20} />,
+        link: "/direction",
+      },
+      {
+        title: " Espaco Aereo",
+        icon: <MdAirplanemodeActive size={20} />,
+        link: "/airspace",
+      },
+      {
+        title: " Estatuto",
+        icon: <MdMenuBook size={20} />,
+        link: "/statute",
+      },
+      {
+        title: " História",
+        icon: <FaFilePen size={20} />,
+        link: "/about",
+      },
+      {
+        title: " Regimento Interno",
+        icon: <MdMenuBook size={20} />,
+        link: "/regiment",
+      },
+    ]
+  },
+  {
+    title: "Associados",
+    icon: <MdParagliding size={20} />,
+    link: "/login",
+  },
+];
+
+
 export const Header = () => {
-  // const dispatch = useDispatch();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const renderMenu = () => {
+    return Menu.map((menuItem) => {
+      if (menuItem.submenu) {
+        return (
+          <div className="nav-item" key={menuItem.title}>
+            <span>{menuItem.icon}</span>
+            <span>{menuItem.title}</span>
+            <div className="submenu">
+              {menuItem.submenu.map((submenuItem) => (
+                <Link to={submenuItem.link} className="submenu-item" key={submenuItem.title}>
+                  <span>{submenuItem.icon}</span>
+                  <span>{submenuItem.title}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        );
+      } else {
+        return (
+          <Link to={menuItem.link} className="nav-item" key={menuItem.title}>
+            <span>{menuItem.icon}</span>
+            <span>{menuItem.title}</span>
+          </Link>
+        );
+      }
+    });
+  };
 
   return (
     <HeaderWrap>
@@ -21,18 +100,7 @@ export const Header = () => {
         </div>
 
         <nav className="nav-menu">
-          <Link to="/home" className="nav-item">Home</Link>
-          <div className="nav-item">
-            Sobre
-            <div className="submenu">
-              <Link to="/direction" className="submenu-item">Diretoria</Link>
-              <Link to="/airspace" className="submenu-item">Espaço Aéreo</Link>
-              <Link to="/statute" className="submenu-item">Estatuto</Link>
-              <Link to="/regiment" className="submenu-item">Regimento Interno</Link>
-              <Link to="/about" className="submenu-item">História</Link>
-            </div>
-          </div>
-          <Link to="/login" className="nav-item">Área Associados</Link>
+          {renderMenu()}
         </nav>
 
         <button
@@ -43,13 +111,7 @@ export const Header = () => {
         </button>
 
         <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-          <Link to="/home" className="mobile-nav-item" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>Home</Link>
-          <Link to="/login" className="mobile-nav-item" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>Área Associados</Link>
-          <Link to="/direction" className="mobile-nav-item" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>Diretoria</Link>
-          <Link to="/airspace" className="mobile-nav-item" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>Espaço Aéreo</Link>
-          <Link to="/statute" className="mobile-nav-item" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>Estatuto</Link>
-          <Link to="/regiment" className="mobile-nav-item" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>Regimento Interno</Link>
-          <Link to="/about" className="mobile-nav-item" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>História</Link>
+          {renderMenu()}
         </div>
       </div>
     </HeaderWrap>

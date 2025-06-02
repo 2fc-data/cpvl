@@ -4,7 +4,7 @@ import { media, theme } from "../../styles/theme/theme";
 export const HeaderWrap = styled.header`
   /* background-color: ${theme.colors.white}; */
   background-color: transparent;
-  color: ${theme.colors.white};
+  /* color: ${theme.colors.white}; */
   padding: 1rem 0rem;
   z-index: 1000;
 
@@ -50,34 +50,53 @@ export const HeaderWrap = styled.header`
     }
   }
 
-  .nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
 
+
+
+  .nav-menu {
+    align-items: center;
+    display: flex;
+    flex: -1;
+    gap: 1.5rem;
+    min-height: calc(100% - 84px);
+    
     ${media.lg`
       display: none;
     `}
   }
 
-  .nav-item {
-    /* background-color: ${theme.colors.lightGreen}; */
+  .nav-item {    
+    align-items: center;
     border-radius: 3px;
-    box-shadow: 0px 1px 3px ${theme.colors.lightGreen};
-    color: ${theme.colors.forestGreen};
-    position: relative;    
+    border-top: 3px solid transparent;
+    color: ${theme.colors.lightBlack};
+    display: flex;
     font-weight: 600;
-    padding: 0.3rem 1rem;
+    gap: 0.5rem;
+    justify-content: center;
+    min-width: 120px;
+    padding: 0.3rem;
+    position: relative;
     transition: ${theme.transitions.easeInOut};
+    width: 100%;
+
+    ${media.lg`
+      justify-content: left;
+      margin: 1rem 0 0 1.5rem;
+
+    `}
 
     &:hover {      
-      background-color: ${theme.colors.white};
-      border-radius: 3px;
-      color: ${theme.colors.lightGreen};
+      border-top: 3px solid ${theme.colors.black};  
+      color: ${theme.colors.black};    
 
       .submenu {
         display: block;
       }
+    }
+
+    &:active {
+      border-top: 3px solid ${theme.colors.black};      
     }
   }
 
@@ -86,37 +105,48 @@ export const HeaderWrap = styled.header`
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: ${theme.colors.white};
+    background-color: ${theme.colors.lightWhite};
     border-radius: 6px;
-    box-shadow: 0 2px 3px ${theme.colors.lightGreen};
+    box-shadow: 0 2px 3px ${theme.colors.lightBlack};
     min-width: 200px;
     padding: 0.5rem 0;
 
     .submenu-item {
-      border-bottom: 1px solid ${theme.colors.lightGreen};
-      color: ${theme.colors.lightGreen};
+      align-items: center;
+      border-bottom: 1px solid ${theme.colors.lightBlack};
+      color: ${theme.colors.lightBlack};
+      display: block;
       margin-left: 0.5rem;
       padding: 0.5rem;
-      display: block;
+
 
       &:last-child {
         border-bottom: none;
       }
 
       &:hover {
-        background-color: ${theme.colors.lightGreen};
-        color: ${theme.colors.white};      
+        background-color: ${theme.colors.white};
+        color: ${theme.colors.black};      
+      }
+
+
+      .submenu-icon {
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }
 
   .mobile-menu-btn {
-    color: ${theme.colors.lightGreen};
+    color: ${theme.colors.skyBlueDark};
+    cursor: pointer;
     display: none;   
     font-size: 1.5rem;
-    cursor: pointer;
 
-    ${media.lg`
+    ${media.lg`      
       display: block;
     `}
   }
@@ -132,13 +162,14 @@ export const HeaderWrap = styled.header`
 
     &.active {
       display: block;
+      height: 100%;
     }
 
     .mobile-nav-item {
       color: ${theme.colors.lightGreen};
       padding: 0.75rem 1rem;
       display: block;
-      border-bottom: 1px solid ${theme.colors.border};
+      border-bottom: 1px solid ${theme.colors.skyBlue};
 
       &:hover {
         background-color: ${theme.colors.lightGreen};

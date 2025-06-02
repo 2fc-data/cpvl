@@ -51,10 +51,10 @@ export const theme: DefaultTheme = {
     lightGreen: "#517356", // Light forest green 
     darkGray: "#8C8C7B", // Dark gray for text
     lightGray: "#8C8C7B",
-    lightWhite: "rgba(255, 255, 255, 0.9)",
+    lightWhite: "rgba(255, 255, 255, 0.6)",
     white: "#FFFFFF",    
     black: "#000000",
-    lightBlack: "rgba(19, 19, 19, 0.6)",
+    lightBlack: "rgba(37, 37, 37, 0.9)",
     background: "#F5F5F5",
     text: "#0D0D0D",
     border: "#DEF2F1",

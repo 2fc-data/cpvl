@@ -20,44 +20,6 @@ export const Sidebar: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const isSidebarOpen = useSelector((state: RootState) => state.rootReducer.sidebar.isSidebarOpen);
 
-  const Menus = [
-    {
-      title: "Home",
-      icon: <MdHome size={20} />,
-      link: "/home",
-    },    
-    {
-      title: "Diretoria",
-      icon: <FaBuilding size={20} />,
-      link: "/direction",
-    },
-    {
-      title: "Espaco Aereo",
-      icon: <MdAirplanemodeActive size={20} />,
-      link: "/airspace",
-    },
-    { 
-      tile: "Estatuto",
-      icon: <MdBarChart size={20} />,
-      link: "/statute",
-    },
-    {
-      title: "Regimento Interno",
-      icon: <FaFilePen size={20} />,
-      link: "/regiment",
-    },
-    {
-      title: "Sobre",
-      icon: <MdMenuBook size={20} />,
-      link: "/about",
-    },
-  ];
-
-
-
-
-
-
   return (
     <SidebarWrap
       className={`${isSidebarOpen ? "sidebar-active" : ""}`}

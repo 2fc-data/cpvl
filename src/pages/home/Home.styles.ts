@@ -1,9 +1,8 @@
 import { media, theme } from "../../styles/theme/theme";
 import styled from "styled-components";
-import image_se from "../../assets/images/se1.jpg";
+import image_se from "../../assets/images/rampanorteAprox2.jpg";
 
 export const HomeWrap = styled.div`
-  margin-top: -90px;
 
   .home-content {
     align-items: center;

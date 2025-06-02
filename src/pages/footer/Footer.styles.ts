@@ -34,7 +34,7 @@ export const FooterWrap = styled.div`
     align-items: center;
     background-color: ${theme.colors.lightWhite};
     border-radius: 6px;
-    color: ${theme.colors.lightGreen};
+    color: ${theme.colors.lightBlack};
     display: flex-wrap;
     justify-content: lcenter;
     line-height: 2;
@@ -51,7 +51,7 @@ export const FooterWrap = styled.div`
   }
 
   .footer-title {
-    border-bottom: 3px solid ${theme.colors.lightGreen};
+    border-bottom: 3px solid ${theme.colors.lightBlack};
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 30px;    
@@ -63,9 +63,8 @@ export const FooterWrap = styled.div`
   }
 
   .footer-link {
-    border-bottom: 1px solid ${theme.colors.lightGreen};
-    font-family: sans-serif;  
-    font-weight: 500;
+    border-bottom: 1px solid ${theme.colors.black};    
+    font-weight: 600;
     margin-top: 10px;
     padding-left: 10px;
     text-align: left;
@@ -75,7 +74,7 @@ export const FooterWrap = styled.div`
     `}
 
     &:hover {
-      background-color: ${theme.colors.lightGreen};
+      background-color: ${theme.colors.black};
       color: ${theme.colors.white};
       border-radius: 3px;
     }

@@ -190,7 +190,7 @@ export const DirectionWrap = styled.div`
     background-color: ${theme.colors.white};
     border: 1px solid ${theme.colors.white};
     border-radius: 6px;
-    color: ${theme.colors.black};
+    color: ${theme.colors.lightBlack};
     justify-content: center;
     padding: 9px 9px ;
     width: 135px;

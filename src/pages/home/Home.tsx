@@ -8,7 +8,7 @@ export const Home = () => {
       scale: 1,
     },
     hover: {
-      scale: 1.2,
+      scale: 1.01,
     },
   }
 
@@ -16,7 +16,7 @@ export const Home = () => {
     <HomeWrap>
       <motion.div className='home-content'
         initial="hidden"
-        transition={{ duration: 1.5 }}
+        transition={{ duration: 1.2 }}
         variants={zoomVariant}
         whileHover="hover"
       >

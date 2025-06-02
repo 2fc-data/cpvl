@@ -149,7 +149,7 @@ export const Signup = () => {
 
           <div className="form-group">
             <br />
-            <button type="reset" className="button button-clean">Limpar</button>
+            <button type="reset" className="button">Limpar</button>
             <button className="button">Cadastrar</button>            
           </div>
         </div>

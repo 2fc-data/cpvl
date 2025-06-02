@@ -53,8 +53,8 @@ export const SectionWrap = styled.div`
 
   .section-title {
     display: flex;
-    border-bottom: 3px solid ${theme.colors.skyBlueDark};
-    color: ${theme.colors.skyBlueDark};
+    border-bottom: 3px solid ${theme.colors.lightBlack};
+    color: ${theme.colors.black};
     font-size: 16px;
     font-weight: 700;
     justify-content: center;
@@ -63,7 +63,7 @@ export const SectionWrap = styled.div`
   }
 
   .section-description {
-    color: ${theme.colors.skyBlueDark};
+    color: ${theme.colors.lightBlack};
     padding: 15px 0;
     font-size: 14px;
     font-weight: 500;
@@ -84,17 +84,17 @@ export const SectionWrap = styled.div`
     bottom: 0;
     display: flex;
     background-color: ${theme.colors.white};
-    border: 1px solid ${theme.colors.white};
+    border: 1px solid ${theme.colors.black};
     border-radius: 6px;
-    color: ${theme.colors.skyBlueDark};
+    color: ${theme.colors.lightBlack};
     justify-content: center;
-    margin-top: 15px;
-    padding: 10px 5px ;
+    margin-top: 5px;
+    padding: 5px 5px ;
     width: 100%;
 
     &:hover {
-      background-color: ${theme.colors.skyBlueDark};
-      border: 1px solid ${theme.colors.skyBlueDark};
+      background-color: ${theme.colors.black};
+      border: 1px solid ${theme.colors.white};
       border-radius: 6px;
       color: ${theme.colors.white};
       cursor: pointer;

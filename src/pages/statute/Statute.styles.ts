@@ -57,7 +57,6 @@ export const StatuteWrap = styled.div`
 
   .statute-block {
     align-items: start;
-    font-family: roboto, sans-serif;    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -85,7 +84,7 @@ export const StatuteWrap = styled.div`
 
   .statute-block-title {
     align-items: center;
-    color: ${theme.colors.lightGreen};
+    color: ${theme.colors.black};
     display: flex; 
     font-size: 3rem;
     font-weight: 500;      
@@ -122,16 +121,16 @@ export const StatuteWrap = styled.div`
     align-items: center;
     display: flex;
     background-color: ${theme.colors.white};
-    border: 1px solid ${theme.colors.lightGreen};
+    border: 1px solid ${theme.colors.black};
     border-radius: 6px;
-    color: ${theme.colors.lightGreen};
+    color: ${theme.colors.lightBlack};
     justify-content: center;
     padding: 3px 9px ;
     width: 135px;
 
     &:hover {
-      background-color: ${theme.colors.lightGreen};
-      border: 1px solid ${theme.colors.lightGreen};
+      background-color: ${theme.colors.black};
+      border: 1px solid ${theme.colors.white};
       border-radius: 6px;
       color: ${theme.colors.white};
       cursor: pointer;
