@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavbarWrap } from './Navbar.styles'; // Importa os estilos do Navbar
+import { NavbarWrap } from './Navbar.styles'; 
 import { FaBuilding } from "react-icons/fa";
 import { FaFilePen } from "react-icons/fa6";
 import {
@@ -13,11 +13,10 @@ import {
 import { Link } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 import { useDispatch, useSelector } from 'react-redux';
-// Ajuste os caminhos conforme sua estrutura
+
 import { toggleMenubar, setMenubarClose } from '../../redux/slices/menubarSlice'; 
 import { RootState } from '../../redux/store'; 
 
-// --- Definições de Tipo --- 
 interface SubmenuItemType {
   title: string;
   icon: React.ReactNode; 
@@ -36,9 +35,7 @@ interface MenuItemProps {
   isMobile: boolean;
   closeMobileMenu: () => void; 
 }
-// --- Fim das Definições de Tipo ---
 
-// Definição da estrutura do Menu
 const Menu: MenuItemType[] = [
   {
     title: " Home",
@@ -84,7 +81,7 @@ const Menu: MenuItemType[] = [
   },
 ];
 
-// Componente auxiliar MenuItem (permanece dentro do Navbar ou pode ser movido para seu próprio arquivo)
+
 const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) => {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
 
@@ -169,12 +166,12 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) 
   }
 };
 
-// Componente Navbar
+
 export const Navbar: React.FC = () => {
   const isMenubarOpen = useSelector((state: RootState) => state.menubar.isMenubarOpen);
   const dispatch = useDispatch();
 
-  // Lógica de resize para fechar menu mobile
+  
   useEffect(() => {
     const handleResize = () => {
       const lgBreakpoint = 992; 
@@ -198,22 +195,19 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <NavbarWrap> {/* Usa o wrapper de estilos do Navbar */}
-      {/* Overlay precisa estar aqui para controlar visibilidade com o estado */}
+    <NavbarWrap>
       <div
         className={`overlay ${isMenubarOpen ? 'active' : ''}`}
         onClick={handleCloseMenubar}
         aria-hidden={!isMenubarOpen} 
       />
 
-      {/* Menu Desktop */}
       <nav className="nav-menu" aria-label="Menu Principal">
         {Menu.map((menuItem) => (
           <MenuItem key={menuItem.title} item={menuItem} isMobile={false} closeMobileMenu={() => {}} />
         ))}
       </nav>
 
-      {/* Botão Mobile */}
       <button
         className="mobile-menu-btn"
         onClick={handleToggleMenubar} 
@@ -224,7 +218,6 @@ export const Navbar: React.FC = () => {
         {isMenubarOpen ? <MdClose size={36} /> : <MdMenu size={36} />}
       </button>
 
-      {/* Container Mobile */}
       <div
         id="mobile-menu-nav" 
         className={`mobile-menu ${isMenubarOpen ? 'active' : ''}`}
