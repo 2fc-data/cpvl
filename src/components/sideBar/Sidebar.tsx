@@ -13,7 +13,7 @@ import {
 } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setSidebarClose } from "../../redux/slices/sidebarSlice";
+import { setSidebarClose } from "../../redux/slices/menubarSlice";
 import type { AppDispatch, RootState } from "../../redux/store";
 
 export const Sidebar: React.FC = () => {

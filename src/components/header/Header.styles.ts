@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { media, theme } from "../../styles/theme/theme";
+import { media, theme } from "../../styles/theme/theme"; // Verifique se este caminho está correto
 
 export const HeaderWrap = styled.header`
-  /* background-color: ${theme.colors.white}; */
-  background-color: transparent;
-  /* color: ${theme.colors.white}; */
+  background-color: transparent; // Mantido como transparente, ajuste se necessário
   padding: 1rem 0rem;
+  position: relative; // Adicionado para contexto de posicionamento do menu mobile
   z-index: 1000;
 
   ${media.xl`
@@ -16,59 +15,56 @@ export const HeaderWrap = styled.header`
     align-items: center;
     display: flex;
     justify-content: space-between;
-    top: 0;
-    margin: 0 35px;
+    margin: 0 35px; // Considere usar variáveis de tema ou espaçamento relativo
   }
 
   .logo-section {
-    border: none;    
+    border: none;
     display: flex;
     align-items: center;
     gap: 1rem;
-    
 
     .logo {
       width: 120px;
       height: 54px;
+      display: block; // Garante que o link não tenha altura zero
 
       img {
         border: none;
         border-radius: 3px;
-        width: 99%;
-        height: 99%;
+        width: 100%; // Alterado para 100% para preencher o container
+        height: 100%; // Alterado para 100%
         object-fit: contain;
+        display: block; // Remove espaço extra abaixo da imagem
       }
     }
 
-    .brand-name {
+    // .brand-name foi removido no código original, mantido comentado
+    /* .brand-name {
       font-size: 1.5rem;
       font-weight: 700;
 
       ${media.md`
         display: none;
       `}
-    }
+    } */
   }
 
-
-
-
+  // Menu de Navegação Desktop
   .nav-menu {
     align-items: center;
     display: flex;
-    flex: -1;
     gap: 1.5rem;
-    min-height: calc(100% - 84px);
-    
+
     ${media.lg`
-      display: none;
+      display: none; // Esconde no breakpoint lg e menores
     `}
   }
 
-  .nav-item {    
+  .nav-item {
     align-items: center;
     border-radius: 3px;
-    border-top: 3px solid transparent;
+    border-top: 3px solid transparent; // Efeito hover pode causar layout shift
     color: ${theme.colors.lightBlack};
     display: flex;
     font-weight: 600;
@@ -76,71 +72,79 @@ export const HeaderWrap = styled.header`
     justify-content: center;
     min-width: 120px;
     padding: 0.3rem;
-    position: relative;
-    width: 100%;
+    position: relative; // Necessário para o posicionamento absoluto do submenu
+    text-decoration: none; // Garante que Links não tenham sublinhado padrão
+    cursor: pointer; // Indica que é clicável (especialmente para itens com submenu)
 
     .arrowDown-icon-details {
       transition: ${theme.transitions.easeInOut};
     }
 
-    ${media.lg`
-      justify-content: left;
-      margin: 1rem 0 0 1.5rem;
+    // Estilos específicos para mobile foram removidos daqui, pois o .mobile-menu tem seus próprios estilos
 
-    `}
-
-    &:hover {      
-      border-top: 3px solid ${theme.colors.black};  
+    &:hover,
+    &:focus-within { // Adicionado :focus-within para acessibilidade e consistência
+      border-top: 3px solid ${theme.colors.black};
       color: ${theme.colors.black};
 
       .submenu {
-        display: block;
+        display: block; // Mostra submenu no hover/focus
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
       }
 
-      .arrowUp-icon-details {
-        transform: rotate(-180deg); 
+      .arrowUp-icon-details { // Renomeado para clareza, a classe original tinha dois nomes
+        transform: rotate(-180deg);
         transition: transform 0.3s ease-out;
       }
     }
 
     &:active {
-      border-top: 3px solid ${theme.colors.black};      
+      border-top: 3px solid ${theme.colors.black};
     }
   }
 
   .submenu {
-    display: none;
+    display: none; // Escondido por padrão
+    opacity: 0; // Para transição suave
+    visibility: hidden; // Para acessibilidade
     position: absolute;
-    top: 100%;
+    top: 100%; // Posiciona abaixo do .nav-item
     left: 0;
     background-color: ${theme.colors.lightWhite};
     border-radius: 6px;
     box-shadow: 0 2px 3px ${theme.colors.lightBlack};
     min-width: 200px;
     padding: 0.5rem 0;
+    z-index: 1010; // Garante que fique sobre outros elementos
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transform: translateY(-10px); // Posição inicial para transição
 
     .submenu-item {
       align-items: center;
-      border-bottom: 1px solid ${theme.colors.lightBlack};
+      // border-bottom: 1px solid ${theme.colors.lightBlack}; // Removido border, pode ser adicionado se necessário
       color: ${theme.colors.lightBlack};
-      display: block;
-      margin-left: 0.5rem;
-      padding: 0.5rem;
-
+      display: flex; // Alterado para flex para alinhar ícone e texto
+      gap: 0.5rem; // Espaço entre ícone e texto
+      padding: 0.75rem 1rem; // Ajustado padding
+      text-decoration: none; // Garante que Links não tenham sublinhado
+      white-space: nowrap; // Evita quebra de linha
 
       &:last-child {
         border-bottom: none;
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: ${theme.colors.white};
-        color: ${theme.colors.black}; 
+        color: ${theme.colors.black};
       }
 
-
+      // Estilos do ícone dentro do submenu (ajuste conforme necessário)
       .submenu-icon {
-        width: 28px;
-        height: 28px;
+        // width: 28px; // Removido width fixo
+        // height: 28px; // Removido height fixo
         display: flex;
         align-items: center;
         justify-content: center;
@@ -148,45 +152,120 @@ export const HeaderWrap = styled.header`
     }
   }
 
+  // Botão do Menu Mobile (Hamburguer)
   .mobile-menu-btn {
-    color: ${theme.colors.skyBlueDark};
+    background: none;
+    border: none;
+    color: ${theme.colors.skyBlueDark}; // Ajuste a cor conforme o design
     cursor: pointer;
-    display: none;   
-    font-size: 1.5rem;
+    display: none; // Escondido por padrão
+    font-size: 1.5rem; // Tamanho do ícone
+    padding: 0.5rem; // Área de clique
+    z-index: 1051; // Acima do overlay e menu
 
-    ${media.lg`      
-      display: block;
+    ${media.lg`
+      display: block; // Mostra no breakpoint lg e menores
     `}
   }
 
+  // Container do Menu Mobile
   .mobile-menu {
-    display: none;
+    // display: none; // Controle será feito via transform/opacity para animação
     position: fixed;
-    top: 80px;
+    top: 0;
     left: 0;
-    right: 0;
-    background-color: ${theme.colors.white};
-    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    background-color: ${theme.colors.white}; // Fundo do menu
+    padding: 6rem 1rem 1rem 1rem; // Padding (topo maior para não sobrepor header fixo, se houver)
+    transform: translateX(-100%); // Começa fora da tela à esquerda
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto; // Permite scroll se o conteúdo for maior que a tela
+    z-index: 1050; // Abaixo do botão de fechar, mas acima do conteúdo da página
 
     &.active {
-      display: block;
-      height: 100%;
+      // display: block; // Não necessário com transform
+      transform: translateX(0); // Move para dentro da tela
     }
 
-    .mobile-nav-item {
-      color: ${theme.colors.lightGreen};
-      padding: 0.75rem 1rem;
-      display: block;
-      border-bottom: 1px solid ${theme.colors.skyBlue};
+    // Adaptação do .nav-item para o contexto mobile
+    // Usaremos as mesmas classes base, mas com estilos específicos aqui se necessário
+    .nav-item {
+      display: block; // Itens empilhados verticalmente
+      width: 100%;
+      text-align: left;
+      padding: 1rem 1.5rem;
+      border-top: none; // Remove borda superior do desktop
+      border-bottom: 1px solid ${theme.colors.skyBlue}; // Adiciona separador
+      color: ${theme.colors.lightBlack}; // Cor padrão no mobile
+      font-weight: 500;
 
-      &:hover {
-        background-color: ${theme.colors.lightGreen};
-        color: ${theme.colors.white};      
+      &:hover,
+      &:focus {
+        background-color: ${theme.colors.lightGreen}; // Efeito hover mobile
+        color: ${theme.colors.white};
+        border-top: none; // Garante que a borda do desktop não apareça
+
+        .submenu {
+          // Lógica de submenu mobile precisa ser diferente (ex: acordeão)
+          // Por ora, o submenu desktop (hover) não funcionará bem aqui.
+          // Requer implementação adicional para abrir/fechar com clique.
+          display: none; // Esconde submenu desktop no mobile por padrão
+        }
       }
 
       &:last-child {
         border-bottom: none;
       }
+
+      // Esconde a seta de dropdown desktop no mobile
+      .arrowDown-icon-details {
+        display: none;
+      }
+    }
+
+    // Estilos específicos para o submenu dentro do mobile-menu (se implementar clique)
+    .submenu {
+      position: static; // Submenu não será absoluto no mobile
+      display: block; // Ou controlado por estado de clique
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      padding: 0.5rem 0 0.5rem 1.5rem; // Indentação
+      background-color: transparent;
+
+      .submenu-item {
+        padding: 0.75rem 0;
+        border: none;
+        color: ${theme.colors.lightBlack}; // Ajuste cor
+
+        &:hover,
+        &:focus {
+          background-color: transparent;
+          color: ${theme.colors.black}; // Ajuste cor hover
+        }
+      }
+    }
+  }
+
+  // Overlay (opcional, para escurecer o fundo quando o menu mobile está aberto)
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040; // Abaixo do menu mobile
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
     }
   }
 `;
+

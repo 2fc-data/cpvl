@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { HomeWrap } from "./Home.styles"
-import { useState } from 'react';
 
 export const Home = () => {
 
