@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; // Import useEffect
+import React, { useState, useEffect } from "react";
 import { HeaderWrap } from './Header.styles';
 import { FaBuilding } from "react-icons/fa";
 import { FaFilePen } from "react-icons/fa6";
@@ -14,13 +14,8 @@ import Logo from '../../assets/images/logo_cpvl.svg'; // Verifique se este camin
 import { Link } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 import { useDispatch, useSelector } from 'react-redux';
-// Ajuste o caminho para o seu slice menubarSlice
-// Importa tanto toggle quanto a ação específica de fechar
 import { toggleMenubar, setMenubarClose } from '../../redux/slices/menubarSlice'; 
-// !! IMPORTANTE: Verifique se este caminho para RootState está correto !!
 import { RootState } from '../../redux/store'; 
-// Opcional: Importar o tema se quiser usar o valor do breakpoint dinamicamente
-// import { theme } from '../../styles/theme/theme';
 
 // --- Definições de Tipo --- 
 interface SubmenuItemType {
@@ -110,9 +105,19 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) 
     }
   };
 
-  const handleLinkClick = () => {
+  const handleAnyLinkClick = (event?: React.MouseEvent<HTMLAnchorElement> | React.KeyboardEvent<HTMLAnchorElement>) => {
+    // Fecha o menu mobile e o acordeão
     if (isMobile) {
+        if (isSubmenuOpen) {
+            setIsSubmenuOpen(false);
+        }
         closeMobileMenu();
+    }
+    
+    // **CORREÇÃO DESKTOP (Tentativa 2):** Remove o foco do link clicado IMEDIATAMENTE.
+    if (!isMobile && event && event.currentTarget) {
+        // Remove o setTimeout, chama blur diretamente.
+        (event.currentTarget as HTMLElement).blur(); 
     }
   };
 
@@ -140,9 +145,9 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) 
               key={submenuItem.title}
               onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                 e.stopPropagation(); 
-                handleLinkClick(); 
+                handleAnyLinkClick(e); 
               }}
-              onKeyDown={(e) => { if (e.key === 'Enter') handleLinkClick(); }}
+              onKeyDown={(e) => { if (e.key === 'Enter') handleAnyLinkClick(e); }}
             >
               <span className="submenu-icon">{submenuItem.icon}</span>
               <span>{submenuItem.title}</span>
@@ -156,8 +161,8 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) 
       <Link
         to={item.link}
         className="nav-item"
-        onClick={handleLinkClick} 
-        onKeyDown={(e) => { if (e.key === 'Enter') handleLinkClick(); }}
+        onClick={(e) => handleAnyLinkClick(e)} 
+        onKeyDown={(e) => { if (e.key === 'Enter') handleAnyLinkClick(e); }}
       >
         <span>{item.icon}</span>
         <span>{item.title}</span>
@@ -171,40 +176,24 @@ export const Header: React.FC = () => {
   const isMenubarOpen = useSelector((state: RootState) => state.menubar.isMenubarOpen);
   const dispatch = useDispatch();
 
-  // --- LÓGICA DE RESIZE --- 
   useEffect(() => {
     const handleResize = () => {
-      // Defina o breakpoint lg. Use o valor do seu tema se possível.
-      // Exemplo: const lgBreakpoint = parseInt(theme.breakpoints.lg, 10);
-      const lgBreakpoint = 992; // Usando valor fixo como exemplo
-
+      const lgBreakpoint = 992; 
       if (window.innerWidth >= lgBreakpoint && isMenubarOpen) {
-        // Se a janela for maior/igual a 'lg' E o menu estiver aberto,
-        // despacha a ação para fechar o menu.
         dispatch(setMenubarClose());
       }
     };
-
-    // Adiciona o listener quando o componente monta
     window.addEventListener('resize', handleResize);
-
-    // Chama uma vez para verificar o estado inicial
     handleResize();
-
-    // Remove o listener quando o componente desmonta (cleanup)
     return () => window.removeEventListener('resize', handleResize);
-
-  }, [isMenubarOpen, dispatch]); // Dependências: re-executa se o estado do menu ou dispatch mudarem
-  // --- FIM DA LÓGICA DE RESIZE ---
+  }, [isMenubarOpen, dispatch]); 
 
   const handleToggleMenubar = () => {
     dispatch(toggleMenubar());
   };
 
-  // Função explícita para fechar (usada pelo overlay, logo, links)
   const handleCloseMenubar = () => {
     if (isMenubarOpen) {
-      // Usa a ação específica de fechar para clareza
       dispatch(setMenubarClose());
     }
   };
