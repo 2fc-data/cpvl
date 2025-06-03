@@ -1,11 +1,7 @@
 import styled from 'styled-components';
-import { media, theme } from "../../styles/theme/theme"; // Verifique se este caminho está correto
+import { media, theme } from "../../styles/theme/theme"; 
 
-// Estilos movidos do Header.styles.ts para o Navbar
-export const NavbarWrap = styled.div`
-  // --- LÓGICA DE VISIBILIDADE --- 
-
-  // Menu Desktop (Visível > lg)
+export const NavbarWrap = styled.div` 
   .nav-menu {
     align-items: center;
     display: flex; 
@@ -15,8 +11,7 @@ export const NavbarWrap = styled.div`
       display: none; 
     `}
   }
-
-  // Botão Mobile (Visível <= lg)
+  
   .mobile-menu-btn {
     background: none;
     border: none;
@@ -31,8 +26,7 @@ export const NavbarWrap = styled.div`
       display: block; 
     `}
   }
-
-  // Container Mobile (Visível e funcional <= lg)
+  
   .mobile-menu {
     display: none; 
     
@@ -53,20 +47,19 @@ export const NavbarWrap = styled.div`
       &.active {
         transform: translateX(0); 
       }
-
-      // Estilos do .nav-item DENTRO do mobile-menu
+      
       .nav-item {
         display: block; 
         width: 100%;
         text-align: left;
-        padding: 1rem 1.5rem; // Padding mobile padrão
-        margin-bottom: 0; // Reseta margin do hover fix desktop
+        padding: 1rem 1.5rem; 
+        margin-bottom: 0; 
         border-top: none; 
         border-bottom: 1px solid ${theme.colors.skyBlue}; 
         color: ${theme.colors.lightBlack}; 
         font-weight: 500;
         cursor: pointer; 
-        position: static; // Garante que não seja relative como no desktop
+        position: static; 
 
         &:hover,
         &:focus {
@@ -80,35 +73,34 @@ export const NavbarWrap = styled.div`
         }
 
         .arrowDown-icon-details {
-          display: inline-block; // Mostra seta no mobile se tiver submenu
+          display: inline-block; 
           transition: transform 0.3s ease-out;
           &.rotated {
              transform: rotate(-180deg);
           }
         }
         .arrowUp-icon-details { 
-             display: none; // Esconde seta específica do hover desktop
+             display: none; 
         }
       }
 
-      // Estilos do .submenu DENTRO do mobile-menu
       .submenu {
-        position: static; // Fundamental para o fluxo normal no mobile
-        display: none; // Controlado pela classe .active adicionada via JS/React state
+        position: static; 
+        display: none; 
         opacity: 1;
         visibility: visible;
         transform: none;
         box-shadow: none;
-        padding: 0.5rem 0 0.5rem 1.5rem; // Padding mobile
+        padding: 0.5rem 0 0.5rem 1.5rem; 
         background-color: transparent;
         transition: none; 
         border-top: 1px solid ${theme.colors.skyBlue}; 
         margin-left: -1.5rem; 
         margin-right: -1.5rem;
-        border-radius: 0; // Reseta border-radius do desktop
-        min-width: auto; // Reseta min-width do desktop
+        border-radius: 0; 
+        min-width: auto; 
 
-        &.active { // Classe para mostrar o submenu no mobile
+        &.active { 
            display: block;
         }
 
@@ -129,8 +121,7 @@ export const NavbarWrap = styled.div`
       }
     `}
   }
-
-  // Overlay (Visível e funcional <= lg quando ativo)
+  
   .overlay {
     position: fixed;
     top: 0;
@@ -152,10 +143,7 @@ export const NavbarWrap = styled.div`
       }
     `}
   }
-
-  // --- Estilos Desktop (> lg) --- 
-
-  // Estilos base do .nav-item (aplicados principalmente no desktop)
+  
   .nav-item {
     align-items: center;
     border-radius: 3px;
@@ -167,11 +155,10 @@ export const NavbarWrap = styled.div`
     justify-content: center;
     min-width: 120px;
     padding: 0.3rem; 
-    position: relative; // Necessário para submenu absoluto
+    position: relative; 
     text-decoration: none; 
     cursor: pointer; 
 
-    // Aplica o hover fix SOMENTE no desktop
     @media (min-width: ${theme.breakpoints.lg}) {
         padding-bottom: 0.8rem; 
         margin-bottom: -0.5rem; 
@@ -179,17 +166,16 @@ export const NavbarWrap = styled.div`
 
     .arrowDown-icon-details {
       transition: ${theme.transitions.easeInOut};
-      // Esconde seta no desktop por padrão, mostra se tiver submenu
+      
       ${media.lg`
          display: none;
       `}
     }
-    // Mostra a seta no desktop se tiver submenu (implícito pela presença do .submenu)
+    
     &:has(.submenu) .arrowDown-icon-details {
         display: inline-block;
     }
 
-    // Efeitos hover/focus SOMENTE no desktop
     &:hover,
     &:focus-within { 
       @media (min-width: ${theme.breakpoints.lg}) { 
@@ -204,7 +190,7 @@ export const NavbarWrap = styled.div`
             transform: translateY(0);
           }
 
-          // Rotação da seta no hover desktop
+          
           .arrowDown-icon-details { 
             transform: rotate(-180deg);
             transition: transform 0.3s ease-out;
@@ -218,10 +204,8 @@ export const NavbarWrap = styled.div`
        }
     }
   }
-
-  // Estilos do submenu SOMENTE no desktop
+  
   .submenu {
-    // Estilos padrão (aplicados no desktop)
     display: none; 
     opacity: 0; 
     visibility: hidden; 
@@ -235,8 +219,7 @@ export const NavbarWrap = styled.div`
     z-index: 1010; 
     transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.2s ease-in-out;
     transform: translateY(-10px); 
-
-    // Aplica o hover fix SOMENTE no desktop
+   
     @media (min-width: ${theme.breakpoints.lg}) {
         top: calc(100% - 0.5rem); 
         padding-top: 0.8rem; 
