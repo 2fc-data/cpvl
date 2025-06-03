@@ -7,7 +7,7 @@ import {
   hasMinLength
 } from '../../util/validation';
 
-function signupAction(prevFormState: unknown, formData: FormData) {
+function signupAction(_prevFormState: unknown, formData: FormData) {
   const name = formData.get('name');
   const email = formData.get('email');
   const password = formData.get('password');

@@ -12,8 +12,7 @@ import {
   hasMinLength
 } from '../../util/validation';
 
-function loginAction(prevFormState: unknown, formData: FormData) {
-  console.log(prevFormState);
+function loginAction(_prevFormState: unknown, formData: FormData) {
   const email = formData.get('email');
   const password = formData.get('password');
 
