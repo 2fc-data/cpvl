@@ -1,4 +1,4 @@
-import React, { useState } from "react"; // Import React
+import React, { useState, useEffect } from "react"; // Import useEffect
 import { HeaderWrap } from './Header.styles';
 import { FaBuilding } from "react-icons/fa";
 import { FaFilePen } from "react-icons/fa6";
@@ -15,9 +15,12 @@ import { Link } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 import { useDispatch, useSelector } from 'react-redux';
 // Ajuste o caminho para o seu slice menubarSlice
-import { toggleMenubar } from '../../redux/slices/menubarSlice'; 
+// Importa tanto toggle quanto a ação específica de fechar
+import { toggleMenubar, setMenubarClose } from '../../redux/slices/menubarSlice'; 
 // !! IMPORTANTE: Verifique se este caminho para RootState está correto !!
 import { RootState } from '../../redux/store'; 
+// Opcional: Importar o tema se quiser usar o valor do breakpoint dinamicamente
+// import { theme } from '../../styles/theme/theme';
 
 // --- Definições de Tipo --- 
 interface SubmenuItemType {
@@ -85,23 +88,18 @@ const Menu: MenuItemType[] = [
   },
 ];
 
-// Componente auxiliar MenuItem com tipagem explícita nas props
+// Componente auxiliar MenuItem
 const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) => {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
 
-  // CORREÇÃO LINHA 105: Separando handlers para Click e KeyDown
-
-  // Handler para clique (mouse)
   const handleSubmenuClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
     if (isMobile && item.submenu) {
-      e.preventDefault(); // Previne navegação se o item principal tiver link
+      e.preventDefault(); 
       setIsSubmenuOpen(!isSubmenuOpen);
     }
-    // Se não for mobile ou não tiver submenu, o clique não faz nada aqui (navegação normal)
   };
 
-  // Handler para teclado (Enter ou Espaço)
   const handleSubmenuKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     e.stopPropagation();
     if (isMobile && item.submenu) {
@@ -110,10 +108,8 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) 
         setIsSubmenuOpen(!isSubmenuOpen);
       }
     }
-    // Outras teclas não fazem nada aqui
   };
 
-  // Handler para clique em links (fecha menu mobile)
   const handleLinkClick = () => {
     if (isMobile) {
         closeMobileMenu();
@@ -124,7 +120,6 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) 
     return (
       <div
         className={`nav-item ${isMobile && isSubmenuOpen ? 'submenu-open' : ''}`}
-        // Usa os handlers separados
         onClick={handleSubmenuClick} 
         onKeyDown={handleSubmenuKeyDown}
         role="button" 
@@ -144,10 +139,9 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) 
               className="submenu-item"
               key={submenuItem.title}
               onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
-                e.stopPropagation(); // Impede que o clique no link do submenu dispare handlers do pai
-                handleLinkClick(); // Fecha o menu mobile ao clicar em um item do submenu
+                e.stopPropagation(); 
+                handleLinkClick(); 
               }}
-              // Permite fechar com Enter também
               onKeyDown={(e) => { if (e.key === 'Enter') handleLinkClick(); }}
             >
               <span className="submenu-icon">{submenuItem.icon}</span>
@@ -162,8 +156,8 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) 
       <Link
         to={item.link}
         className="nav-item"
-        onClick={handleLinkClick} // Fecha menu mobile ao clicar
-        onKeyDown={(e) => { if (e.key === 'Enter') handleLinkClick(); }} // Fecha com Enter
+        onClick={handleLinkClick} 
+        onKeyDown={(e) => { if (e.key === 'Enter') handleLinkClick(); }}
       >
         <span>{item.icon}</span>
         <span>{item.title}</span>
@@ -172,22 +166,46 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) 
   }
 };
 
+// Componente Principal Header
 export const Header: React.FC = () => { 
-  // CORREÇÃO LINHA 170 (Verificação):
-  // Este seletor está SINTATICAMENTE correto.
-  // Se ainda der erro, o problema é 99% de certeza:
-  // 1. O arquivo store.ts NÃO foi configurado corretamente (veja mensagem anterior).
-  // 2. O tipo RootState importado de '../../redux/store' está incorreto ou o caminho está errado.
   const isMenubarOpen = useSelector((state: RootState) => state.menubar.isMenubarOpen);
   const dispatch = useDispatch();
+
+  // --- LÓGICA DE RESIZE --- 
+  useEffect(() => {
+    const handleResize = () => {
+      // Defina o breakpoint lg. Use o valor do seu tema se possível.
+      // Exemplo: const lgBreakpoint = parseInt(theme.breakpoints.lg, 10);
+      const lgBreakpoint = 992; // Usando valor fixo como exemplo
+
+      if (window.innerWidth >= lgBreakpoint && isMenubarOpen) {
+        // Se a janela for maior/igual a 'lg' E o menu estiver aberto,
+        // despacha a ação para fechar o menu.
+        dispatch(setMenubarClose());
+      }
+    };
+
+    // Adiciona o listener quando o componente monta
+    window.addEventListener('resize', handleResize);
+
+    // Chama uma vez para verificar o estado inicial
+    handleResize();
+
+    // Remove o listener quando o componente desmonta (cleanup)
+    return () => window.removeEventListener('resize', handleResize);
+
+  }, [isMenubarOpen, dispatch]); // Dependências: re-executa se o estado do menu ou dispatch mudarem
+  // --- FIM DA LÓGICA DE RESIZE ---
 
   const handleToggleMenubar = () => {
     dispatch(toggleMenubar());
   };
 
+  // Função explícita para fechar (usada pelo overlay, logo, links)
   const handleCloseMenubar = () => {
     if (isMenubarOpen) {
-      dispatch(toggleMenubar());
+      // Usa a ação específica de fechar para clareza
+      dispatch(setMenubarClose());
     }
   };
 
