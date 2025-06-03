@@ -56,6 +56,7 @@ export const DirectionWrap = styled.div`
   }
 
   .direction-grid-container {
+    animation: slide-up-fade-in 0.6s ease-out forwards;
     background-color: ${theme.colors.white};
     display: grid;
     grid-template-columns: 20% 30% auto;
@@ -65,6 +66,17 @@ export const DirectionWrap = styled.div`
     border-radius: 6px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     min-width: 90%;
+  }
+
+  @keyframes slide-up-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .grid-item-col1 {
@@ -116,7 +128,6 @@ export const DirectionWrap = styled.div`
 
   .direction-block {
     align-items: start;
-    font-family: roboto, sans-serif;    
     display: flex;
     flex-direction: column;
     justify-content: space-around;

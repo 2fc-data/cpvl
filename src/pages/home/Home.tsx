@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
 import { HomeWrap } from "./Home.styles"
+import { useState } from 'react';
 
 export const Home = () => {
 
-  const zoomVariant = {
+  const zoomVariantImg = {
     initial: {
       scale: 1,
     },
@@ -14,23 +15,21 @@ export const Home = () => {
 
   return (
     <HomeWrap>
-      <motion.div className='home-content'
-        initial="hidden"
-        transition={{ duration: 1.2 }}
-        variants={zoomVariant}
+      <motion.div className='home-content'        
+        transition={{ duration: 1 }}
+        variants={zoomVariantImg}
         whileHover="hover"
       >
 
-        <div className="home-title">
+        <motion.div className="home-title">
           Clube Poços-caldense de Vôo Livre
-        </div>
+        </motion.div>
 
-        <div className="home-subtitle">
+        <motion.div className="home-subtitle">
           desde 1995
-        </div>
+        </motion.div>
 
       </motion.div>
-
     </HomeWrap>
   )
 }

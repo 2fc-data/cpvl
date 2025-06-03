@@ -11,6 +11,7 @@ import { MdMenu } from "react-icons/md";
 import Logo from '../../assets/images/logo_cpvl.svg';
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 const Menu = [
   {
@@ -76,6 +77,7 @@ export const Header = () => {
                 </Link>
               ))}
             </div>
+            <IoIosArrowDown size={20} className='arrowDown-icon-details arrowUp-icon-details'/>
           </div>
         );
       } else {

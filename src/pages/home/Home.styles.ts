@@ -12,9 +12,8 @@ export const HomeWrap = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    height: 100VH;
     width: 100%;
-  }
 
   .home-title{
     align-items: center;
@@ -23,7 +22,7 @@ export const HomeWrap = styled.div`
     font-size: 36px;
     font-weight: 800;
     justify-content: center;
-    margin-top: -300px;
+    margin-top: -500px;
 
     padding: 12px 20px;
     text-transform: uppercase;
@@ -52,4 +51,5 @@ export const HomeWrap = styled.div`
     justify-content: center;
     margin-top: 1rem;
   }
+}
 `;

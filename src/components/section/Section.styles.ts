@@ -6,7 +6,7 @@ export const SectionWrap = styled.div`
   background-color: ${theme.colors.skyBlueDark};  
   display: flex;
   justify-content: space-around;
-  margin-top: 0px;
+  margin: 30px 0px;
   padding: 130px 0px;
   width: 100%;
 

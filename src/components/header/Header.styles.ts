@@ -77,8 +77,11 @@ export const HeaderWrap = styled.header`
     min-width: 120px;
     padding: 0.3rem;
     position: relative;
-    transition: ${theme.transitions.easeInOut};
     width: 100%;
+
+    .arrowDown-icon-details {
+      transition: ${theme.transitions.easeInOut};
+    }
 
     ${media.lg`
       justify-content: left;
@@ -88,10 +91,15 @@ export const HeaderWrap = styled.header`
 
     &:hover {      
       border-top: 3px solid ${theme.colors.black};  
-      color: ${theme.colors.black};    
+      color: ${theme.colors.black};
 
       .submenu {
         display: block;
+      }
+
+      .arrowUp-icon-details {
+        transform: rotate(-180deg); 
+        transition: transform 0.3s ease-out;
       }
     }
 
@@ -126,7 +134,7 @@ export const HeaderWrap = styled.header`
 
       &:hover {
         background-color: ${theme.colors.white};
-        color: ${theme.colors.black};      
+        color: ${theme.colors.black}; 
       }
 
 

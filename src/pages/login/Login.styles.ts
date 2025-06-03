@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { media, theme } from "../../styles/theme/theme";
 
 export const LoginWrap = styled.div`
+  
   display: flex;
   justify-content: center;
   width: 100%;
@@ -15,6 +16,7 @@ export const LoginWrap = styled.div`
   `}
 
   .login-form-container {
+    animation: slide-up-fade-in 0.6s ease-out forwards;
     border: 1px solid ${theme.colors.black};
     border-radius: 6px;
     display: flex;
@@ -34,6 +36,17 @@ export const LoginWrap = styled.div`
       margin: 30px auto;
       width: 87%;
     `}
+  }
+
+  @keyframes slide-up-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .login-title {
@@ -71,7 +84,7 @@ export const LoginWrap = styled.div`
       font-size: 12px;
     }
   }
-  
+
   .error {
     border-top: 3px solid ${theme.colors.lightGray};
     margin-top: 10px;

@@ -57,7 +57,6 @@ export const AboutWrap = styled.div`
 
   .about-block {
     align-items: start;
-    font-family: roboto, sans-serif;    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -96,6 +95,7 @@ export const AboutWrap = styled.div`
   
   .about-block-text{
     align-items: center;  
+    animation: slide-up-fade-in 0.6s ease-out forwards;
     background-color: ${theme.colors.white};  
     font-size: .9rem;
     font-weight: 500;
@@ -104,6 +104,17 @@ export const AboutWrap = styled.div`
     padding: 10px 25px;
     text-align: justify;
     width: auto;
+  }
+
+  @keyframes slide-up-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .about-block-img {

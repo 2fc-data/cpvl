@@ -95,6 +95,7 @@ export const StatuteWrap = styled.div`
   
   .statute-block-text{
     align-items: center;  
+    animation: slide-up-fade-in 0.6s ease-out forwards;
     background-color: ${theme.colors.white};  
     font-size: 14px;
     font-weight: 500;
@@ -105,6 +106,17 @@ export const StatuteWrap = styled.div`
     width: auto;
   }
   
+  @keyframes slide-up-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .statute-block-paragraph {
     padding: 10px 60px;
 
