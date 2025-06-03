@@ -1,245 +1,35 @@
-import React, { useState, useEffect } from "react";
-import { HeaderWrap } from './Header.styles';
-import { FaBuilding } from "react-icons/fa";
-import { FaFilePen } from "react-icons/fa6";
-import {
-  MdAirplanemodeActive,
-  MdHome,
-  MdMenuBook,
-  MdParagliding,
-  MdMenu,
-  MdClose
-} from "react-icons/md";
+import React from "react"; // Não precisa mais de useState/useEffect aqui
+import { HeaderWrap } from './Header.styles'; // Importa os estilos simplificados do Header
 import Logo from '../../assets/images/logo_cpvl.svg'; // Verifique se este caminho está correto
 import { Link } from "react-router-dom";
-import { IoIosArrowDown } from "react-icons/io";
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleMenubar, setMenubarClose } from '../../redux/slices/menubarSlice'; 
-import { RootState } from '../../redux/store'; 
+// Importa o novo componente Navbar
+import { Navbar } from "../navbar/Navbar"; // Ajuste o caminho conforme sua estrutura
 
-// --- Definições de Tipo --- 
-interface SubmenuItemType {
-  title: string;
-  icon: React.ReactNode; 
-  link: string;
-}
+// Componente Header simplificado
+export const Header: React.FC = () => {
+  // Toda a lógica de estado (Redux, local), efeitos e handlers de menu
+  // foi movida para o componente Navbar.
 
-interface MenuItemType {
-  title: string;
-  icon: React.ReactNode;
-  link: string;
-  submenu?: SubmenuItemType[]; 
-}
-
-interface MenuItemProps {
-  item: MenuItemType;
-  isMobile: boolean;
-  closeMobileMenu: () => void; 
-}
-// --- Fim das Definições de Tipo ---
-
-const Menu: MenuItemType[] = [
-  {
-    title: " Home",
-    icon: <MdHome size={20} />,
-    link: "/home",
-  },
-  {
-    title: " Sobre",
-    icon: <MdMenuBook size={20} />,
-    link: "/about",
-    submenu: [
-      {
-        title: " Diretoria",
-        icon: <FaBuilding size={20} />,
-        link: "/direction",
-      },
-      {
-        title: " Espaco Aereo",
-        icon: <MdAirplanemodeActive size={20} />,
-        link: "/airspace",
-      },
-      {
-        title: " Estatuto",
-        icon: <MdMenuBook size={20} />,
-        link: "/statute",
-      },
-      {
-        title: " História",
-        icon: <FaFilePen size={20} />,
-        link: "/about",
-      },
-      {
-        title: " Regimento Interno",
-        icon: <MdMenuBook size={20} />,
-        link: "/regiment",
-      },
-    ]
-  },
-  {
-    title: "Associados",
-    icon: <MdParagliding size={20} />,
-    link: "/login",
-  },
-];
-
-// Componente auxiliar MenuItem
-const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) => {
-  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
-
-  const handleSubmenuClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.stopPropagation();
-    if (isMobile && item.submenu) {
-      e.preventDefault(); 
-      setIsSubmenuOpen(!isSubmenuOpen);
-    }
-  };
-
-  const handleSubmenuKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    e.stopPropagation();
-    if (isMobile && item.submenu) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        setIsSubmenuOpen(!isSubmenuOpen);
-      }
-    }
-  };
-
-  const handleAnyLinkClick = (event?: React.MouseEvent<HTMLAnchorElement> | React.KeyboardEvent<HTMLAnchorElement>) => {
-    // Fecha o menu mobile e o acordeão
-    if (isMobile) {
-        if (isSubmenuOpen) {
-            setIsSubmenuOpen(false);
-        }
-        closeMobileMenu();
-    }
-    
-    // **CORREÇÃO DESKTOP (Tentativa 2):** Remove o foco do link clicado IMEDIATAMENTE.
-    if (!isMobile && event && event.currentTarget) {
-        // Remove o setTimeout, chama blur diretamente.
-        (event.currentTarget as HTMLElement).blur(); 
-    }
-  };
-
-  if (item.submenu) {
-    return (
-      <div
-        className={`nav-item ${isMobile && isSubmenuOpen ? 'submenu-open' : ''}`}
-        onClick={handleSubmenuClick} 
-        onKeyDown={handleSubmenuKeyDown}
-        role="button" 
-        tabIndex={0} 
-        aria-haspopup="true"
-        aria-expanded={isMobile ? isSubmenuOpen : undefined}
-      >
-        <span>{item.icon}</span>
-        <span>{item.title}</span>
-        {!isMobile && <IoIosArrowDown size={20} className='arrowDown-icon-details arrowUp-icon-details' />}
-        {isMobile && <IoIosArrowDown size={20} className={`arrowDown-icon-details ${isSubmenuOpen ? 'rotated' : ''}`} />}
-
-        <div className={`submenu ${isMobile && isSubmenuOpen ? 'active' : ''}`}>
-          {item.submenu.map((submenuItem) => (
-            <Link
-              to={submenuItem.link}
-              className="submenu-item"
-              key={submenuItem.title}
-              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
-                e.stopPropagation(); 
-                handleAnyLinkClick(e); 
-              }}
-              onKeyDown={(e) => { if (e.key === 'Enter') handleAnyLinkClick(e); }}
-            >
-              <span className="submenu-icon">{submenuItem.icon}</span>
-              <span>{submenuItem.title}</span>
-            </Link>
-          ))}
-        </div>
-      </div>
-    );
-  } else {
-    return (
-      <Link
-        to={item.link}
-        className="nav-item"
-        onClick={(e) => handleAnyLinkClick(e)} 
-        onKeyDown={(e) => { if (e.key === 'Enter') handleAnyLinkClick(e); }}
-      >
-        <span>{item.icon}</span>
-        <span>{item.title}</span>
-      </Link>
-    );
-  }
-};
-
-// Componente Principal Header
-export const Header: React.FC = () => { 
-  const isMenubarOpen = useSelector((state: RootState) => state.menubar.isMenubarOpen);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const handleResize = () => {
-      const lgBreakpoint = 992; 
-      if (window.innerWidth >= lgBreakpoint && isMenubarOpen) {
-        dispatch(setMenubarClose());
-      }
-    };
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => window.removeEventListener('resize', handleResize);
-  }, [isMenubarOpen, dispatch]); 
-
-  const handleToggleMenubar = () => {
-    dispatch(toggleMenubar());
-  };
-
-  const handleCloseMenubar = () => {
-    if (isMenubarOpen) {
-      dispatch(setMenubarClose());
-    }
-  };
+  // A função handleCloseMenubar agora é gerenciada internamente pelo Navbar,
+  // mas se o logo precisar fechar o menu, o Navbar precisa expor essa função
+  // ou o clique no logo precisa ser tratado de outra forma (ex: via Redux globalmente)
+  // Por simplicidade, vamos assumir que o clique no logo não precisa mais fechar o menu,
+  // ou que essa lógica será adicionada ao Navbar se necessário.
 
   return (
-    <HeaderWrap>
-      <div
-        className={`overlay ${isMenubarOpen ? 'active' : ''}`}
-        onClick={handleCloseMenubar}
-        aria-hidden={!isMenubarOpen} 
-      />
-
+    <HeaderWrap> 
       <div className="header-container">
+        {/* Seção do Logo permanece no Header */}
         <div className="logo-section">
-          <Link to="/" className="logo" onClick={handleCloseMenubar}>
+          {/* O onClick que fechava o menu foi removido daqui, pois a lógica está no Navbar */}
+          <Link to="/" className="logo">
             <img src={Logo} alt="CPVL Logo" />
           </Link>
         </div>
 
-        <nav className="nav-menu" aria-label="Menu Principal">
-          {Menu.map((menuItem) => (
-            <MenuItem key={menuItem.title} item={menuItem} isMobile={false} closeMobileMenu={() => {}} />
-          ))}
-        </nav>
+        {/* Renderiza o componente Navbar, que agora contém toda a navegação */}
+        <Navbar />
 
-        <button
-          className="mobile-menu-btn"
-          onClick={handleToggleMenubar} 
-          aria-label={isMenubarOpen ? "Fechar menu" : "Abrir menu"}
-          aria-expanded={isMenubarOpen}
-          aria-controls="mobile-menu-nav" 
-        >
-          {isMenubarOpen ? <MdClose size={36} /> : <MdMenu size={36} />}
-        </button>
-
-        <div
-          id="mobile-menu-nav" 
-          className={`mobile-menu ${isMenubarOpen ? 'active' : ''}`}
-          aria-hidden={!isMenubarOpen}
-        >
-          <nav aria-label="Menu Mobile">
-            {Menu.map((menuItem) => (
-              <MenuItem key={menuItem.title} item={menuItem} isMobile={true} closeMobileMenu={handleCloseMenubar} />
-            ))}
-          </nav>
-        </div>
       </div>
     </HeaderWrap>
   );
