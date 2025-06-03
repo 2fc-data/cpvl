@@ -76,7 +76,7 @@ export const Signup = () => {
           <div className="form-group">
             <label htmlFor="name">Nome completo:</label>
             <input
-              defaultValue={formState.enteredValues?.name}
+              defaultValue={formState.enteredValues?.name?.toString()}
               id="name"
               name="name"
               placeholder="Nome completo"
@@ -88,7 +88,7 @@ export const Signup = () => {
             <label htmlFor="email">E-mail:</label>
             <input
               autoComplete="username"
-              defaultValue={formState.enteredValues?.email}
+              defaultValue={formState.enteredValues?.email?.toString()}
               id="email"
               name="email"
               placeholder="E-mail válido"
@@ -100,7 +100,7 @@ export const Signup = () => {
             <label htmlFor="password">Senha:</label>
             <input
               autoComplete="new-password"
-              defaultValue={formState.enteredValues?.password}
+              defaultValue={formState.enteredValues?.password?.toString()}
               id="password"
               name="password"
               placeholder="Mínimo 6 caracteres"
@@ -112,7 +112,7 @@ export const Signup = () => {
             <label htmlFor="confirmpassword">Confirme a senha:</label>
             <input
               autoComplete="confirm-new-password"
-              defaultValue={formState.enteredValues?.confirmPassword}
+              defaultValue={formState.enteredValues?.confirmPassword?.toString()}
               id="confirmPassword"
               name="confirmPassword"
               placeholder="Confirme a senha"
@@ -123,7 +123,7 @@ export const Signup = () => {
 
           <div className="form-group">
             <input
-              defaultChecked={formState.enteredValues?.agreeStatute}
+              defaultChecked={Boolean(formState.enteredValues?.agreeStatute)}
               id="agreeStatute"
               name="agreeStatute"
               type="checkbox"
@@ -133,7 +133,7 @@ export const Signup = () => {
 
           <div className="form-group">
             <input
-              defaultChecked={formState.enteredValues?.agreeRegimentoInterno}
+              defaultChecked={Boolean(formState.enteredValues?.agreeRegimentoInterno)}
               id="agreeRegimentoInterno"
               name="agreeRegimentoInterno"
               type="checkbox"
