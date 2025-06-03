@@ -72,7 +72,7 @@ export const Login = () => {
             <label>E-mail:</label>
             <input
               autoComplete='username'
-              defaultValue={formState.enteredValues?.email}
+              defaultValue={formState.enteredValues?.email?.toString()}
               id="email"
               name="email"
               placeholder="Seu e-mail"
@@ -84,7 +84,7 @@ export const Login = () => {
             <label>Senha:</label>
             <input
               autoComplete='current-password'
-              defaultValue={formState.enteredValues?.password}
+              defaultValue={formState.enteredValues?.password?.toString()}
               id="password"
               name="password"
               placeholder="Mínimo 6 caracteres"
