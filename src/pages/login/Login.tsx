@@ -9,11 +9,11 @@ import { LoginWrap } from './Login.styles';
 import {
   isEmail,
   isNotEmpty,
-  isEqualToOtherValue,
   hasMinLength
 } from '../../util/validation';
 
 function loginAction(prevFormState: unknown, formData: FormData) {
+  console.log(prevFormState);
   const email = formData.get('email');
   const password = formData.get('password');
 
