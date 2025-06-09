@@ -6,6 +6,7 @@ import { media, theme } from "../../styles/theme/theme"; // Verifique se este ca
 export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
   // --- LÓGICA DE VISIBILIDADE --- 
 
+  // Estilos base do .nav-item (aplicados principalmente no desktop)
   // Menu Desktop (Visível > lg)
   .nav-menu {
     align-items: center;
@@ -17,160 +18,6 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
     `}
   }
 
-  // Botão Mobile (Visível <= lg)
-  .mobile-menu-btn {
-    background: none;
-    border: none;
-    color: ${theme.colors.primary}; 
-    cursor: pointer;
-    display: none; // Escondido por padrão (telas > lg)
-    font-size: 1.5rem; 
-    padding: 0.5rem; 
-    z-index: 1051; // Acima do overlay e menu
-    position: relative; // Posição padrão
-    top: auto; // Reseta top
-    right: auto; // Reseta right
-
-    ${media.lg`
-      display: block; // VISÍVEL em telas <= lg
-
-      // **CORREÇÃO BOTÃO X:** Aplica position: fixed QUANDO o menu está aberto
-      ${({ $isMenubarOpen }) =>
-        $isMenubarOpen &&
-        css`
-          position: fixed;
-          top: 1.5rem; // Ajuste conforme necessário para alinhar com o header
-          right: 35px; // Ajuste conforme a margem do header-container
-          // Garante que a cor seja visível sobre o fundo branco do menu
-          color: ${theme.colors.primary}; 
-        `}
-    `}
-  }
-
-  // Container Mobile (Visível e funcional <= lg)
-  .mobile-menu {
-    display: none; 
-    
-    ${media.lg` 
-      display: block; 
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: ${theme.colors.white}; 
-      padding: 6rem 1rem 1rem 1rem; 
-      transform: translateX(-100%); 
-      transition: transform 0.3s ease-in-out;
-      overflow-y: auto; 
-      z-index: 1050; 
-
-      &.active {
-        transform: translateX(0); 
-      }
-
-      // Estilos do .nav-item DENTRO do mobile-menu
-      .nav-item {
-        display: block; 
-        width: 100%;
-        text-align: left;
-        padding: 1rem 1.5rem; 
-        margin-bottom: 0; 
-        border-top: none; 
-        border-bottom: 1px solid ${theme.colors.primary}; 
-        color: ${theme.colors.primary}; 
-        font-weight: 500;
-        cursor: pointer; 
-        position: static; 
-
-        &:hover,
-        &:focus {
-          background-color: ${theme.colors.primary}; 
-          color: ${theme.colors.white};
-          border-top: none; 
-        }
-
-        &:last-child {
-          border-bottom: none;
-        }
-
-        .arrowDown-icon-details {
-          display: inline-block; 
-          transition: transform 0.3s ease-out;
-          &.rotated {
-             transform: rotate(-180deg);
-          }
-        }
-        .arrowUp-icon-details { 
-             display: none; 
-        }
-      }
-
-      // Estilos do .submenu DENTRO do mobile-menu
-      .submenu {
-        position: static; 
-        display: none; 
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        padding: 0.5rem 0 0.5rem 1.5rem; 
-        background-color: transparent;
-        transition: none; 
-        border-top: 1px solid ${theme.colors.primary}; 
-        margin-left: -1.5rem; 
-        margin-right: -1.5rem;
-        border-radius: 0; 
-        min-width: auto; 
-
-        &.active { 
-           display: block;
-        }
-
-        .submenu-item {
-          padding: 0.75rem 1.5rem; 
-          border: none;
-          color: ${theme.colors.primary}; 
-          display: flex; 
-          gap: 0.5rem;
-          white-space: nowrap;
-
-          &:hover,
-          &:focus {
-            background-color: transparent; 
-            color: ${theme.colors.primary}; 
-          }
-        }
-      }
-    `}
-  }
-
-  // Overlay (Visível e funcional <= lg quando ativo)
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1040; 
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    display: none; 
-
-    ${media.lg` 
-      &.active {
-        display: block; 
-        opacity: 1;
-        visibility: visible;
-      }
-    `}
-  }
-
-  // --- Estilos Desktop (> lg) --- 
-
-  // Estilos base do .nav-item (aplicados principalmente no desktop)
   .nav-item {
     align-items: center;
     border-radius: 3px;
@@ -239,6 +86,7 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
     background-color: ${theme.colors.white};
     border-radius: 6px;
     box-shadow: 0 2px 3px ${theme.colors.primary};
+    color: ${theme.colors.primary};
     min-width: 200px;
     padding: 0.5rem 0;
     z-index: 1010; 
@@ -277,5 +125,153 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
         justify-content: center;
       }
     }
+  }
+
+
+  // Botão Mobile (Visível <= lg)
+  .mobile-menu-btn {
+    background: none;
+    border: none;
+    color: ${theme.colors.primary}; 
+    cursor: pointer;
+    display: none; 
+    font-size: 1.5rem; 
+    padding: 0.5rem; 
+    z-index: 1051; // Acima do overlay e menu
+    position: relative; // Posição padrão
+    top: auto; 
+    right: auto; 
+
+    ${media.lg`
+      display: block; // VISÍVEL em telas <= lg
+      
+      ${({ $isMenubarOpen }: { $isMenubarOpen?: boolean }) =>
+        $isMenubarOpen &&
+        css`
+          position: fixed;
+          top: 1.5rem; 
+          right: 35px;           
+          color: ${theme.colors.primary}; 
+        `}
+    `}
+  }
+
+  // Container Mobile (Visível e funcional <= lg)
+  .mobile-menu {
+    display: none; 
+    
+    ${media.lg` 
+      background-color: ${theme.colors.white}; 
+      display: block;
+      height: 100%;
+      left: 0;      
+      overflow-y: auto; 
+      padding: 9rem 1rem 1rem 1rem; 
+      position: fixed;
+      top: 0;
+      transform: translateX(-100%); 
+      transition: transform 0.3s ease-in-out;
+      width: 100%;
+      z-index: 1050; 
+
+      &.active {
+        transform: translateX(0); 
+      }
+
+      // Estilos do .nav-item DENTRO do mobile-menu
+      .nav-item {
+        display: block; 
+        width: 100%;
+        text-align: left;
+        padding: 1.5rem 1.5rem; 
+        margin-bottom: 0; 
+        border-top: none; 
+        border-bottom: 3px solid ${theme.colors.primary}; 
+        color: ${theme.colors.primary}; 
+        font-weight: 500;
+        cursor: pointer; 
+        position: static; 
+
+        &:hover,
+        &:focus {
+          background-color: ${theme.colors.white}; 
+          color: ${theme.colors.primary};
+          border-top: none; 
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .arrowDown-icon-details {
+          display: inline-block; 
+          transition: transform 0.3s ease-out;
+          &.rotated {
+             transform: rotate(-180deg);
+          }
+        }
+        .arrowUp-icon-details { 
+             display: none; 
+        }
+      }
+
+      // Estilos do .submenu DENTRO do mobile-menu
+      .submenu {
+        position: static;        
+        border-radius: 0; 
+        box-shadow: none;
+        display: none; 
+        margin-left: -1.5rem; 
+        margin-right: -1.5rem;
+        min-width: auto; 
+        opacity: 1;
+        padding: 0.5rem 0 0.5rem 1.5rem; 
+        transform: none;
+        transition: none; 
+        visibility: visible;
+
+        &.active { 
+           display: block;
+        }
+
+        .submenu-item {
+          padding: 1rem 1.5rem; 
+          border-top: 3px solid transparent; 
+          color: ${theme.colors.primary}; 
+          display: flex; 
+          gap: 0.5rem;
+          white-space: nowrap;
+
+          &:hover,
+          &:focus {
+            border-top: 3px solid ${theme.colors.primary};
+            color: ${theme.colors.primary}; 
+          }
+        }
+      }
+    `}
+  }
+
+  // Overlay (Visível e funcional <= lg quando ativo)
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040; 
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    display: none; 
+
+    ${media.lg` 
+      &.active {
+        display: block; 
+        opacity: 1;
+        visibility: visible;
+      }
+    `}
   }
 `;

@@ -26,8 +26,8 @@ export const HeaderWrap = styled.header`
     z-index: 1052; 
 
     .logo {
-      width: 120px;
-      height: 54px;
+      width: 180px;
+      height: 114px;
       display: block; 
 
       img {

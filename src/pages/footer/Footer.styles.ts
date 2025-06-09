@@ -37,7 +37,7 @@ export const FooterWrap = styled.div`
   .footer-block {
     align-items: center;
     border-radius: 6px;
-    color: ${theme.colors.whiteLight};
+    color: ${theme.colors.secondary};
     display: flex-wrap;
     justify-content: center;
     line-height: 2;
@@ -53,7 +53,7 @@ export const FooterWrap = styled.div`
   }
 
   .footer-title {
-    border-bottom: 3px solid ${theme.colors.whiteLight};    
+    border-bottom: 3px solid ${theme.colors.secondary};    
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 30px;    
@@ -65,8 +65,8 @@ export const FooterWrap = styled.div`
   }
 
   .footer-link {
-    border-bottom: 1px solid ${theme.colors.whiteLight};
-    color: ${theme.colors.whiteLight};
+    border-bottom: 1px solid ${theme.colors.secondary};
+    color: ${theme.colors.secondary};
     font-weight: 600;
     margin-top: 10px;
     padding-left: 10px;
@@ -78,7 +78,7 @@ export const FooterWrap = styled.div`
 
     &:hover {
       background-color: ${theme.colors.whiteLight};
-      color: ${theme.colors.earthLight};
+      color: ${theme.colors.secondary};
       border-radius: 3px;
     }
   }
