@@ -40,7 +40,7 @@ export const AirspaceWrap = styled.div`
     background-color: ${theme.colors.white};
     display: flex;
     min-height: 10vh;
-    justify-content: space-around;
+    justify-content: center;
     margin: 90px 0;
     width: 100%;
 
@@ -83,7 +83,7 @@ export const AirspaceWrap = styled.div`
 
   .airspace-block-title {
     align-items: center;
-    color: ${theme.colors.black};
+    color: ${theme.colors.primary};
     display: flex; 
     font-size: 3rem;
     font-weight: 500;      
@@ -95,7 +95,7 @@ export const AirspaceWrap = styled.div`
   .airspace-block-text{
     align-items: center;
     animation: slide-up-fade-in 0.6s ease-out forwards;
-    background-color: ${theme.colors.white};  
+    color: ${theme.colors.text};
     font-size: 14px;
     font-weight: 500;
     justify-content: center;
@@ -132,15 +132,15 @@ export const AirspaceWrap = styled.div`
     align-items: center;
     display: flex;
     background-color: ${theme.colors.white};
-    border: 1px solid ${theme.colors.black};
+    border: 1px solid ${theme.colors.secondary};
     border-radius: 6px;
-    color: ${theme.colors.lightBlack};
+    color: ${theme.colors.secondary};
     justify-content: center;
     padding: 3px 9px ;
     width: 135px;
 
     &:hover {
-      background-color: ${theme.colors.black};
+      background-color: ${theme.colors.secondary};
       border: 1px solid ${theme.colors.white};
       border-radius: 6px;
       color: ${theme.colors.white};

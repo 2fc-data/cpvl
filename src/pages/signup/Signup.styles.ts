@@ -16,7 +16,7 @@ export const SignupWrap = styled.div`
 
   .signup-form-container {
     animation: slide-up-fade-in 0.6s ease-out forwards;
-    border: 1px solid ${theme.colors.black};
+    border: 1px solid ${theme.colors.primary};
     border-radius: 6px;
     display: flex;
     flex-direction: column;
@@ -67,7 +67,7 @@ export const SignupWrap = styled.div`
     input[type='text'],
     input[type='password'] {
       padding: 10px;
-      border: 1px solid ${theme.colors.lightBlack};
+      border: 1px solid ${theme.colors.secondary};
       border-radius: 6px;
       font-size: 16px;
     }
@@ -79,17 +79,17 @@ export const SignupWrap = styled.div`
     }
 
     span {
-      color: ${theme.colors.lightBlack};
+      color: ${theme.colors.text};
       font-size: 12px;
     }
   }
 
   .error {
-    border-top: 3px solid ${theme.colors.lightGray};
+    border-top: 3px solid ${theme.colors.secondary};
     margin-top: 10px;
     font-size: 14px;
     font-weight: 600;
-    color: ${theme.colors.lightGray};
+    color: ${theme.colors.text};
   }
 
   .error ul {
@@ -108,15 +108,15 @@ export const SignupWrap = styled.div`
   .button {
     padding: 10px;
     background-color: ${theme.colors.white};
-    border: 1px solid ${theme.colors.black};
-    color: ${theme.colors.lightBlack};
+    border: 1px solid ${theme.colors.secondary};
+    color: ${theme.colors.secondary};
     border-radius: 6px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: ${theme.colors.black};
+      background-color: ${theme.colors.secondary};
       color: ${theme.colors.white};
     }
   }

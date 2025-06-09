@@ -3,7 +3,7 @@ import { media, theme } from "../../styles/theme/theme";
 
 export const SectionWrap = styled.div`
   align-items: center;
-  background-color: ${theme.colors.skyBlueDark};  
+  background-color: ${theme.colors.primary}; 
   display: flex;
   justify-content: space-around;
   margin: 30px 0px;
@@ -29,7 +29,7 @@ export const SectionWrap = styled.div`
     align-items: center;
     background-color: ${theme.colors.white};  
     border-radius: 6px;
-    box-shadow: 0px 3px 6px rgba(243, 238, 238, 0.3);
+    box-shadow: 3px 3px 9px ${theme.colors.primary};
     display: flex-wrap;
     justify-content: center;
     min-height: 345px;
@@ -53,8 +53,8 @@ export const SectionWrap = styled.div`
 
   .section-title {
     display: flex;
-    border-bottom: 3px solid ${theme.colors.lightBlack};
-    color: ${theme.colors.black};
+    border-bottom: 3px solid ${theme.colors.secondary};
+    color: ${theme.colors.primary};
     font-size: 16px;
     font-weight: 700;
     justify-content: center;
@@ -63,7 +63,7 @@ export const SectionWrap = styled.div`
   }
 
   .section-description {
-    color: ${theme.colors.lightBlack};
+    color: ${theme.colors.text};
     padding: 15px 0;
     font-size: 14px;
     font-weight: 500;
@@ -84,16 +84,16 @@ export const SectionWrap = styled.div`
     bottom: 0;
     display: flex;
     background-color: ${theme.colors.white};
-    border: 1px solid ${theme.colors.black};
+    border: 1px solid ${theme.colors.secondary};
     border-radius: 6px;
-    color: ${theme.colors.lightBlack};
+    color: ${theme.colors.secondary};
     justify-content: center;
     margin-top: 5px;
     padding: 5px 5px ;
     width: 100%;
 
     &:hover {
-      background-color: ${theme.colors.black};
+      background-color: ${theme.colors.secondary};
       border: 1px solid ${theme.colors.white};
       border-radius: 6px;
       color: ${theme.colors.white};

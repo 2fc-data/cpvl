@@ -39,7 +39,7 @@ export const AboutWrap = styled.div`
 
   .about-section{
     align-items: center;
-    background-color: ${theme.colors.white};
+    /* background-color: ${theme.colors.white}; */
     display: flex;
     min-height: 10vh;
     justify-content: space-around;
@@ -75,7 +75,7 @@ export const AboutWrap = styled.div`
 
   .about-block-title {
     align-items: center;
-    color: ${theme.colors.black};
+    color: ${theme.colors.primary};
     display: flex; 
     font-size: 3rem;
     font-weight: 500;    
@@ -96,7 +96,7 @@ export const AboutWrap = styled.div`
   .about-block-text{
     align-items: center;  
     animation: slide-up-fade-in 0.6s ease-out forwards;
-    background-color: ${theme.colors.white};  
+    color: ${theme.colors.black};  
     font-size: .9rem;
     font-weight: 500;
     justify-content: center;
@@ -118,7 +118,7 @@ export const AboutWrap = styled.div`
   }
 
   .about-block-img {
-    align-items: center;
+    align-items: center;   
     background-image: url(${image_paulo_sergio});
     background-position: center;
     background-size: cover;    
@@ -143,7 +143,7 @@ export const AboutWrap = styled.div`
     background-color: ${theme.colors.white};
     border: 1px solid ${theme.colors.black};
     border-radius: 6px;
-    color: ${theme.colors.black};
+    color: ${theme.colors.secondary};
     justify-content: center;
     padding: 9px 9px ;
     width: 135px;

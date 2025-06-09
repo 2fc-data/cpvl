@@ -4,28 +4,38 @@ import type { DefaultTheme } from "styled-components";
 declare module "styled-components" {
   export interface DefaultTheme {
     colors: {
+      danger: string;
+      info: string;
       primary: string;
       secondary: string;
-      skyBlue: string;
-      skyBlueDark: string;
-      forestGreen: string;
-      lightGreen: string;
-      darkGray: string;
-      lightGray: string;
-      lightWhite: string;
+      success: string;
+      warning: string;
+
+      blue: string;
+      blueDark: string;
+      blueLight: string;
+      
+      earth: string;
+      earthDark: string;
+      earthLight: string;
+
+      oliva: string;
+      olivaDark: string;
+      olivaLight: string;
+
       white: string;
+      whiteLight: string;
       black: string;
-      lightBlack: string;
-      background: string;
       text: string;
-      border: string;
     };
+
     typography: {
       fontFamily: string;
       fontSize: string;
       fontWeight: number;
       lineHeight: number;
     };
+
     breakpoints: {
       xs: string;
       sm: string;
@@ -35,6 +45,7 @@ declare module "styled-components" {
       xxl: string;
       xxxl: string;
     };
+    
     transitions: {
       easeInOut: string;
     };
@@ -43,30 +54,40 @@ declare module "styled-components" {
 
 export const theme: DefaultTheme = {
   colors: {
-    primary: "#2B7A78", // Teal green
-    secondary: "#3AAFA9", // Light teal
-    skyBlue: "#17A2B8", // Sky blue
-    skyBlueDark: "#2c517b", // 212d33 // 
-    forestGreen: "#142618", // Deep forest green
-    lightGreen: "#517356", // Light forest green 
-    darkGray: "#8C8C7B", // Dark gray for text
-    lightGray: "#8C8C7B",
-    lightWhite: "rgba(255, 255, 255, 0.6)",
-    white: "#FFFFFF",    
-    black: "#000000",
-    lightBlack: "rgba(37, 37, 37, 0.9)",
-    background: "#F5F5F5",
-    text: "#0D0D0D",
-    border: "#DEF2F1",
+    danger: "rgba(220, 53, 69, 1)",
+    info: "rgba(3, 60, 154, 1)",    
+    primary: "rgba(89, 66, 46, 1)", //buttons, headings, and links.     
+    secondary: "rgba(166, 124, 73, 1)",
+    success: "rgba(0, 92, 83, 1)",
+    warning: "rgba(255, 193, 7, 1)",
+
+    blue: "rgba(127, 178, 240, 1)",
+    blueDark: "rgba(78, 122, 199, 1)",
+    blueLight: "rgba(173, 213, 247, 1)",
+    
+    earth: "rgba(140, 97, 59, 0.6)",
+    earthDark: "rgba(89, 66, 46, 0.3)",
+    earthLight: "rgba(166, 124, 73, 0.3)",
+
+    oliva: "rgba(111, 117, 30, 1)",
+    olivaDark: "rgba(84, 92, 20, 1)",
+    olivaLight: "rgba(203, 214, 135, 0.6)",
+    
+    white: "rgba(255, 255, 255, 1)",
+    whiteLight: "rgba(255, 255, 255, 0.6)",
+
+    black: "rgb(18, 18, 18)",
+    text: "rgb(78, 78, 78)",
   },
+
   typography: {
     // "Atlas Typewriter", "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
-
     fontFamily: `"Atlas Typewriter", "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace, "DM Sans", sans-serif`,
     fontSize: "14px",
     fontWeight: 400,
     lineHeight: 1.6,
   },
+
   breakpoints: {
     xs: "480px",
     sm: "576px",
@@ -76,8 +97,9 @@ export const theme: DefaultTheme = {
     xxl: "1440px",
     xxxl: "1600px",
   },
+
   transitions: {
-    easeInOut: "all 0.3s ease-in-out",
+    easeInOut: "all 0.3s ease-in-out",    
   },
 };
 

@@ -50,6 +50,7 @@ export const LoginWrap = styled.div`
   }
 
   .login-title {
+    color: ${theme.colors.primary};
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -68,7 +69,7 @@ export const LoginWrap = styled.div`
     input[type='text'],
     input[type='password'] {
       padding: 10px;
-      border: 1px solid ${theme.colors.black};
+      border: 1px solid ${theme.colors.secondary};
       border-radius: 6px;
       font-size: 16px;
     }
@@ -80,17 +81,17 @@ export const LoginWrap = styled.div`
     }
 
     span {
-      color: ${theme.colors.lightGreen};
+      color: ${theme.colors.text};
       font-size: 12px;
     }
   }
 
   .error {
-    border-top: 3px solid ${theme.colors.lightGray};
+    border-top: 3px solid ${theme.colors.warning};
     margin-top: 10px;
     font-size: 14px;
     font-weight: 600;
-    color: ${theme.colors.lightGray};
+    color: ${theme.colors.warning};
   }
 
   .error ul {
@@ -109,15 +110,15 @@ export const LoginWrap = styled.div`
   .button {
     padding: 10px;
     background-color: ${theme.colors.white};
-    border: 1px solid ${theme.colors.black};
-    color: ${theme.colors.lightBlack};
+    border: 1px solid ${theme.colors.secondary};
+    color: ${theme.colors.primary};
     border-radius: 6px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: ${theme.colors.black};
+      background-color: ${theme.colors.secondary};
       color: ${theme.colors.white};
     }
   }

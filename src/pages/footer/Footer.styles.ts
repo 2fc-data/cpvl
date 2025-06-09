@@ -1,57 +1,59 @@
 import styled from "styled-components";
 import { media, theme } from "../../styles/theme/theme";
-import footerBg from "../../assets/images/footerBg.jpg";
-
 
 export const FooterWrap = styled.div`
   align-items: center;  
-  background-image: url(${footerBg});
-  background-size: cover;
-  background-position: center;
+  background-color: ${theme.colors.earthLight};
   bottom: 0;
   display: flex;
   justify-content: space-around;
   margin-top: 0px;
-  padding: 130px 10px;
+  padding: 60px 10px;
   width: 100%;
 
-  ${media.lg`
-    display: flex-wrap;
-    flex-direction: column;
-    padding: 45px 9px;
-    text-align: center;
-  `}
+  .wrap {
+    align-items: center;
+    display: flex;    
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
 
-  ${media.md`
-    display: flex-wrap;
-    flex-direction: column;
-    margin-top: 0px;
-    padding: 30px 9px;
-    text-align: center;
-  `}
+    ${media.lg`
+      display: flex-wrap;
+      flex-direction: column;
+      padding: 30px 9px;
+      text-align: center;
+    `}
+
+    ${media.md`
+      display: flex-wrap;
+      flex-direction: column;
+      margin-top: 0px;
+      padding: 30px 9px;
+      text-align: center;
+    `}
+  }
 
   .footer-block {
     align-items: center;
-    background-color: ${theme.colors.lightWhite};
     border-radius: 6px;
-    color: ${theme.colors.lightBlack};
+    color: ${theme.colors.whiteLight};
     display: flex-wrap;
-    justify-content: lcenter;
+    justify-content: center;
     line-height: 2;
-    margin: 20px 10px;
+    margin: 20px 25px;
     min-height: 345px;
-    padding: 20px 10px;    
-    width: 300px;
+    padding: 20px 5px;    
+    width: 270px;
 
     ${media.lg`
       padding: 15px 12px;
       width: 90%;
     `}
-
   }
 
   .footer-title {
-    border-bottom: 3px solid ${theme.colors.lightBlack};
+    border-bottom: 3px solid ${theme.colors.whiteLight};    
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 30px;    
@@ -63,7 +65,8 @@ export const FooterWrap = styled.div`
   }
 
   .footer-link {
-    border-bottom: 1px solid ${theme.colors.black};    
+    border-bottom: 1px solid ${theme.colors.whiteLight};
+    color: ${theme.colors.whiteLight};
     font-weight: 600;
     margin-top: 10px;
     padding-left: 10px;
@@ -74,8 +77,8 @@ export const FooterWrap = styled.div`
     `}
 
     &:hover {
-      background-color: ${theme.colors.black};
-      color: ${theme.colors.white};
+      background-color: ${theme.colors.whiteLight};
+      color: ${theme.colors.earthLight};
       border-radius: 3px;
     }
   }

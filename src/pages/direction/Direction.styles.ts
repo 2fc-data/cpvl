@@ -38,7 +38,7 @@ export const DirectionWrap = styled.div`
 
   .direction-section{
     align-items: center;    
-    background-color: ${theme.colors.white};
+    /* background-color: ${theme.colors.olivaDark}; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -58,10 +58,11 @@ export const DirectionWrap = styled.div`
   .direction-grid-container {
     animation: slide-up-fade-in 0.6s ease-out forwards;
     background-color: ${theme.colors.white};
+    color: ${theme.colors.text};
     display: grid;
     grid-template-columns: 20% 30% auto;
     column-gap: 25px;
-    margin: 15px;
+    margin: 20px;
     padding: 20px;
     border-radius: 6px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
