@@ -1,6 +1,6 @@
 import React from "react";
 import { HeaderWrap } from './Header.styles';
-import Logo from '../../assets/images/logo_cpvl.svg';
+import Logo from '../../assets/images/cpvlLogoVet1.png';
 import { Link } from "react-router-dom";
 
 import { Navbar } from "../navbar/Navbar";

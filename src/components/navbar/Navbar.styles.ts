@@ -10,8 +10,11 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
   // Menu Desktop (Visível > lg)
   .nav-menu {
     align-items: center;
+    background-color: ${theme.colors.whiteLight};
+    border-radius: 6px;
     display: flex; 
     gap: 1.5rem;
+    padding: 0 1rem;
 
     ${media.lg`
       display: none; 
@@ -130,13 +133,13 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
 
   // Botão Mobile (Visível <= lg)
   .mobile-menu-btn {
-    background: none;
-    border: none;
+    background-color: ${theme.colors.whiteLight};
+    border-radius: 6px;
     color: ${theme.colors.primary}; 
     cursor: pointer;
     display: none; 
     font-size: 1.5rem; 
-    padding: 0.5rem; 
+    padding: 0 0.3rem; 
     z-index: 1051; // Acima do overlay e menu
     position: relative; // Posição padrão
     top: auto; 

@@ -14,7 +14,7 @@ export const HeaderWrap = styled.header`
     align-items: center;
     display: flex;
     justify-content: space-between;
-    margin: 0 35px; // Usar variáveis de tema
+    margin: 0 45px; // Usar variáveis de tema
   }
 
   .logo-section {
@@ -26,9 +26,14 @@ export const HeaderWrap = styled.header`
     z-index: 1052; 
 
     .logo {
-      width: 180px;
-      height: 114px;
+      width: 200px;
+      height: 134px;
       display: block; 
+
+      ${media.lg`
+        width: 160px;
+        height: 84px;
+      `}
 
       img {
         border: none;

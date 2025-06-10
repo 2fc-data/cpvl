@@ -11,8 +11,9 @@ export const HomeWrap = styled.div`
     background-position: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     height: 100VH;
+    justify-content: center;
+    margin-top: -11rem;
     width: 100%;
 
   .home-title{
