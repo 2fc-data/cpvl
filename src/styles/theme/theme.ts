@@ -19,6 +19,10 @@ declare module "styled-components" {
       earthDark: string;
       earthLight: string;
 
+      green: string;
+      greenDark: string;
+      greenLight: string;
+      
       oliva: string;
       olivaDark: string;
       olivaLight: string;
@@ -61,13 +65,17 @@ export const theme: DefaultTheme = {
     success: "rgba(0, 92, 83, 1)",
     warning: "rgba(255, 193, 7, 1)",
 
-    blue: "rgba(127, 178, 240, 1)",
-    blueDark: "rgba(78, 122, 199, 1)",
-    blueLight: "rgba(173, 213, 247, 1)",
+    blue: "rgba(0, 90, 169, 0.66)",
+    blueDark: "rgba(0, 71, 133, 0.52)",
+    blueLight: "rgba(0, 133, 228, 0.89)",
     
     earth: "rgba(140, 97, 59, 0.6)",
     earthDark: "rgba(89, 66, 46, 0.3)",
     earthLight: "rgba(166, 124, 73, 0.3)",
+
+    green: "rgba(0, 166, 80, 0.65)",
+    greenDark: "rgba(0, 130, 63, 0.51)",
+    greenLight: "rgba(72, 217, 134, 0.85)",
 
     oliva: "rgba(111, 117, 30, 1)",
     olivaDark: "rgba(84, 92, 20, 1)",
