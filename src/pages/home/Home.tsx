@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { HomeWrap } from "./Home.styles"
+// import { HorizontalScroll } from "../../components/horizontalScroll"
 
 export const Home = () => {
 
@@ -27,8 +28,9 @@ export const Home = () => {
         <motion.div className="home-subtitle">
           desde 1995
         </motion.div>
-
       </motion.div>
+
+      {/* <HorizontalScroll /> */}
     </HomeWrap>
   )
 }
