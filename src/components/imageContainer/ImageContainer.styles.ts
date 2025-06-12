@@ -2,9 +2,12 @@ import styled from "styled-components";
 import { theme } from "../../styles/theme/theme";
 
 export const ImageContainerWrap = styled.div`
-  height: auto;
-  width: clamp(6rem, 60rem, 60rem);
+  background-color: ${theme.colors.secondary}; 
+  height: clamp(4rem, 50rem, 20rem);
+  padding: 0.6rem;
+  width: clamp(6rem, 50rem, 20rem);
 `;
+
 
 export const ImageDescription = styled.div`
   color: ${theme.colors.white};
@@ -13,4 +16,3 @@ export const ImageDescription = styled.div`
   margin-top: -9rem;
   text-align: center;
 `;
-

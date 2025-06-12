@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../styles/theme/theme";
 
 export const HorizontalScrollWrap = styled.div`
-  height: 50vh;
+  /* height: 100%; */
   margin-top: 25px;
 `;
 
@@ -21,6 +21,4 @@ export const Images = styled.div`
   gap: 9rem;
 `;
 
-export const ImagesItem = styled.div`  
-  margin-right: 1rem;
-`;
+

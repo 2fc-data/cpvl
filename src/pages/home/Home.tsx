@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { HomeWrap } from "./Home.styles"
-// import { HorizontalScroll } from "../../components/horizontalScroll"
+import { HorizontalScroll } from "../../components/horizontalScroll"
 
 export const Home = () => {
 
@@ -30,7 +30,7 @@ export const Home = () => {
         </motion.div>
       </motion.div>
 
-      {/* <HorizontalScroll /> */}
+      <HorizontalScroll />
     </HomeWrap>
   )
 }
