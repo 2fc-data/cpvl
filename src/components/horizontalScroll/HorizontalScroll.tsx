@@ -6,7 +6,6 @@ import {
   HorizontalScrollWrap,
   ContentContainer,
   Images,
-  ImagesItem
 } from "./HorizontalScroll.styles";
 
 import img_01 from '../../assets/images/carousel/hero_01.jpg';
