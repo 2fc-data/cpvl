@@ -3,7 +3,7 @@ import { media, theme } from "../../styles/theme/theme";
 
 export const FooterWrap = styled.div`
   align-items: center;  
-  background-color: ${theme.colors.earthLight};
+  background-color: ${theme.colors.secondary};
   bottom: 0;
   display: flex;
   justify-content: space-around;
@@ -37,7 +37,7 @@ export const FooterWrap = styled.div`
   .footer-block {
     align-items: center;
     border-radius: 6px;
-    color: ${theme.colors.secondary};
+    color: ${theme.colors.white};
     display: flex-wrap;
     justify-content: center;
     line-height: 2;
@@ -53,7 +53,7 @@ export const FooterWrap = styled.div`
   }
 
   .footer-title {
-    border-bottom: 3px solid ${theme.colors.secondary};    
+    border-bottom: 3px solid ${theme.colors.white};    
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 30px;    
@@ -65,8 +65,8 @@ export const FooterWrap = styled.div`
   }
 
   .footer-link {
-    border-bottom: 1px solid ${theme.colors.secondary};
-    color: ${theme.colors.secondary};
+    border-bottom: 1px solid ${theme.colors.whiteLight};
+    color: ${theme.colors.white};
     font-weight: 600;
     margin-top: 10px;
     padding-left: 10px;
@@ -77,7 +77,7 @@ export const FooterWrap = styled.div`
     `}
 
     &:hover {
-      background-color: ${theme.colors.whiteLight};
+      background-color: ${theme.colors.white};
       color: ${theme.colors.secondary};
       border-radius: 3px;
     }
