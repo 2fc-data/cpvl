@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { SectionWrap } from "./Section.styles";
 
 export const Section = () => {
@@ -9,7 +10,7 @@ export const Section = () => {
           Desde 1986, o Código Brasileiro de Aeronáutica estabelece que o aerodesporto deverá ser praticado em áreas determinadas pela autoridade aeronáutica.
         </div>
         <div className="section-link">
-          <a href="/airspace">Saiba mais</a>
+          <Link toLink to="/airspace">Saiba mais</Link>
         </div>
       </div>
 
@@ -19,7 +20,7 @@ export const Section = () => {
           O Clube Poçoscaldense de Vôo Livre - CPVL tem um novo Estatuto aprovado na gestão 2024/2025
         </div>
         <div className="section-link">
-          <a href="/statute">Saiba mais</a>
+          <Link to="/statute">Saiba mais</Link>
         </div>
       </div>
       
@@ -29,7 +30,7 @@ export const Section = () => {
           Na assemblpeia Geral Extraordinária (AGE) de setembro de 2024, foram debatido novos tópicos importantes para atualização do novo Regimento Interno.
         </div> 
         <div className="section-link">
-          <a href="/regiment" target="_self">Saiba mais</a>
+          <Link to="/regiment" target="_self">Saiba mais</Link>
         </div>
       </div>
 

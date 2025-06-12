@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import { FooterWrap } from "./Footer.styles";
+
 
 export const Footer = () => {
   return (
@@ -6,16 +8,16 @@ export const Footer = () => {
       <div className="wrap">
         <div className="footer-block">
           <p className="footer-title">Institucional</p>
-          <p className="footer-link"><a href="/direction">Diretoria</a></p>
-          <p className="footer-link"><a href="/airspace">Espaço aéreo</a></p>
-          <p className="footer-link"><a href="/statute">Estatuto</a></p>
-          <p className="footer-link"><a href="/regiment">Regimento Interno</a></p>
-          <p className="footer-link"><a href="/about">Sobre</a></p>
+          <p className="footer-link"><Link to="/direction">Diretoria</Link></p>
+          <p className="footer-link"><Link to="/airspace">Espaço aéreo</Link></p>
+          <p className="footer-link"><Link to="/statute">Estatuto</Link></p>
+          <p className="footer-link"><Link to="/regiment">Regimento Interno</Link></p>
+          <p className="footer-link"><Link to="/about">Sobre</Link></p>
         </div>
 
         <div className="footer-block">
           <p className="footer-title">Rampa</p>
-          <p className="footer-link"><a href="https://www.google.com/maps/@-21.7716455,-46.5746857,17z?entry=ttu">Mapa</a></p>
+          <p className="footer-link"><Link to="https://www.google.com/maps/@-21.7716455,-46.5746857,17z?entry=ttu">Mapa</Link></p>
           <p className="footer-link">WP: -21.7715658,-46.5749861</p>
           <p className="footer-link">Altitude: 1550m</p>
           <p className="footer-link">Desnível: 400m</p>
@@ -24,8 +26,8 @@ export const Footer = () => {
 
         <div className="footer-block">
           <p className="footer-title">Midias Sociais</p>
-          <p className="footer-link"><a href="https://www.facebook.com/cpvlpocos/">Facebook</a></p>
-          <p className="footer-link"><a href="https://www.instagram.com/cpvloficial/">Instagram</a></p>
+          <p className="footer-link"><Link to="https://www.facebook.com/cpvlpocos/">Facebook</Link></p>
+          <p className="footer-link"><Link to="https://www.instagram.com/cpvloficial/">Instagram</Link></p>
         </div>
       </div>
     </FooterWrap>
