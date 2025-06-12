@@ -10,7 +10,7 @@ export const Section = () => {
           Desde 1986, o Código Brasileiro de Aeronáutica estabelece que o aerodesporto deverá ser praticado em áreas determinadas pela autoridade aeronáutica.
         </div>
         <div className="section-link">
-          <Link toLink to="/airspace">Saiba mais</Link>
+          <Link to="/airspace">Saiba mais</Link>
         </div>
       </div>
 
@@ -37,3 +37,4 @@ export const Section = () => {
     </SectionWrap >
   )
 }
+
