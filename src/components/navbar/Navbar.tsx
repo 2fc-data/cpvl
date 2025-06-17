@@ -10,7 +10,7 @@ import {
   MdMenu,
   MdClose
 } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -134,9 +134,9 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) 
 
         <div className={`submenu ${isMobile && isSubmenuOpen ? 'active' : ''}`}>
           {item.submenu.map((submenuItem) => (
-            <Link
+            <NavLink
               to={submenuItem.link}
-              className="submenu-item"
+              className={() => isMobile ? "submenu-item-mobile" : "submenu-item" }
               key={submenuItem.title}
               onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                 e.stopPropagation(); 
@@ -146,22 +146,23 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) 
             >
               <span className="submenu-icon">{submenuItem.icon}</span>
               <span>{submenuItem.title}</span>
-            </Link>
+            </NavLink>
           ))}
         </div>
       </div>
     );
   } else {
     return (
-      <Link
+      <NavLink
         to={item.link}
-        className="nav-item"
+        className={() => isMobile ? "nav-item-mobile" : "nav-item" }
         onClick={(e) => handleAnyLinkClick(e)} 
         onKeyDown={(e) => { if (e.key === 'Enter') handleAnyLinkClick(e); }}
+        end
       >
         <span>{item.icon}</span>
         <span>{item.title}</span>
-      </Link>
+      </NavLink>
     );
   }
 };
