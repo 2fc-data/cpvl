@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { BaseLayoutWrap } from "./BaseLayout.styles";
 import { Header } from "../header";
-import { Section } from "../section";
+
 import { Footer } from "../../pages/footer";
  
 export const BaseLayout = () => {
@@ -10,7 +10,6 @@ export const BaseLayout = () => {
       <Header />
       <div className="main-content-wrapper">
         <Outlet />
-        <Section />
       </div>
       <Footer />
     </BaseLayoutWrap>
