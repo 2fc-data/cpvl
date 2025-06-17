@@ -55,7 +55,7 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
     &:focus-within { 
       @media (min-width: ${theme.breakpoints.lg}) { 
           border-top: 3px solid ${theme.colors.primary};
-          color: ${theme.colors.primary};
+          color: ${theme.colors.primary};          
           background-color: transparent; 
 
           .submenu {
