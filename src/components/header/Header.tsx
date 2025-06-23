@@ -1,11 +1,10 @@
-import React from "react";
 import { HeaderWrap } from './Header.styles';
 import Logo from '../../assets/images/cpvlLogoVet1.png';
 import { Link } from "react-router-dom";
 
 import { Navbar } from "../navbar/Navbar";
 
-export const Header: React.FC = () => {
+export const Header = () => {
   return (
     <HeaderWrap> 
       <div className="header-container">        
