@@ -5,8 +5,7 @@ export const DashboardLayout = () => {
   return (
     <DashboardLayoutWrap>
       <HeaderDashboard />
-      Dashboard Layout
-      < Outlet />
+      <Outlet />
     </DashboardLayoutWrap>
   )
 }; 

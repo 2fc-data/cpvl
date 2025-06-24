@@ -9,7 +9,7 @@ export const PilotDetail = () => {
     <PilotDetailWrap>
       <p>PilotDetails</p>
       <p>{params.pilotId}</p>
-      <p><Link to=".." relative="path">Voltar</Link>Voltar</p>
+      <p><Link to=".." relative="path">Voltar</Link></p>
     </PilotDetailWrap>
   )
 };

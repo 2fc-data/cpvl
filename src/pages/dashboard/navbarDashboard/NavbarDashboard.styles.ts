@@ -8,12 +8,12 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
 
   // Estilos base do .nav-item (aplicados principalmente no desktop)
   // Menu Desktop (Visível > lg)
+  
   .nav-menu {
-    align-items: center;
-    background-color: ${theme.colors.whiteLight};
+    align-items: center;    
     border-radius: 6px;
-    display: flex; 
-    gap: 1.5rem;
+    display: flex;
+    gap: 0.5rem;  
     padding: 0 1rem;
 
     ${media.lg`
@@ -23,12 +23,12 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
 
   .nav-item {
     align-items: center;
+    background-color: ${theme.colors.whiteLight};
     border-radius: 3px;
     border-top: 3px solid transparent; 
     color: ${theme.colors.primary};
     display: flex; 
-    font-weight: 600;
-    gap: 0.5rem;
+    font-weight: 600;    
     justify-content: center;
     min-width: 120px;
     padding: 0.3rem; 
@@ -55,7 +55,7 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
     &:focus-within { 
       @media (min-width: ${theme.breakpoints.lg}) { 
           border-top: 3px solid ${theme.colors.primary};
-          color: ${theme.colors.primary};          
+          color: ${theme.colors.white};          
           background-color: transparent; 
 
           .submenu {

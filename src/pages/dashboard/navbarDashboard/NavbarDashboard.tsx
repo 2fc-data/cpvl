@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavbarWrap } from './NavbarDashboard.styles'; 
+import { NavbarWrap } from './NavbarDashboard.styles';
 
 import {
   MdMenu,
@@ -9,34 +9,41 @@ import { NavLink } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 import { useDispatch, useSelector } from 'react-redux';
 
-import { toggleMenubar, setMenubarClose } from '../../../redux/slices/menubarSlice'; 
-import { RootState } from '../../../redux/store'; 
+import { toggleMenubar, setMenubarClose } from '../../../redux/slices/menubarSlice';
+import { RootState } from '../../../redux/store';
 
 interface SubmenuItemType {
   title: string;
-  icon: React.ReactNode; 
+  icon: React.ReactNode;
   link: string;
 }
 
 interface MenuItemType {
   title: string;
   link: string;
-  submenu?: SubmenuItemType[]; 
+  submenu?: SubmenuItemType[];
 }
 
 interface MenuItemProps {
   item: MenuItemType;
   isMobile: boolean;
-  closeMobileMenu: () => void; 
+  closeMobileMenu: () => void;
 }
 
 const Menu: MenuItemType[] = [
   {
-    title: "Pilots",    
-    link: "pilots",
+    title: "Diretoria",
+    link: "dashboardDirection",
+  }, 
+  {
+    title: "Fiscal",
+    link: "dashboardFiscal",
+  }, 
+  {
+    title: "Piloto",
+    link: "dashboardPilot",
   }
 ];
-
 
 const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) => {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
@@ -44,7 +51,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) 
   const handleSubmenuClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
     if (isMobile && item.submenu) {
-      e.preventDefault(); 
+      e.preventDefault();
       setIsSubmenuOpen(!isSubmenuOpen);
     }
   };
@@ -61,14 +68,14 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) 
 
   const handleAnyLinkClick = (event?: React.MouseEvent<HTMLAnchorElement> | React.KeyboardEvent<HTMLAnchorElement>) => {
     if (isMobile) {
-        if (isSubmenuOpen) {
-            setIsSubmenuOpen(false);
-        }
-        closeMobileMenu();
+      if (isSubmenuOpen) {
+        setIsSubmenuOpen(false);
+      }
+      closeMobileMenu();
     }
-    
+
     if (!isMobile && event && event.currentTarget) {
-        (event.currentTarget as HTMLElement).blur(); 
+      (event.currentTarget as HTMLElement).blur();
     }
   };
 
@@ -76,10 +83,10 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) 
     return (
       <div
         className={`nav-item ${isMobile && isSubmenuOpen ? 'submenu-open' : ''}`}
-        onClick={handleSubmenuClick} 
+        onClick={handleSubmenuClick}
         onKeyDown={handleSubmenuKeyDown}
-        role="button" 
-        tabIndex={0} 
+        role="button"
+        tabIndex={0}
         aria-haspopup="true"
         aria-expanded={isMobile ? isSubmenuOpen : undefined}
       >
@@ -91,11 +98,11 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) 
           {item.submenu.map((submenuItem) => (
             <NavLink
               to={submenuItem.link}
-              className={() => isMobile ? "submenu-item-mobile" : "submenu-item" }
+              className={() => isMobile ? "submenu-item-mobile" : "submenu-item"}
               key={submenuItem.title}
               onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
-                e.stopPropagation(); 
-                handleAnyLinkClick(e); 
+                e.stopPropagation();
+                handleAnyLinkClick(e);
               }}
               onKeyDown={(e) => { if (e.key === 'Enter') handleAnyLinkClick(e); }}
             >
@@ -110,8 +117,8 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) 
     return (
       <NavLink
         to={item.link}
-        className={() => isMobile ? "nav-item-mobile" : "nav-item" }
-        onClick={(e) => handleAnyLinkClick(e)} 
+        className={() => isMobile ? "nav-item-mobile" : "nav-item"}
+        onClick={(e) => handleAnyLinkClick(e)}
         onKeyDown={(e) => { if (e.key === 'Enter') handleAnyLinkClick(e); }}
         end
       >
@@ -128,7 +135,7 @@ export const NavbarDashboard = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      const lgBreakpoint = 992; 
+      const lgBreakpoint = 992;
       if (window.innerWidth >= lgBreakpoint && isMenubarOpen) {
         dispatch(setMenubarClose());
       }
@@ -136,7 +143,7 @@ export const NavbarDashboard = () => {
     window.addEventListener('resize', handleResize);
     handleResize();
     return () => window.removeEventListener('resize', handleResize);
-  }, [isMenubarOpen, dispatch]); 
+  }, [isMenubarOpen, dispatch]);
 
   const handleToggleMenubar = () => {
     dispatch(toggleMenubar());
@@ -153,27 +160,27 @@ export const NavbarDashboard = () => {
       <div
         className={`overlay ${isMenubarOpen ? 'active' : ''}`}
         onClick={handleCloseMenubar}
-        aria-hidden={!isMenubarOpen} 
+        aria-hidden={!isMenubarOpen}
       />
 
       <nav className="nav-menu" aria-label="Menu Principal">
         {Menu.map((menuItem) => (
-          <MenuItem key={menuItem.title} item={menuItem} isMobile={false} closeMobileMenu={() => {}} />
+          <MenuItem key={menuItem.title} item={menuItem} isMobile={false} closeMobileMenu={() => { }} />
         ))}
       </nav>
 
       <button
         className="mobile-menu-btn"
-        onClick={handleToggleMenubar} 
+        onClick={handleToggleMenubar}
         aria-label={isMenubarOpen ? "Fechar menu" : "Abrir menu"}
         aria-expanded={isMenubarOpen}
-        aria-controls="mobile-menu-nav" 
+        aria-controls="mobile-menu-nav"
       >
         {isMenubarOpen ? <MdClose size={36} /> : <MdMenu size={36} />}
       </button>
 
       <div
-        id="mobile-menu-nav" 
+        id="mobile-menu-nav"
         className={`mobile-menu ${isMenubarOpen ? 'active' : ''}`}
         aria-hidden={!isMenubarOpen}
       >

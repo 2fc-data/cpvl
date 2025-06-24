@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { media } from "../../../styles/theme/theme";
+import { media, theme } from "../../../styles/theme/theme";
 
 export const HeaderWrap = styled.header`
   padding: 1rem 0rem;
@@ -12,9 +12,10 @@ export const HeaderWrap = styled.header`
 
   .header-container {
     align-items: center;
+    background-color: ${theme.colors.primary};
     display: flex;
     justify-content: space-between;
-    margin: 0 45px; // Usar variáveis de tema
+    padding: 0 45px; // Usar variáveis de tema
   }
 
   .logo-section {
