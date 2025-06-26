@@ -5,7 +5,7 @@ import { theme } from "./styles/theme/theme";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { GlobalStyles } from "./styles/global/globalStyles";
 
-import { BaseLayout } from "./components/layout/";
+import { BaseLayout } from "./components/baseLayout";
 import { About } from "./pages/about";
 import { Airspace } from './pages/airSpace';
 import { Direction } from "./pages/direction";
@@ -17,6 +17,15 @@ import { Signup } from './pages/signup';
 import { Statute } from "./pages/statute";
 
 import { DashboardLayout } from "./components/dashboardLayout";
+
+import { DashboardDirection } from "./pages/dashboard/dashboardDirection";
+import { DashboardFiscal } from "./pages/dashboard/dashboardFiscal/DashboardFiscal";
+import { DashboardPilot } from "./pages/dashboard/dashboardPilot";
+
+// import { Pilots } from "./pages/dashboard/pilots";
+// import { PilotDetail } from "./pages/dashboard/pilotDetail";
+// import { PilotsFinancial } from "./pages/dashboard/pilotsFinancial";
+// import { PilotsStatus } from "./pages/dashboard/pilotsStatus";
 
 const router = createBrowserRouter([
   {
@@ -33,13 +42,45 @@ const router = createBrowserRouter([
       { path: "regiment", element: <Regiment /> },
       { path: "signup", element: <Signup /> },
       { path: "statute", element: <Statute /> },
-    ],
-  },
-  {
-    path: '/PrivateRoutes',
-    element: <DashboardLayout />,
-    children: [
-      { index: true, element: <DashboardLayout /> }      
+      {
+        path: '/prv',
+        element: <DashboardLayout />,
+        errorElement: <ErrorPage />,
+        children: [
+          // { path: '', element: <Pilots /> },
+          // { path: "pilots", element: <Pilots /> },
+          // { path: "pilots/:pilotId", element: <PilotDetail /> },
+          // { path: "pilots-status", element: <PilotsStatus /> },
+          // { path: "pilots-financial", element: <PilotsFinancial /> }
+          {
+            path: 'dd',
+            element: <DashboardDirection />,
+            errorElement: <ErrorPage />,
+            children: [
+              { path: '', element: <DashboardDirection /> },
+              { path: "dashboardDirection", element: <DashboardDirection /> },              
+            ],
+          },
+          {
+            path: 'df',
+            element: <DashboardFiscal />,
+            errorElement: <ErrorPage />,
+            children: [
+              { path: '', element: <DashboardFiscal /> },
+              { path: "dashboardFiscal", element: <DashboardFiscal /> },
+            ],
+          },
+          {
+            path: 'dp',
+            element: <DashboardPilot />,
+            errorElement: <ErrorPage />,
+            children: [
+              { path: '', element: <DashboardPilot /> },
+              { path: "dashboardPilot", element: <DashboardPilot /> },
+            ],
+          }
+        ],
+      },
     ],
   },
 ]);
