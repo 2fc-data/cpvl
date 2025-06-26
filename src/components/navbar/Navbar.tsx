@@ -40,7 +40,7 @@ const Menu: MenuItemType[] = [
   {
     title: " Home",
     icon: <MdHome size={20} />,
-    link: "/home",
+    link: "/",
   },
   {
     title: " Sobre",

@@ -38,7 +38,6 @@ const router = createBrowserRouter([
       { path: "about", element: <About /> },
       { path: "airspace", element: <Airspace /> },
       { path: "direction", element: <Direction /> },
-      { path: "home", element: <Home /> },
       { path: "login", element: <Login /> },
       { path: "regiment", element: <Regiment /> },
       { path: "signup", element: <Signup /> },
