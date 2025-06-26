@@ -7,7 +7,7 @@ export const PilotDetail = () => {
 
   return (
     <PilotDetailWrap>
-      <p>PilotDetails</p>
+      <h1>Detalhes do Piloto</h1>
       <p>{params.pilotId}</p>
       <p><Link to=".." relative="path">Voltar</Link></p>
     </PilotDetailWrap>

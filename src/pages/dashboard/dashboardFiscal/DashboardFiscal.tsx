@@ -1,10 +1,12 @@
+import { Outlet } from "react-router-dom";
 import { DashboardFiscalWrap } from "./DashboardFiscal.styles";
-import { PilotsStatus } from "../pilotsStatus";
+
 
 export const DashboardFiscal = () => {
   return (
     <DashboardFiscalWrap>
-      <PilotsStatus />
+      <h1>Dashboard do Fiscal</h1>
+      <Outlet />
     </DashboardFiscalWrap>
   );
 };

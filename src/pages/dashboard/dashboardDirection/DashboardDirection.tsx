@@ -1,17 +1,12 @@
+import { Outlet } from "react-router-dom";
 import { DashboardDirectionWrap } from "./DashboardDirection.styles";
-import { Pilots } from "../pilots";
-import { PilotDetail } from "../pilotDetail";
-import { PilotsFinancial } from "../pilotsFinancial";
-import { PilotsStatus } from "../pilotsStatus";
+
 
 export const DashboardDirection = () => {
   return (
     <DashboardDirectionWrap>
-      DashboardDirection
-      <Pilots />
-      <PilotDetail />
-      <PilotsFinancial />
-      <PilotsStatus />
+      <h1>Dashboard da Diretoria</h1>
+      <Outlet />
     </DashboardDirectionWrap>
   );
 };

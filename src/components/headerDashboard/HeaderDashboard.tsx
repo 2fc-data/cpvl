@@ -1,7 +1,7 @@
 import { HeaderWrap } from './HeaderDashboard.styles';
 // import { Link } from "react-router-dom";
 
-import { NavbarDashboard } from "../navbarDashboard";
+import { NavbarDashboard } from "../../pages/dashboard/navbarDashboard";
 
 export const HeaderDashboard = () => {
   return (

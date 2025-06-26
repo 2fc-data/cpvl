@@ -1,11 +1,11 @@
+import { Outlet } from "react-router-dom";
 import { DashboardPilotWrap } from "./DashboardPilot.styles";
-import { PilotDetail } from "../pilotDetail";
 
 export const DashboardPilot = () => {
   return (
     <DashboardPilotWrap>
-      <h1>Dashboard Piloto</h1>
-      <PilotDetail />
+      <h1>Dashboard Pilotos</h1>
+      <Outlet />
     </DashboardPilotWrap>
   );
 };  

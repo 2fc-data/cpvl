@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { HeaderDashboard } from "../../pages/dashboard/headerDashboard";
+import { HeaderDashboard } from "../headerDashboard";
 import { DashboardLayoutWrap } from "./DashboardLayout.styles";
 export const DashboardLayout = () => {
   return (
