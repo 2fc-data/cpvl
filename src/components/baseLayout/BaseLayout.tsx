@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { BaseLayoutWrap } from "./BaseLayout.styles";
 import { Header } from "../header";
-
 import { Footer } from "../../pages/footer";
  
 export const BaseLayout = () => {
