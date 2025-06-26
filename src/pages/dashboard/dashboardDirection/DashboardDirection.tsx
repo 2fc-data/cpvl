@@ -1,4 +1,4 @@
-import { DashboardDirectionWrap } from "./DashboardDiretion.styles";
+import { DashboardDirectionWrap } from "./DashboardDirection.styles";
 import { Pilots } from "../pilots";
 import { PilotDetail } from "../pilotDetail";
 import { PilotsFinancial } from "../pilotsFinancial";

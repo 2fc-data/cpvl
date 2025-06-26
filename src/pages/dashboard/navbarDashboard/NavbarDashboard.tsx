@@ -33,15 +33,15 @@ interface MenuItemProps {
 const Menu: MenuItemType[] = [
   {
     title: "Diretoria",
-    link: "dashboardDirection",
+    link: "dd",
   }, 
   {
     title: "Fiscal",
-    link: "dashboardFiscal",
+    link: "df",
   }, 
   {
     title: "Piloto",
-    link: "dashboardPilot",
+    link: "dp",
   }
 ];
 
