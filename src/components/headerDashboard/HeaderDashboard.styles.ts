@@ -4,7 +4,7 @@ import { media, theme } from "../../styles/theme/theme";
 export const HeaderWrap = styled.header`
   padding: 1rem 0rem;
   position: relative; 
-  z-index: 1000;
+  z-index: 995;
 
   ${media.xl`
     padding: 1rem 0rem;
