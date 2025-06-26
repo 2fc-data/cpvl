@@ -1,1 +1,1 @@
-export { dashboardFiscal } from "./DashboardFiscal";
+export { DashboardFiscal } from "./DashboardFiscal";
