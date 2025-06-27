@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       { path: "signup", element: <Signup /> },
       { path: "statute", element: <Statute /> },
       {
-        path: "/prv",
+        path: "prv",
         element: <DashboardLayout />,
         errorElement: <ErrorPage />,
         children: [
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
             element: <DashboardDirection />,
             errorElement: <ErrorPage />,
             children: [
-              { path: "", element: <Pilots /> },
+              { index: true, element: <Pilots /> },
               { path: ":pilotId", element: <PilotDetail /> }, 
               { path: "pilots-status", element: <PilotsStatus /> },
               { path: "pilots-financial", element: <PilotsFinancial /> },
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
             element: <DashboardFiscal />,
             errorElement: <ErrorPage />,
             children: [
-              { path: "", element:<PilotsStatus /> },
+              { index: true, element:<PilotsStatus /> },
             ],
           },
           {
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
             element: <DashboardPilot />,
             errorElement: <ErrorPage />,
             children: [
-              { path: "", element: <PilotDetail /> },           
+              { index: true, element: <PilotDetail /> },           
             ],
           }
         ],
