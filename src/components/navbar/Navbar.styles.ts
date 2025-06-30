@@ -6,26 +6,25 @@ import { media, theme } from "../../styles/theme/theme"; // Verifique se este ca
 export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
   // --- LÓGICA DE VISIBILIDADE --- 
 
-  // Estilos base do .nav-item (aplicados principalmente no desktop)
   // Menu Desktop (Visível > lg)
   .nav-menu {
     align-items: center;
-    background-color: ${theme.colors.whiteLight};
-    border-radius: 6px;
     display: flex; 
     gap: 1.5rem;
-    padding: 0 1rem;
 
     ${media.lg`
       display: none; 
     `}
   }
 
+  // --- Estilos Desktop (> lg) --- 
+
+  // Estilos base do .nav-item (aplicados principalmente no desktop)
   .nav-item {
     align-items: center;
-    border-radius: 3px;
+    border-radius: 6px;
     border-top: 3px solid transparent; 
-    color: ${theme.colors.primary};
+    color: ${theme.colors.black};
     display: flex; 
     font-weight: 600;
     gap: 0.5rem;
@@ -54,9 +53,9 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
     &:hover,
     &:focus-within { 
       @media (min-width: ${theme.breakpoints.lg}) { 
-          border-top: 3px solid ${theme.colors.primary};
-          color: ${theme.colors.primary};          
-          background-color: transparent; 
+          border-top: 3px solid ${theme.colors.black};
+          color: ${theme.colors.black};
+          background-color: ${theme.colors.white}; 
 
           .submenu {
             display: block; 
@@ -74,13 +73,14 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
 
     &:active {
        @media (min-width: ${theme.breakpoints.lg}) {
-           border-top: 3px solid ${theme.colors.primary};
+           border-top: 3px solid ${theme.colors.black};
        }
     }
   }
 
   // Estilos do submenu SOMENTE no desktop
   .submenu {
+    border-radius: 6px;
     display: none; 
     opacity: 0; 
     visibility: hidden; 
@@ -88,8 +88,7 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
     left: 0;
     background-color: ${theme.colors.white};
     border-radius: 6px;
-    box-shadow: 0 2px 3px ${theme.colors.primary};
-    color: ${theme.colors.primary};
+    box-shadow: 0 2px 3px ${theme.colors.text};
     min-width: 200px;
     padding: 0.5rem 0;
     z-index: 1010; 
@@ -103,8 +102,8 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
 
     .submenu-item {
       align-items: center;
-      border-top: 3px solid transparent;
-      color: ${theme.colors.primary};
+      border-radius: 6px;
+      color: ${theme.colors.black};
       display: flex; 
       gap: 0.5rem; 
       padding: 0.75rem 1rem; 
@@ -117,9 +116,8 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
 
       &:hover,
       &:focus {
-        background-color: ${theme.colors.white};
-        border-top: 3px solid ${theme.colors.primary};
-        color: ${theme.colors.primary};
+        background-color: ${theme.colors.text};
+        color: ${theme.colors.white};
       }
 
       .submenu-icon {
@@ -133,28 +131,30 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
 
   // Botão Mobile (Visível <= lg)
   .mobile-menu-btn {
-    background-color: ${theme.colors.whiteLight};
-    border-radius: 6px;
-    color: ${theme.colors.primary}; 
+    background: none;
+    border: none;
+    color: ${theme.colors.black}; 
     cursor: pointer;
-    display: none; 
+    display: none; // Escondido por padrão (telas > lg)
     font-size: 1.5rem; 
-    padding: 0 0.3rem; 
+    padding: 0.5rem; 
     z-index: 1051; // Acima do overlay e menu
     position: relative; // Posição padrão
-    top: auto; 
-    right: auto; 
+    top: auto; // Reseta top
+    right: auto; // Reseta right
 
     ${media.lg`
       display: block; // VISÍVEL em telas <= lg
-      
-      ${({ $isMenubarOpen }: { $isMenubarOpen?: boolean }) =>
-        $isMenubarOpen &&
-        css`
+
+      // **CORREÇÃO BOTÃO X:** Aplica position: fixed QUANDO o menu está aberto
+      ${({ $isMenubarOpen }) =>
+      $isMenubarOpen &&
+      css`
           position: fixed;
-          top: 1.5rem; 
-          right: 35px;           
-          color: ${theme.colors.primary}; 
+          top: 1.5rem; // Ajuste conforme necessário para alinhar com o header
+          right: 35px; // Ajuste conforme a margem do header-container
+          // Garante que a cor seja visível sobre o fundo branco do menu
+          color: ${theme.colors.black}; 
         `}
     `}
   }
@@ -164,17 +164,17 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
     display: none; 
     
     ${media.lg` 
-      background-color: ${theme.colors.white}; 
-      display: block;
-      height: 100%;
-      left: 0;      
-      overflow-y: auto; 
-      padding: 9rem 1rem 1rem 1rem; 
+      display: block; 
       position: fixed;
       top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: ${theme.colors.white}; 
+      padding: 6rem 1rem 1rem 1rem; 
       transform: translateX(-100%); 
       transition: transform 0.3s ease-in-out;
-      width: 100%;
+      overflow-y: auto; 
       z-index: 1050; 
 
       &.active {
@@ -186,19 +186,19 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
         display: block; 
         width: 100%;
         text-align: left;
-        padding: 1.5rem 1.5rem; 
+        padding: 1rem 1.5rem; 
         margin-bottom: 0; 
         border-top: none; 
-        border-bottom: 3px solid ${theme.colors.primary}; 
-        color: ${theme.colors.primary}; 
+        border-bottom: 1px solid ${theme.colors.black}; 
+        color: ${theme.colors.black}; 
         font-weight: 500;
         cursor: pointer; 
         position: static; 
 
         &:hover,
         &:focus {
-          background-color: ${theme.colors.white}; 
-          color: ${theme.colors.primary};
+          background-color: ${theme.colors.text}; 
+          color: ${theme.colors.white};
           border-top: none; 
         }
 
@@ -220,35 +220,37 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
 
       // Estilos do .submenu DENTRO do mobile-menu
       .submenu {
-        position: static;        
-        border-radius: 0; 
-        box-shadow: none;
+        position: static; 
         display: none; 
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        padding: 0.5rem 0 0.5rem 1.5rem; 
+        background-color: ${theme.colors.white}; 
+        transition: none; 
+        border-top: 1px solid ${theme.colors.black}; 
         margin-left: -1.5rem; 
         margin-right: -1.5rem;
+        border-radius: 0; 
         min-width: auto; 
-        opacity: 1;
-        padding: 0.5rem 0 0.5rem 1.5rem; 
-        transform: none;
-        transition: none; 
-        visibility: visible;
 
         &.active { 
            display: block;
         }
 
         .submenu-item {
-          padding: 1rem 1.5rem; 
-          border-top: 3px solid transparent; 
-          color: ${theme.colors.primary}; 
+          padding: 0.75rem 1.5rem; 
+          border: none;
+          color: ${theme.colors.black}; 
           display: flex; 
           gap: 0.5rem;
           white-space: nowrap;
 
           &:hover,
           &:focus {
-            border-top: 3px solid ${theme.colors.primary};
-            color: ${theme.colors.primary}; 
+            background-color: ${theme.colors.text}; 
+            color: ${theme.colors.white}; 
           }
         }
       }
@@ -277,4 +279,5 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
       }
     `}
   }
+
 `;
