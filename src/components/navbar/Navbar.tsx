@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavbarWrap } from './Navbar.styles'; 
+import { NavbarWrap } from './Navbar.styles'; // Importa os estilos do Navbar
 import { FaBuilding } from "react-icons/fa";
 import { FaFilePen } from "react-icons/fa6";
 import {
@@ -10,13 +10,14 @@ import {
   MdMenu,
   MdClose
 } from "react-icons/md";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 import { useDispatch, useSelector } from 'react-redux';
-
+// Ajuste os caminhos conforme sua estrutura
 import { toggleMenubar, setMenubarClose } from '../../redux/slices/menubarSlice'; 
 import { RootState } from '../../redux/store'; 
 
+// --- Definições de Tipo --- 
 interface SubmenuItemType {
   title: string;
   icon: React.ReactNode; 
@@ -35,7 +36,9 @@ interface MenuItemProps {
   isMobile: boolean;
   closeMobileMenu: () => void; 
 }
+// --- Fim das Definições de Tipo ---
 
+// Definição da estrutura do Menu
 const Menu: MenuItemType[] = [
   {
     title: " Home",
@@ -81,7 +84,7 @@ const Menu: MenuItemType[] = [
   },
 ];
 
-
+// Componente auxiliar MenuItem
 const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) => {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
 
@@ -134,9 +137,9 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) 
 
         <div className={`submenu ${isMobile && isSubmenuOpen ? 'active' : ''}`}>
           {item.submenu.map((submenuItem) => (
-            <NavLink
+            <Link
               to={submenuItem.link}
-              className={() => isMobile ? "submenu-item-mobile" : "submenu-item" }
+              className="submenu-item"
               key={submenuItem.title}
               onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                 e.stopPropagation(); 
@@ -146,33 +149,31 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, isMobile, closeMobileMenu }) 
             >
               <span className="submenu-icon">{submenuItem.icon}</span>
               <span>{submenuItem.title}</span>
-            </NavLink>
+            </Link>
           ))}
         </div>
       </div>
     );
   } else {
     return (
-      <NavLink
+      <Link
         to={item.link}
-        className={() => isMobile ? "nav-item-mobile" : "nav-item" }
+        className="nav-item"
         onClick={(e) => handleAnyLinkClick(e)} 
         onKeyDown={(e) => { if (e.key === 'Enter') handleAnyLinkClick(e); }}
-        end
       >
         <span>{item.icon}</span>
         <span>{item.title}</span>
-      </NavLink>
+      </Link>
     );
   }
 };
 
-
+// Componente Navbar
 export const Navbar: React.FC = () => {
   const isMenubarOpen = useSelector((state: RootState) => state.menubar.isMenubarOpen);
   const dispatch = useDispatch();
 
-  
   useEffect(() => {
     const handleResize = () => {
       const lgBreakpoint = 992; 
@@ -196,7 +197,8 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <NavbarWrap>
+    // Passa o estado isMenubarOpen para o styled component
+    <NavbarWrap $isMenubarOpen={isMenubarOpen}> 
       <div
         className={`overlay ${isMenubarOpen ? 'active' : ''}`}
         onClick={handleCloseMenubar}
