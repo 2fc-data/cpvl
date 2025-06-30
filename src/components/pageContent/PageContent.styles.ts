@@ -1,6 +1,6 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 
-export const ErrorWrap = styled.div`
+export const PageContentWrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
