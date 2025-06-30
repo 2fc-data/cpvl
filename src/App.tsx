@@ -24,9 +24,8 @@ import { DashboardPilot } from "./pages/dashboard/dashboardPilot";
 
 import { Pilots } from "./pages/dashboard/pilots";
 import { PilotDetail } from "./pages/dashboard/pilotDetail";
-import { PilotsStatus } from "./pages/dashboard/pilotsStatus";
+import { PilotsStatus, Loader as pilotsTakeoffLoader } from "./pages/dashboard/pilotsStatus";
 import { PilotsFinancial } from "./pages/dashboard/pilotsFinancial";
-
 
 const router = createBrowserRouter([
   {
@@ -43,6 +42,18 @@ const router = createBrowserRouter([
       { path: "signup", element: <Signup /> },
       { path: "statute", element: <Statute /> },
       {
+        path: "fiscal",
+        element: <DashboardFiscal />,
+        errorElement: <ErrorPage />,
+        children: [
+          {
+            index: true, 
+            element: <PilotsStatus />,
+            loader: pilotsTakeoffLoader,
+          },
+        ],
+      },
+      {
         path: "prv",
         element: <DashboardLayout />,
         errorElement: <ErrorPage />,
@@ -53,17 +64,9 @@ const router = createBrowserRouter([
             errorElement: <ErrorPage />,
             children: [
               { index: true, element: <Pilots /> },
-              { path: ":pilotId", element: <PilotDetail /> }, 
+              { path: ":pilotId", element: <PilotDetail /> },
               { path: "pilots-status", element: <PilotsStatus /> },
               { path: "pilots-financial", element: <PilotsFinancial /> },
-            ],
-          },
-          {
-            path: "df",
-            element: <DashboardFiscal />,
-            errorElement: <ErrorPage />,
-            children: [
-              { index: true, element:<PilotsStatus /> },
             ],
           },
           {
@@ -71,7 +74,7 @@ const router = createBrowserRouter([
             element: <DashboardPilot />,
             errorElement: <ErrorPage />,
             children: [
-              { index: true, element: <PilotDetail /> },           
+              { index: true, element: <PilotDetail /> },
             ],
           }
         ],
