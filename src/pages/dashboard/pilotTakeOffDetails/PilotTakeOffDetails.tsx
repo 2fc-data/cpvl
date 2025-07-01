@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Params, useLoaderData } from "react-router-dom";
 import { PilotTakeOffItem } from "../../../components/pilotTakeOffItem";
 
 import { PilotTakeOffDetailsWrap } from "./PilotTakeOffDetails.styles";
@@ -13,7 +13,7 @@ export const PilotTakeOffDetails = () => {
   )
 };
 
-export async function loader({request, params}) {
+export async function loader({ params }: { params: Params<string> }) {
   const id = params.id;
 
   const response = await fetch('http://localhost:8080/fiscal/' + id);
@@ -27,3 +27,4 @@ export async function loader({request, params}) {
     return response;
   }
 }
+
