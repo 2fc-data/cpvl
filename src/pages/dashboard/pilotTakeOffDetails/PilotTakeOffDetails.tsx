@@ -1,3 +1,9 @@
+import { PilotTakeOffDetailsWrap } from "./PilotTakeOffDetails.styles";
+
 export const PilotTakeOffDetails = () => {
-  return <div>PilotTakeOffDetails</div>;
+  return (
+    <PilotTakeOffDetailsWrap>
+      PilotTakeOffDetails
+    </PilotTakeOffDetailsWrap>
+  )
 };
