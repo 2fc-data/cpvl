@@ -1,6 +1,6 @@
-import { styled } from "styled-components"; 
+import styled from "styled-components";
 
-export const PilotsStatusWrap = styled.div`
+export const PilotsTakeOffListWrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
