@@ -147,7 +147,7 @@ export const NavbarWrap = styled.div<{ $isMenubarOpen?: boolean }>`
       display: block; // VISÍVEL em telas <= lg
 
       // **CORREÇÃO BOTÃO X:** Aplica position: fixed QUANDO o menu está aberto
-      ${({ $isMenubarOpen }) =>
+      ${({ $isMenubarOpen }: { $isMenubarOpen: boolean }) =>
       $isMenubarOpen &&
       css`
           position: fixed;
