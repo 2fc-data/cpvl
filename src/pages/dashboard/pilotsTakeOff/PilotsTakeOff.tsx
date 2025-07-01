@@ -1,18 +1,20 @@
 import { useLoaderData } from "react-router-dom";
-import { PilotsList } from "../../../components/pilotsList/";
-import { PilotsStatusWrap } from "./PilotsStatus.styles";
+import { PilotsList } from "../../../components/pilotsList";
+import { PilotsTakeOffWrap, PilotsTakeOffContent } from "./PilotsTakeOff.styles";
 
-export const PilotsStatus = () => {
+export const PilotsTakeOff = () => {
   const pilots_takeoff = useLoaderData();
 
   return (
-    <PilotsStatusWrap>
+    <PilotsTakeOffWrap>
       <h1>Pilotos autorizados a decolar</h1>
       <h5>ABVL ok - ANAC ok - FMVL ok - CLUBE ok</h5>
 
-      <PilotsList pilots={pilots_takeoff} />
+      <PilotsTakeOffContent>
+        <PilotsList pilots={pilots_takeoff} />
+      </PilotsTakeOffContent>
 
-    </PilotsStatusWrap>
+    </PilotsTakeOffWrap>
   );
 }
 
@@ -22,10 +24,10 @@ export const Loader = async () => {
   if (!response.ok) {
     throw new Response(
       JSON.stringify({ message: "Pilotos regulares não encontrados." }), {
-      status: 500,      
+      status: 500,
     })
   } else {
-    const resData = await response.json();    
+    const resData = await response.json();
     return resData.pilots;
   }
 }

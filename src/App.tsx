@@ -16,16 +16,11 @@ import { Regiment } from "./pages/regiment";
 import { Signup } from "./pages/signup";
 import { Statute } from "./pages/statute";
 
-import { DashboardLayout } from "./components/dashboardLayout";
-
-import { DashboardDirection } from "./pages/dashboard/dashboardDirection";
 import { DashboardFiscal } from "./pages/dashboard/dashboardFiscal/DashboardFiscal";
-import { DashboardPilot } from "./pages/dashboard/dashboardPilot";
 
-import { Pilots } from "./pages/dashboard/pilots";
-import { PilotDetail } from "./pages/dashboard/pilotDetail";
-import { PilotsStatus, Loader as pilotsTakeoffLoader } from "./pages/dashboard/pilotsStatus";
-import { PilotsFinancial } from "./pages/dashboard/pilotsFinancial";
+
+import { PilotsTakeOff, Loader as pilotsTakeoffLoader } from "./pages/dashboard/pilotsTakeOff";
+// import { PilotsTakeOffDetails } from "./pages/dashboard/pilotsTakeOffDetails";
 
 const router = createBrowserRouter([
   {
@@ -48,35 +43,10 @@ const router = createBrowserRouter([
         children: [
           {
             index: true, 
-            element: <PilotsStatus />,
+            element: <PilotsTakeOff />,
             loader: pilotsTakeoffLoader,
           },
-        ],
-      },
-      {
-        path: "prv",
-        element: <DashboardLayout />,
-        errorElement: <ErrorPage />,
-        children: [
-          {
-            path: "dd",
-            element: <DashboardDirection />,
-            errorElement: <ErrorPage />,
-            children: [
-              { index: true, element: <Pilots /> },
-              { path: ":pilotId", element: <PilotDetail /> },
-              { path: "pilots-status", element: <PilotsStatus /> },
-              { path: "pilots-financial", element: <PilotsFinancial /> },
-            ],
-          },
-          {
-            path: "dp",
-            element: <DashboardPilot />,
-            errorElement: <ErrorPage />,
-            children: [
-              { index: true, element: <PilotDetail /> },
-            ],
-          }
+          // { path: ":pilotTakeOffId", element: <PilotsTakeOffDetails /> },
         ],
       },
     ],
