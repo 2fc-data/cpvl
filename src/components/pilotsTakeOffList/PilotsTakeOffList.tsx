@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import  { PilotsTakeOffListWrap } from "./PilotTakeOffList.styles";
+import  { PilotsTakeOffListWrap } from "./PilotsTakeOffList.styles";
 
 type Pilot = {
   id: string;
@@ -13,11 +13,11 @@ export const PilotsTakeOffList = ({ pilots }: { pilots: Pilot }) => {
   }
   
   return (
-    <PilotsTakeOffListWrap>
+    <PilotsTakeOffListWrap>      
       <ul>
         {pilots.map((pilot) => (
           <li key={pilot.id}>
-            <Link to={`/pilots/${pilot.id}`}>              
+            <Link to={`${pilot.id}`}>              
               <div>
                 <h2>{pilot.name}</h2>             
               </div>

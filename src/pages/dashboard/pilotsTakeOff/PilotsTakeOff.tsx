@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import { PilotsList } from "../../../components/pilotsList";
+import { PilotsTakeOffList } from "../../../components/pilotsTakeOffList";
 import { PilotsTakeOffWrap, PilotsTakeOffContent } from "./PilotsTakeOff.styles";
 
 export const PilotsTakeOff = () => {
@@ -11,7 +11,7 @@ export const PilotsTakeOff = () => {
       <h5>ABVL ok - ANAC ok - FMVL ok - CLUBE ok</h5>
 
       <PilotsTakeOffContent>
-        <PilotsList pilots={pilots_takeoff} />
+        <PilotsTakeOffList pilots={pilots_takeoff} />
       </PilotsTakeOffContent>
 
     </PilotsTakeOffWrap>
