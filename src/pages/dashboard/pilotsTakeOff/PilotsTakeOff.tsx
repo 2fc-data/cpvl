@@ -23,9 +23,9 @@ export const Loader = async () => {
 
   if (!response.ok) {
     throw new Response(
-      JSON.stringify({ message: "Pilotos regulares não encontrados." }), {
-      status: 500,
-    })
+      JSON.stringify({ message: "Pilotos regulares não encontrados." }),
+      { status: 500 }
+    );
   } else {
     const resData = await response.json();
     return resData.pilots;

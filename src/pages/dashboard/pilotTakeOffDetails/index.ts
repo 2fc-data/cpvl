@@ -1,1 +1,1 @@
-export { PilotTakeOffDetails } from "./PilotTakeOffDetails";
+export { PilotTakeOffDetails, loader } from "./PilotTakeOffDetails";

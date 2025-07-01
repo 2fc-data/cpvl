@@ -1,5 +1,4 @@
 import { useRouteError } from "react-router-dom";
-import { Header } from "../../components/header";
 import { PageContent } from "../../components/pageContent";
 import { ErrorWrap } from "./Error.styles";
 
@@ -13,7 +12,7 @@ interface RouteError {
 
 export const ErrorPage = () => {
   const error = useRouteError() as RouteError | null;
-  let title = "An erro occurred";
+  let title = "Error";
   let message = "Ops, algo errado aconteceu.";
 
   if (error?.status === 500) {
@@ -27,7 +26,6 @@ export const ErrorPage = () => {
 
   return (
     <ErrorWrap>
-      <Header />
       <PageContent title={title}>         
         <p>{message}</p>
       </PageContent>

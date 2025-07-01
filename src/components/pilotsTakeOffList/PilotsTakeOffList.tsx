@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import  { PilotsTakeOffListWrap } from "./PilotsTakeOffList.styles";
 
-type Pilot = {
+type PilotsTakeOff = {
   id: string;
   name: string;
 };
 
-export const PilotsTakeOffList = ({ pilots }: { pilots: Pilot }) => {
+export const PilotsTakeOffList = ({ pilots }: { pilots: PilotsTakeOff }) => {
   
   if (!Array.isArray(pilots)) {
     return <div>Error: Pilots is not an array</div>;
@@ -17,9 +17,9 @@ export const PilotsTakeOffList = ({ pilots }: { pilots: Pilot }) => {
       <ul>
         {pilots.map((pilot) => (
           <li key={pilot.id}>
-            <Link to={`${pilot.id}`}>              
+            <Link to={pilot.id}>              
               <div>
-                <h2>{pilot.name}</h2>             
+                {pilot.name}
               </div>
             </Link>
           </li>

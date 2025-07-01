@@ -19,7 +19,7 @@ import { Statute } from "./pages/statute";
 import { DashboardFiscal } from "./pages/dashboard/dashboardFiscal/DashboardFiscal";
 
 import { PilotsTakeOff, Loader as pilotsTakeoffLoader } from "./pages/dashboard/pilotsTakeOff";
-import { PilotTakeOffDetails } from "./pages/dashboard/pilotTakeOffDetails";
+import { PilotTakeOffDetails, loader as pilotTakeOffDetailsLoader } from "./pages/dashboard/pilotTakeOffDetails";
 
 const router = createBrowserRouter([
   {
@@ -45,7 +45,10 @@ const router = createBrowserRouter([
             element: <PilotsTakeOff />,
             loader: pilotsTakeoffLoader,
           },
-          { path: ":pilotTakeOffId", element: <PilotTakeOffDetails /> },
+          { 
+            path: ":id", element: <PilotTakeOffDetails />,
+            loader: pilotTakeOffDetailsLoader,
+           },
         ],
       },
     ],
