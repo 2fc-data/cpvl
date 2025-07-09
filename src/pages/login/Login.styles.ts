@@ -87,11 +87,11 @@ export const LoginWrap = styled.div`
   }
 
   .error {
-    border-top: 3px solid ${theme.colors.warning};
+    border-top: 3px solid ${theme.colors.danger};
     margin-top: 10px;
     font-size: 14px;
     font-weight: 600;
-    color: ${theme.colors.warning};
+    color: ${theme.colors.danger};
   }
 
   .error ul {

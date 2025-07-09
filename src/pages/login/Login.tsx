@@ -1,61 +1,45 @@
 import { useActionState } from 'react';
-
 import { Link } from 'react-router-dom';
-// import { useDispatch } from 'react-redux';
-// import { setToken } from '../../redux/slices/authSlice';
-// import axios from 'axios';
+
+// import { API, getURI } from '../../services';
+// import { useLocalStorage } from 'usehooks-ts';
 
 import { LoginWrap } from './Login.styles';
 import {
-  isEmail,
   isNotEmpty,
   hasMinLength
 } from '../../util/validation';
 
 function loginAction(_prevFormState: unknown, formData: FormData) {
-  const email = formData.get('email');
+  const username = formData.get('username');
   const password = formData.get('password');
-
   const errors: string[] = [];
 
-  if (email !== null &&
-    (!isNotEmpty(email.toString()) || !isEmail(email.toString()))) {
-    errors.push("Digite um E-mail válido");
+  if (username !== null &&
+    (!isNotEmpty(username.toString()) || !hasMinLength(username.toString(), 3))) {
+    errors.push("Usuário: É o nome antes do '@' do seu e-mail");
   }
-
   if (password !== null &&
     (!isNotEmpty(password.toString()) || !hasMinLength(password.toString(), 6))) {
-    errors.push("Senha deve ter no mínimo 6 characteres");
+    errors.push("Senha: Deve ter no mínimo 6 characteres");
   }
-
-  if (email === null && password === null) {
-    errors.push("Digite se E-mail e Senha.");
+  if (username === null && password === null) {
+    errors.push("Digite seu Usuário e Senha.");
   }
-
   if (errors.length > 0) {
     return {
       errors,
       enteredValues: {
-        email,
+        username,
         password
       }
     };
   }
-
   return { errors: null };
 }
 
 
 export const Login = () => {
-  // const dispatch = useDispatch();
-  // const form = useFormActions({
-  //   initialValues: { email: '', password: '' },
-  //   onSubmit: async (values) => {
-  //     const res = await axios.post('http://localhost:3000/auth/login', values);
-  //     dispatch(setToken(res.data.token));
-  //   },
-  // });
-
   const [formState, formAction] = useActionState(loginAction, {
     errors: null
   });
@@ -68,13 +52,13 @@ export const Login = () => {
           <div className="login-title">Login</div>
 
           <div className="form-group">
-            <label>E-mail:</label>
+            <label>Usuário:</label>
             <input
               autoComplete='username'
-              defaultValue={formState.enteredValues?.email?.toString()}
-              id="email"
-              name="email"
-              placeholder="Seu e-mail"
+              defaultValue={formState.enteredValues?.username?.toString()}
+              id="username"
+              name="username"
+              placeholder="Nome antes do '@' do seu e-mail"
               type="text"
             />
           </div>
@@ -108,7 +92,7 @@ export const Login = () => {
               <li key={index}>{error}</li>
             ))}
           </ul>}
-          
+
           <div className="redirect-login">
             <br />
             <h4>Não tem conta? </h4>
